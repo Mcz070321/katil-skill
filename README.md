@@ -16,7 +16,8 @@
   <p>
     <a href="https://github.com/Mcz070321/katil-skill/releases"><img alt="version 3.7.5" src="https://img.shields.io/badge/version-3.7.5-2f2f2f?style=flat-square"></a>
     <img alt="MIT license" src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square">
-    <img alt="166 tests passed" src="https://img.shields.io/badge/tests-166%20passed-2ea44f?style=flat-square">
+    <a href="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml"><img alt="checks passing" src="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml/badge.svg"></a>
+    <img alt="167 tests passed" src="https://img.shields.io/badge/tests-167%20passed-2ea44f?style=flat-square">
     <img alt="200 abilities" src="https://img.shields.io/badge/abilities-200-8957e5?style=flat-square">
     <img alt="60 styles" src="https://img.shields.io/badge/styles-60-d29922?style=flat-square">
   </p>
@@ -189,11 +190,11 @@ python scripts/style_library.py --validate
 python scripts/run_regression.py --cases tests --out regression_result.json
 ```
 
-当前状态（2026-11-07，Windows 11 / Python 3.12.7 / pytest 7.4.4）：
+当前状态（2026-11-07；Windows 11 / Python 3.12.7 / pytest 7.4.4 本地运行，GitHub Actions 上另有 Linux + Python 3.12 的同套检查）：
 
 | 检查 | 结果 |
 | --- | --- |
-| `pytest tests` | **166 passed, 1 skipped**（符号链接用例在 Windows 跳过） |
+| `pytest tests` | **167 passed**（Linux CI，含符号链接用例）；**166 passed, 1 skipped**（Windows 本地） |
 | `rule_registry_check.py` | PASS，9 条规则；语义等价性 UNKNOWN（需人工复核） |
 | `model_profile_check.py` | PASS（仅结构与来源链接）；semantic_support 始终 UNKNOWN |
 | `ability_library.py --validate` | PASS，200 项，C01–C20 |

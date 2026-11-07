@@ -16,7 +16,8 @@
   <p>
     <a href="https://github.com/Mcz070321/katil-skill/releases"><img alt="version 3.7.5" src="https://img.shields.io/badge/version-3.7.5-2f2f2f?style=flat-square"></a>
     <img alt="MIT license" src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square">
-    <img alt="166 tests passed" src="https://img.shields.io/badge/tests-166%20passed-2ea44f?style=flat-square">
+    <a href="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml"><img alt="checks passing" src="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml/badge.svg"></a>
+    <img alt="167 tests passed" src="https://img.shields.io/badge/tests-167%20passed-2ea44f?style=flat-square">
     <img alt="200 abilities" src="https://img.shields.io/badge/abilities-200-8957e5?style=flat-square">
     <img alt="60 styles" src="https://img.shields.io/badge/styles-60-d29922?style=flat-square">
   </p>
@@ -191,11 +192,11 @@ python scripts/style_library.py --validate
 python scripts/run_regression.py --cases tests --out regression_result.json
 ```
 
-Current state (2026-11-07, Windows 11 / Python 3.12.7 / pytest 7.4.4):
+Current state (2026-11-07; run locally on Windows 11 / Python 3.12.7 / pytest 7.4.4, with the same checks on GitHub Actions Linux + Python 3.12):
 
 | Check | Result |
 | --- | --- |
-| `pytest tests` | **166 passed, 1 skipped** (the symlink case is skipped on Windows) |
+| `pytest tests` | **167 passed** (Linux CI, symlink case included); **166 passed, 1 skipped** (Windows, local) |
 | `rule_registry_check.py` | PASS, 9 rules; semantic equivalence UNKNOWN (manual review required) |
 | `model_profile_check.py` | PASS (structure and provenance links only); semantic_support is always UNKNOWN |
 | `ability_library.py --validate` | PASS, 200 entries, C01–C20 |
