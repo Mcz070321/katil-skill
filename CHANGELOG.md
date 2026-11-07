@@ -2,7 +2,7 @@
 
 - **结构瘦身与单文件库合并**：将 `C01–C20.json` 与 `catalog.json` 合并为单文件 `references/ability-library/abilities.json`（200项），将 `F01–F10.json` 与 `catalog.json` 合并为单文件 `references/style-library/styles.json`（60项），检索脚本同时兼容单文件与旧分片；剥离离线历史日志与冗余副本，使技能包总文件数降至 68 个，完全适配各平台 100 文件上限与 MIME 门禁。
 - **复制块纯净度门禁统一收口**：`scripts/block_lint.py` 新增 `copy_block_purity_findings`，统一拦截「如有参考图」条件句、全局「默认无BGM」、复制块内泄露的 `SD25-` 维护编号、表单式转场头及无时间码写作方式自解释赘语，由 `run_regression.py` 直接复用。
-- **规则注册表一键同步**：`scripts/rule_registry_check.py` 新增 `--sync` 参数，自动计算并写回 9 条核心规则的 `authority_sha256` 与 `summary_sha256`。
+- **规则注册表一键同步**：`scripts/rule_registry_check.py` 新增 `--sync` 参数，自动计算并写回 9 条核心规则的 `authority_sha256` 与 `summary_sha256`；权威哈希按换行归一后的文本计算，避免不同换行格式的检出导致校验漂移。
 - **跨专题去重脱水**：精简次级专题中的重复通用规则复述，统一回指权威锚点。版本与兼容入口对齐 V3.7.5，发布说明见 `references/release-v3.7.5.md`。
 
 # V3.7.4 · 2026-11-07
