@@ -1,0 +1,19 @@
+name: katil-skill
+version: 3.7.5
+release_channel: stable
+compatible_core: '>=3.7.0,<4.0.0'
+contract_versions:
+  rule_registry: 1.0.0
+features:
+- director_core
+- rule_registry
+- action_compatibility
+- model_adaptation
+requires: []
+entrypoint: SKILL.md
+libraries:
+  ability_count: 200
+  style_count: 60
+  ability_library_version: 1.8.0
+  style_library_version: 1.9.0
+validation_scope: 'E1: fixed text tasks and software tests; no real-model/video claim'

@@ -1,0 +1,218 @@
+{
+  "description": "前12项复制自V3.5.2路由回归的实际用例与预期；第13–16项为新增概念档位用例（约束／约束／极简／作者）。供人工或真实模型独立路由判断，不是自动通过证据。",
+  "cases": [
+    {
+      "id": 1,
+      "request": "雨夜便利店，两人分手前的最后一分钟",
+      "intent": "让观众感到关系走到尽头",
+      "genre": "爱情",
+      "medium": "真人",
+      "form": "单条短片",
+      "director_mode": "写实",
+      "expected_load": "叙事与表演、导演运镜、声音与节奏",
+      "prohibited_or_caution": "动作、特效、恐怖；不要因为“雨夜”自动加犯罪或打斗"
+    },
+    {
+      "id": 2,
+      "request": "超现实恐怖爱情动画：女孩爱上镜中慢半拍的自己",
+      "intent": "既感到亲密，又感到不安",
+      "genre": "恐怖＋爱情",
+      "medium": "二维动画",
+      "form": "单条短片",
+      "director_mode": "诗意／实验",
+      "expected_load": "恐怖与悬疑、叙事与表演、动画与故事板、声音与节奏、导演运镜",
+      "prohibited_or_caution": "动作；不要用真人物理纠正动画形变；轴线可有意打破",
+      "evaluation_note": "原版预期的具体媒介是示例，输入未锁定；盲判保留未指定也可通过，不得把示例视作用户硬约束。"
+    },
+    {
+      "id": 3,
+      "request": "护肤品 15 秒竖屏广告，突出质地与吸收",
+      "intent": "让观众记住一个产品事实",
+      "genre": "生活／美容",
+      "medium": "真人",
+      "form": "广告",
+      "director_mode": "商业",
+      "expected_load": "现实主义与广告、声音与节奏、导演运镜",
+      "prohibited_or_caution": "动作、恐怖、完整世界观铺陈；产品外观与 Logo 必须连续"
+    },
+    {
+      "id": 4,
+      "request": "建筑事务所展示新馆空间与动线",
+      "intent": "让观众看懂空间关系",
+      "genre": "建筑／展示",
+      "medium": "三维／实拍",
+      "form": "预演／展示片",
+      "director_mode": "商业／写实",
+      "expected_load": "空间描述三模式、导演运镜、现实主义与广告",
+      "prohibited_or_caution": "动作、叙事冲突；S2 可用尺寸、坐标、楼层，不套 S1 禁米数；空间模式为S2。"
+    },
+    {
+      "id": 5,
+      "request": "实验梦境：镜中人慢半拍，故意反向跳切，不要可见越轴",
+      "intent": "让观众失去稳定空间感",
+      "genre": "梦境／心理",
+      "medium": "真人或混合",
+      "form": "单条短片",
+      "director_mode": "实验",
+      "expected_load": "通用创作核心、叙事与表演、导演运镜、声音与节奏",
+      "prohibited_or_caution": "动作；不要强行用可见越轴证据把它拉回常规；可用 S3，但保留内部逻辑"
+    },
+    {
+      "id": 6,
+      "request": "写实枪战：楼道遭遇，弹匣与掩体都有限",
+      "intent": "让观众相信每一次交火",
+      "genre": "动作",
+      "medium": "真人",
+      "form": "单条短片",
+      "director_mode": "写实",
+      "expected_load": "动作编排、特效与受创、导演运镜、声音与节奏",
+      "prohibited_or_caution": "恐怖、爱情、广告；不要用慢镜代替接触与受力；极高速时再加高速与多人。",
+      "conditional_load": [
+        {
+          "module": "高速与多人",
+          "when": "极高速"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "request": "喜剧群像：一场婚礼上所有人同时说谎",
+      "intent": "让观众笑，并记住人物关系",
+      "genre": "喜剧／家庭",
+      "medium": "真人",
+      "form": "单条短片",
+      "director_mode": "商业／写实",
+      "expected_load": "叙事与表演、声音与节奏、导演运镜",
+      "prohibited_or_caution": "动作、恐怖；不要用恐怖悬念的压迫节奏"
+    },
+    {
+      "id": 8,
+      "request": "恐怖短片：走廊尽头每盏灯灭一次就近一步",
+      "intent": "积累恐惧，而不是突然吓一下",
+      "genre": "恐怖",
+      "medium": "真人",
+      "form": "单条短片",
+      "director_mode": "类型化",
+      "expected_load": "恐怖与悬疑、声音与节奏、导演运镜",
+      "prohibited_or_caution": "动作；jump scare 必须有积累，不能每拍都吓"
+    },
+    {
+      "id": 9,
+      "request": "二维动画故事板：12 格，同一场追逐",
+      "intent": "让制作组读懂空间与动作",
+      "genre": "动作／冒险",
+      "medium": "二维动画",
+      "form": "故事板",
+      "director_mode": "商业",
+      "expected_load": "动画与故事板、导演运镜、空间描述三模式",
+      "prohibited_or_caution": "未经要求不加 BGM；不要把格号、箭头、对白烧进正式画面；只表现追逐路线与情绪时不强制动作模块；空间模式S1／S3；明确搏斗、碰撞、格挡或复杂交锋才加动作编排。",
+      "evaluation_note": "追逐不等于搏斗：只要求读懂路线、速度与情绪时不加载动作编排；出现明确交锋才按动作题材加载。",
+      "conditional_load": [
+        {
+          "module": "动作编排",
+          "when": "明确搏斗、碰撞、格挡或复杂交锋"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "request": "六集悬疑长视频，每集 8 分钟",
+      "intent": "让观众跨集追下去",
+      "genre": "悬疑／犯罪",
+      "medium": "真人",
+      "form": "系列长视频",
+      "director_mode": "类型化",
+      "expected_load": "叙事与表演、恐怖与悬疑、视点与连续、声音与节奏",
+      "prohibited_or_caution": "每集重启世界；不要平均分配每集信息"
+    },
+    {
+      "id": 11,
+      "request": "纪录片访谈：一位夜班护士的十二小时",
+      "intent": "让观众理解她的工作与选择",
+      "genre": "社会／职业",
+      "medium": "真人",
+      "form": "长视频／纪录片",
+      "director_mode": "纪录片",
+      "expected_load": "现实主义与广告、声音与节奏、导演运镜",
+      "prohibited_or_caution": "未经要求不加 BGM；不要用旁白替她下结论；不要伪造事实"
+    },
+    {
+      "id": 12,
+      "request": "游戏预告：30 秒，展示世界观与一名角色",
+      "intent": "让观众记住世界与角色",
+      "genre": "科幻／奇幻／动作（可选）",
+      "medium": "三维／混合",
+      "form": "预告",
+      "director_mode": "商业",
+      "expected_load": "通用创作核心、动画与故事板、声音与节奏、导演运镜",
+      "prohibited_or_caution": "不要默认拍成完整电影；动作只在题材需要时加载；不要把预告当故事板；有战斗才加动作编排。",
+      "evaluation_note": "原版预期的具体媒介是示例，输入未锁定；盲判保留未指定也可通过，不得把示例视作用户硬约束。",
+      "conditional_load": [
+        {
+          "module": "动作编排",
+          "when": "有战斗"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "request": "30秒护肤品广告，已证实的卖点仅为配方遇水乳化。",
+      "intent": "展示可核实的乳化过程",
+      "genre": "产品",
+      "medium": "未指定",
+      "form": "广告",
+      "director_mode": "商业",
+      "concept_mode": "约束型",
+      "expected_load": "原创概念、现实主义与广告",
+      "prohibited_or_caution": "不能新增护肤功效或暗示疗效。需要具体材质语法时加视觉材质与媒介语法。",
+      "conditional_load": [
+        {
+          "module": "视觉材质与媒介语法",
+          "when": "需要具体材质语法"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "request": "将以下原著节选忠实转为视频，保持结局：门外传来两下敲击。阿岚握住铜钥匙，却没有开门。灯影从门缝里一闪而过，她低声说：“等等。”",
+      "intent": "忠实呈现已有事件",
+      "genre": "悬疑／文戏",
+      "medium": "未指定",
+      "form": "原著改编",
+      "director_mode": "忠实／克制",
+      "concept_mode": "约束型",
+      "expected_load": "原创概念、原著约束、叙事与表演",
+      "prohibited_or_caution": "保留两次敲击、未开门、原话与开放终点；不得推断门外是谁或开门结果。"
+    },
+    {
+      "id": 15,
+      "request": "60秒数据可视化产品演示，说明真实给定的数据趋势与对比。",
+      "intent": "让观众准确理解给定数据",
+      "genre": "教学／展示",
+      "medium": "未指定",
+      "form": "数据可视化／演示",
+      "director_mode": "功能／极简",
+      "concept_mode": "极简型",
+      "expected_load": "原创概念、通用创作核心",
+      "prohibited_or_caution": "信息准确优先，不强制象征、剧情或空间母题。需要坐标时加空间描述三模式并采用S2。",
+      "conditional_load": [
+        {
+          "module": "空间描述三模式",
+          "when": "需要坐标，采用S2"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "request": "原创奇幻短片：雨先落地后升天，落点预示三秒后发生的事。",
+      "intent": "让观众学会一条属于这个故事的世界规则",
+      "genre": "奇幻",
+      "medium": "真人",
+      "form": "单条短片",
+      "director_mode": "诗意",
+      "concept_mode": "作者型",
+      "expected_load": "原创概念、通用创作核心、导演运镜、声音与节奏",
+      "prohibited_or_caution": "不套写实物理；不用旁白解释规则；概念只服务人物与事件，不做无关奇观。"
+    }
+  ]
+}

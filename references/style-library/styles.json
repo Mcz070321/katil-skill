@@ -1,0 +1,1568 @@
+{
+  "version": "1.9.0",
+  "count": 60,
+  "families": [
+    {
+      "id": "F01",
+      "name": "真人剧情与纪实",
+      "start": 1,
+      "end": 6
+    },
+    {
+      "id": "F02",
+      "name": "真人类型与时代质感",
+      "start": 7,
+      "end": 12
+    },
+    {
+      "id": "F03",
+      "name": "真人广告与场景观察",
+      "start": 13,
+      "end": 18
+    },
+    {
+      "id": "F04",
+      "name": "写实CG与VFX",
+      "start": 19,
+      "end": 24
+    },
+    {
+      "id": "F05",
+      "name": "风格化CG",
+      "start": 25,
+      "end": 30
+    },
+    {
+      "id": "F06",
+      "name": "日式二维动画",
+      "start": 31,
+      "end": 36
+    },
+    {
+      "id": "F07",
+      "name": "其他二维与图形动画",
+      "start": 37,
+      "end": 42
+    },
+    {
+      "id": "F08",
+      "name": "传统绘画媒介",
+      "start": 43,
+      "end": 48
+    },
+    {
+      "id": "F09",
+      "name": "定格与实体材质",
+      "start": 49,
+      "end": 54
+    },
+    {
+      "id": "F10",
+      "name": "实验混合媒介",
+      "start": 55,
+      "end": 60
+    }
+  ],
+  "styles": [
+    {
+      "id": "S001",
+      "name": "观察纪录",
+      "name_en": "Observational Documentary",
+      "family": "F01",
+      "medium": "真人纪实摄制，以现场行为、实际空间和同步声音建立可信感。",
+      "shape_motion": "动作保留犹豫、重复与偶然遮挡，让行为自行形成开始和结束。",
+      "texture": "保留肤质、衣物磨损与环境杂乱，细节服从现场可见程度。",
+      "light_color": "沿用窗光及现场灯具的方向，允许明暗差与有依据的混合色温。",
+      "camera_edit": "机位随观察对象适度调整，剪辑保留反应与行为结果的连续性。",
+      "vfx_sound": "使用现场声和可定位的画外动静，处理只修复干扰而不制造事件。",
+      "limits": "不为戏剧效果摆出不存在的行为，也不把手持晃动当作真实的证明。",
+      "character_style": {
+        "zh": "人物衣物带自然褶皱与使用痕迹，视线游移和手部停顿保留日常节奏。",
+        "en": "People wear naturally creased, visibly used clothing; wandering glances and pauses in their hands retain the irregular rhythms of everyday behavior."
+      },
+      "scene_style": {
+        "zh": "真实室内保留桌角杂物、磨损墙面与窗光落点，前后空间保持可辨。",
+        "en": "An actual interior retains objects at table edges, worn walls, and patches of window light, with foreground and background spaces remaining legible."
+      },
+      "video_style": {
+        "zh": "镜头在现场缓慢寻找观察位置，完整保留动作后的反应与远近环境声。",
+        "en": "The camera gently searches for an observing position on location, retaining reactions after actions and environmental sounds at distinct distances."
+      }
+    },
+    {
+      "id": "S002",
+      "name": "剧情写实",
+      "name_en": "Naturalistic Drama",
+      "family": "F01",
+      "medium": "真人剧情摄制，以可相信的表演、生活空间和动作因果承载叙事。",
+      "shape_motion": "人物动作有明确目标与阻力，微小表情和身体重心共同显示情绪。",
+      "texture": "棉麻、木器和皮肤维持各自细节，不以统一锐化抹平材质差异。",
+      "light_color": "从窗户与实际灯具组织柔硬对比，肤色和环境色保持相互影响。",
+      "camera_edit": "按人物关系安排景别和视线，切点落在理解、反应或动作变化上。",
+      "vfx_sound": "台词若存在则保留呼吸与距离感，衣料和物件声补足动作因果。",
+      "limits": "情绪需要具体表演支撑，不靠无源轮廓光或失真的空间关系代替。",
+      "character_style": {
+        "zh": "人物肩背放松但手指略显紧绷，棉质衣领与自然肤色呈现细微起伏。",
+        "en": "The person's shoulders remain relaxed while the fingers tighten slightly; a cotton collar and natural skin tones reveal subtle variations."
+      },
+      "scene_style": {
+        "zh": "生活化房间保留木桌、织物与门框层次，窗光和室内灯共同塑造空间。",
+        "en": "A lived-in room retains layers of wooden furniture, textiles, and doorframes, with window light and practical lamps jointly shaping the space."
+      },
+      "video_style": {
+        "zh": "镜头沿人物视线连接动作与反应，身体转向和物件状态在切换间连续。",
+        "en": "Shots connect actions and reactions through the characters' eyelines, maintaining body orientation and object states consistently across each motivated cut."
+      }
+    },
+    {
+      "id": "S003",
+      "name": "长镜空间戏",
+      "name_en": "Spatial Long Take",
+      "family": "F01",
+      "medium": "真人连续调度摄制，利用同一空间内的人物接力和视点移动推进。",
+      "shape_motion": "人物分层进出与交接注意力，前景动作引出后景变化并保留等待。",
+      "texture": "地面、门框与衣料纹理随距离自然变化，空间细节不因运镜跳变。",
+      "light_color": "沿移动路线设置有来源的明暗区域，人物进入各区后受光连续改变。",
+      "camera_edit": "镜头绕开实物障碍衔接人物，以遮挡和景别自然变化组织观看顺序。",
+      "vfx_sound": "脚步与画外声提前提示新区域，混响和音量随镜头所在位置改变。",
+      "limits": "连续镜头不等于不停移动，机位须有通行空间并避免穿墙式转移。",
+      "character_style": {
+        "zh": "人物以清楚的转身、侧让和停步交接视线，服装轮廓在遮挡后仍可辨。",
+        "en": "People pass attention through clear turns, sidesteps, and pauses, while recognizable clothing silhouettes remain consistent when they reappear from behind obstructions."
+      },
+      "scene_style": {
+        "zh": "连通房间通过门框与走廊形成多层纵深，每个转角保留可通行的机位。",
+        "en": "Connected rooms create layered depth through doorways and corridors, with navigable camera positions remaining available around every corner of the space."
+      },
+      "video_style": {
+        "zh": "连续镜头随人物交接缓移和停驻，脚步与画外动静提前引导下一区域。",
+        "en": "A continuous shot moves and pauses with shifting character attention; footsteps and offscreen activity introduce the next area before it enters view."
+      }
+    },
+    {
+      "id": "S004",
+      "name": "静观极简",
+      "name_en": "Contemplative Minimalism",
+      "family": "F01",
+      "medium": "真人静态构图摄制，以留白、环境持续与有限动作形成观看压力。",
+      "shape_motion": "减少动作幅度，保留呼吸、移重和等待，让细小变化获得可见分量。",
+      "texture": "哑光墙面、旧木与素色织物各有细微层次，避免表面统一磨平。",
+      "light_color": "采用稳定的柔光或缓慢自然光变，少量低饱和色维持明确明度关系。",
+      "camera_edit": "固定或极轻微移动机位，以画内变化和空镜余留决定镜头衔接。",
+      "vfx_sound": "室内底噪、远处交通和零星接触声维持时间感，寂静仍有空间层次。",
+      "limits": "留白须保留观看重心，不能以长时间无关画面或全面虚焦替代情绪。",
+      "character_style": {
+        "zh": "素衣人物静立于画面一侧，仅见呼吸、指尖松开与重心缓缓转移。",
+        "en": "A plainly dressed person stands to one side of the frame, with only breathing, relaxing fingertips, and a slow shift of weight visible."
+      },
+      "scene_style": {
+        "zh": "素净墙面与旧木地面留下大块空处，柔和侧光让表面微小差异可读。",
+        "en": "Plain walls and worn wooden flooring leave broad areas empty, while soft side light makes small variations across the surfaces perceptible."
+      },
+      "video_style": {
+        "zh": "固定构图容纳细微动作和动作后的空处，远近底噪持续维持空间时间。",
+        "en": "A fixed composition holds small movements and the empty space that follows them, while near and distant ambience sustains spatial duration."
+      }
+    },
+    {
+      "id": "S005",
+      "name": "人物近景心理",
+      "name_en": "Psychological Close-up",
+      "family": "F01",
+      "medium": "真人近景表演摄制，让面部细变、视线与呼吸承担心理信息。",
+      "shape_motion": "表情由眼睑、嘴角与吞咽逐层变化，避免同时夸大所有面部动作。",
+      "texture": "保留面部细纹、睫毛和唇部干湿差异，妆面与肤质保持合理区分。",
+      "light_color": "利用侧光与局部反光揭示表情转折，明暗比例随心理任务有度变化。",
+      "camera_edit": "近景轴线稳定，轻微靠近或焦点转移对应注意力改变与情绪确认。",
+      "vfx_sound": "近距离呼吸和衣领摩擦突出身体状态，画外声按主观注意适度收放。",
+      "limits": "靠表演呈现心理，不擅加幻觉事件；浅景深仍须保住关键表情部位。",
+      "character_style": {
+        "zh": "面部保留细纹与唇部干湿差异，目光短暂停留后下移，嘴角轻微收紧。",
+        "en": "Fine facial lines and varying lip moisture remain visible; the gaze briefly holds before lowering, while the corners of the mouth tighten subtly."
+      },
+      "scene_style": {
+        "zh": "近景背后保留门框与灯具的模糊位置，侧光在面颊形成可读的明暗过渡。",
+        "en": "Soft doorframe and lamp positions remain recognizable behind the close-up, while side light creates a readable transition across the cheek."
+      },
+      "video_style": {
+        "zh": "镜头贴近但保持稳定，焦点随目光与吞咽微调，近处呼吸带出情绪变化。",
+        "en": "The camera stays close and steady, adjusting focus with glances and swallowing, while nearby breathing carries the gradual change in emotion."
+      }
+    },
+    {
+      "id": "S006",
+      "name": "自然生态微距",
+      "name_en": "Nature and Ecology Macro",
+      "family": "F01",
+      "medium": "自然主体微距实拍，观察昆虫、植物和水滴在真实尺度中的关系。",
+      "shape_motion": "顺应触须探查、叶片回弹与水滴聚合的过程，动作节奏由主体决定。",
+      "texture": "突出翅膜、绒毛、叶脉和液面曲率，材料细节与物种结构相符。",
+      "light_color": "柔化日光或近距离补光显示半透明组织，反光方向和露珠高光一致。",
+      "camera_edit": "沿主体尺度低位观察，微调机位和焦面跟住关键器官与接触位置。",
+      "vfx_sound": "使用可说明尺度的风叶声与环境底噪，放大的细声避免伪装为实录。",
+      "limits": "不拟人化赋予动物行为，也不把视觉放大或时间压缩当作新生物能力。",
+      "character_style": {
+        "zh": "昆虫触须细节清晰，足端贴合叶缘，翅膜纹理与身体绒毛各自分明。",
+        "en": "An insect has clearly defined antennae, feet resting against the leaf edge, and distinct wing membrane patterns and fine body hairs."
+      },
+      "scene_style": {
+        "zh": "叶脉与露珠构成微小地形，柔化日光穿过薄叶，背景枝叶保留尺度线索。",
+        "en": "Leaf veins and dew form a tiny landscape; diffused sunlight passes through thin leaves while background foliage preserves clear clues to scale."
+      },
+      "video_style": {
+        "zh": "微距镜头随触须探查轻调焦面，叶片回弹与水滴聚合保留自然先后。",
+        "en": "The macro shot gently adjusts its focus plane with antenna movements, preserving the natural sequence of leaf rebound and droplet gathering."
+      }
+    },
+    {
+      "id": "S007",
+      "name": "黑白黑色电影",
+      "name_en": "Black-and-White Film Noir",
+      "family": "F02",
+      "medium": "真人黑白类型摄制，以明暗结构、遮挡与不确定的观看位置构建气氛。",
+      "shape_motion": "轮廓在明暗边界进退，动作克制而方向明确，停步与回望形成悬念。",
+      "texture": "深色毛呢、漆面、湿地和烟尘分别转为不同灰阶与反光形态。",
+      "light_color": "硬侧光和窄幅亮区组织黑白反差，阴影有来源且关键线索仍可辨。",
+      "camera_edit": "用斜向构图、低位视点和局部遮挡呈现关系，切换保持空间线索。",
+      "vfx_sound": "鞋跟、门锁和空旷混响形成警觉，尘烟仅在存在相应介质时显现。",
+      "limits": "黑白不等于压死所有暗部；倾斜构图和烟雾须服务观看而非机械叠加。",
+      "character_style": {
+        "zh": "深色毛呢衣领切出清晰轮廓，面部被窄束侧光分开，眼神藏于眉影。",
+        "en": "A dark wool collar creates a clear silhouette; a narrow band of side light divides the face, with the gaze beneath the brow's shadow."
+      },
+      "scene_style": {
+        "zh": "黑白街角保留湿地反光与百叶窗影，门洞深黑仍显出墙面和台阶边界。",
+        "en": "A monochrome street corner retains wet reflections and shadows from window blinds; the dark doorway still reveals the edges of its walls and steps."
+      },
+      "video_style": {
+        "zh": "人物穿过窄幅亮区后停步，低位镜头借遮挡显露信息，鞋跟回声延续。",
+        "en": "A figure crosses a narrow pool of light and pauses; low camera positions reveal information through obstructions as heel echoes continue."
+      }
+    },
+    {
+      "id": "S008",
+      "name": "彩色复古胶片",
+      "name_en": "Vintage Color Film",
+      "family": "F02",
+      "medium": "真人彩色影像模拟传统胶片观看感，年代细节由既定时代设定决定。",
+      "shape_motion": "表演保留从容起落与动作余势，身体姿态符合服装剪裁和环境礼仪。",
+      "texture": "织物纤维、木漆磨损与细颗粒相互区分，颗粒不覆盖主体轮廓。",
+      "light_color": "以温暖高光、柔和色彩偏移和有密度的暗部形成连贯的胶片色调。",
+      "camera_edit": "采用稳定构图与清楚的景别衔接，镜头运动跟随人物而不追求炫技。",
+      "vfx_sound": "高亮边缘可有适量晕染，环境声保留年代材质，介质噪声按需控制。",
+      "limits": "复古色调与颗粒不改变故事年代；物件服从既定时代，漏光和抖动不能掩盖场景信息。",
+      "character_style": {
+        "zh": "人物衣装剪裁利落，织物纤维与袖口磨损可见，温暖高光柔和包住面部。",
+        "en": "The person's clothing has a clean cut, visible fabric fibers, and worn cuffs, while warm highlights gently wrap around the face."
+      },
+      "scene_style": {
+        "zh": "旧木家具与磨损漆面呈现温润色层，窗边亮部轻微晕染，暗部保持密度。",
+        "en": "Old wooden furniture and worn paint display mellow color layers; bright window edges bloom slightly while shadows retain substantial tonal density."
+      },
+      "video_style": {
+        "zh": "稳定镜头跟随从容动作与余势，细颗粒贯穿画面，柔和色偏保持连贯。",
+        "en": "Steady shots follow unhurried gestures and their lingering motion, with fine grain across the image and gently shifted colors remaining consistent."
+      }
+    },
+    {
+      "id": "S009",
+      "name": "霓虹都市",
+      "name_en": "Neon Metropolis",
+      "family": "F02",
+      "medium": "真人都市夜景摄制，通过可见灯源、反射与空间层叠呈现夜间气氛。",
+      "shape_motion": "人物步伐与车流形成不同速度层，转身和停顿改变彩光在身体的落点。",
+      "texture": "湿地、玻璃、金属与合成纤维分配不同反射，保留表面污迹和粗糙度。",
+      "light_color": "彩色灯具主导局部光色，肤色受邻近光源染色但不被整体荧光吞没。",
+      "camera_edit": "借玻璃与街巷纵深进行横移或跟随，切换靠交通方向和亮区位置连接。",
+      "vfx_sound": "电流嗡声、车流和积水接触声有明确距离，光晕限于实际高亮边缘。",
+      "limits": "霓虹必须对应灯源，湿润和烟汽须有环境依据，不固定套用两种对撞色。",
+      "character_style": {
+        "zh": "人物外套保留合成纤维纹理，邻近彩灯在肩线和侧脸形成分区反光。",
+        "en": "The person's jacket retains its synthetic weave, while nearby colored lights create distinct reflection zones along the shoulder line and side of the face."
+      },
+      "scene_style": {
+        "zh": "夜间玻璃与湿地映出可追溯的彩色灯源，街巷亮区逐层向远处递退。",
+        "en": "Nighttime glass and wet pavement reflect identifiable colored light sources, while illuminated street sections recede in successive layers into the distance."
+      },
+      "video_style": {
+        "zh": "横移镜头穿过玻璃反射层，人物与车流保持速度差，彩光随位置连续变化。",
+        "en": "A lateral camera move passes through layered glass reflections; people and traffic retain different speeds as colored light changes continuously with position."
+      }
+    },
+    {
+      "id": "S010",
+      "name": "低调悬疑",
+      "name_en": "Low-Key Suspense",
+      "family": "F02",
+      "medium": "真人悬疑摄制，以受控可见范围、信息延迟和人物警觉建立张力。",
+      "shape_motion": "探看、止步与迟疑后再行动形成节奏，身体先于视线暴露紧张状态。",
+      "texture": "暗处仍区分旧木、粗墙和衣料，局部反光只提示与注意力相关的细节。",
+      "light_color": "小面积实景光勾出行动区域，深暗背景保留必要结构与冷暖层次。",
+      "camera_edit": "利用门缝与前景遮挡限制信息，镜头停留和反向切换回应声音来源。",
+      "vfx_sound": "细小机械声、远处脚步和室内底噪分层出现，音量变化遵循距离。",
+      "limits": "不能凭画风添加追踪者或怪物，暗部遮蔽须给出足以理解行动的线索。",
+      "character_style": {
+        "zh": "人物肩背微收，探看前先停下手部动作，微弱侧光显出额角与紧闭嘴唇。",
+        "en": "The person's shoulders draw inward and the hands stop before a cautious look; faint side light reveals the temple and tightly closed lips."
+      },
+      "scene_style": {
+        "zh": "门缝亮区落在粗墙和旧木上，深处保留家具边界，前景遮挡限制可见范围。",
+        "en": "Light through a narrow doorway falls on rough walls and old wood; furniture edges remain visible deeper inside, with foreground obstructions restricting the view."
+      },
+      "video_style": {
+        "zh": "镜头先停留在有限亮区，再随微弱声源转向遮挡边缘，延迟显露空间信息。",
+        "en": "The camera holds on a limited pool of light, then turns toward a faint sound beyond an obstruction, delaying the release of spatial information."
+      }
+    },
+    {
+      "id": "S011",
+      "name": "高调轻喜",
+      "name_en": "High-Key Light Comedy",
+      "family": "F02",
+      "medium": "真人轻喜剧摄制，用明快空间、可读表演与反应时差组织轻松感。",
+      "shape_motion": "手势轮廓清楚，动作完成后留出理解与反应，失误遵守实际身体条件。",
+      "texture": "干净织物、陶瓷与浅色木材保持触感，不把高亮画面处理成平面塑料。",
+      "light_color": "大面积柔光维持明亮面部，以奶油色和少量鲜明色块区分人物关系。",
+      "camera_edit": "中景呈现动作关系，反应近景接住表演落点，剪辑由笑点因果决定。",
+      "vfx_sound": "物件碰触与衣料声强调动作落点，声音轻重和画面接触保持对应。",
+      "limits": "明亮不等于全无阴影；不强加夸张摔倒、笑声提示或无因果的滑稽动作。",
+      "character_style": {
+        "zh": "人物面部受柔光照亮，衣装色块明快，手势展开后停顿让细微反应可见。",
+        "en": "Soft light brightens the person's face, clothing forms cheerful color blocks, and an open gesture pauses long enough for a subtle reaction to register."
+      },
+      "scene_style": {
+        "zh": "浅木、陶瓷和奶油色墙面构成明亮空间，少量鲜明物件形成清楚视觉落点。",
+        "en": "Pale wood, ceramics, and cream-colored walls form a bright space, with a few vividly colored objects providing clear points of visual attention."
+      },
+      "video_style": {
+        "zh": "中景保留手势与物件关系，动作落点后接住人物反应，接触声轻巧清楚。",
+        "en": "Medium shots retain the relationship between gestures and objects, then catch the character's response after each action lands, with light, clear contact sounds."
+      }
+    },
+    {
+      "id": "S012",
+      "name": "史诗环境人像",
+      "name_en": "Epic Environmental Portraiture",
+      "family": "F02",
+      "medium": "真人环境人像摄制，以大尺度地貌与人物体量关系表达处境和气势。",
+      "shape_motion": "人物动作精简而有重心，衣物与头发随真实风向变化，姿态回应地形。",
+      "texture": "岩石、沙土和厚重衣料各显尺度，表面磨损避免沦为均匀装饰噪点。",
+      "light_color": "低角度自然光塑造地形起伏，以天空冷色和地表暖色区分受光关系。",
+      "camera_edit": "大全景交代人物尺度与路线，再以中近景补充表情和身体受力。",
+      "vfx_sound": "风声、脚下碎屑与远处自然声建立空间，尘土只在实际扰动后出现。",
+      "limits": "宏大感来自尺度与构图，不自动增加超常能力、巨大物体或无源光柱。",
+      "character_style": {
+        "zh": "厚重衣料随横风拉出清晰轮廓，人物稳住重心，面部保留自然受光起伏。",
+        "en": "Heavy fabric forms a clear silhouette in the crosswind; the person steadies their weight while natural light preserves the contours of the face."
+      },
+      "scene_style": {
+        "zh": "巨大岩壁与开阔地表衬出人物尺度，低角度日光将地形分成冷暖层次。",
+        "en": "Vast rock faces and open ground establish the person's scale, while low sunlight divides the terrain into layers of warm light and cool shadow."
+      },
+      "video_style": {
+        "zh": "广阔构图先显出路线与体量，再靠近身体受力，风声和脚下碎屑贯穿。",
+        "en": "Wide compositions establish the route and relative scale before moving closer to bodily effort, with wind and loose debris underfoot carrying through."
+      }
+    },
+    {
+      "id": "S013",
+      "name": "棚拍商业",
+      "name_en": "Studio Commercial",
+      "family": "F03",
+      "medium": "真人与实物棚拍，以受控背景和精确反射清楚呈现产品及使用关系。",
+      "shape_motion": "动作围绕拿取、转动和展示组织，起落平稳，手部不遮住关键结构。",
+      "texture": "玻璃、拉丝金属和织物分别保留透射、方向纹理与纤维触感。",
+      "light_color": "大型柔光面与窄反光条分工塑形，品牌色按实际需求局部出现。",
+      "camera_edit": "运镜沿形体与操作路径展开，整体轮廓和细节镜头保持尺度对应。",
+      "vfx_sound": "旋钮、包装与材质接触声清晰贴合，修饰只强化已发生的物理动作。",
+      "limits": "不靠无条件镜面和悬浮运动美化所有物件，产品结构与功能必须真实。",
+      "character_style": {
+        "zh": "人物手部姿态简洁稳当，指尖避开关键结构，袖口纤维与肤质清楚分离。",
+        "en": "The person's hands remain poised and steady, fingertips avoiding key features, while sleeve fibers and skin texture stay clearly distinct from each other."
+      },
+      "scene_style": {
+        "zh": "干净棚景以柔光面勾出玻璃轮廓，窄反光条沿拉丝金属表面有序延伸。",
+        "en": "A clean studio set uses broad soft reflections to define glass edges, with narrow highlight strips extending orderly across brushed metal surfaces."
+      },
+      "video_style": {
+        "zh": "镜头沿产品曲面平稳移动，拿取和转动展示结构，材质接触声对应落点。",
+        "en": "The camera moves steadily along product curves; lifting and turning reveal the structure, with material contact sounds aligned to each physical action."
+      }
+    },
+    {
+      "id": "S014",
+      "name": "窗光生活广告",
+      "name_en": "Windowlit Lifestyle Advertising",
+      "family": "F03",
+      "medium": "真人生活场景广告，以自然使用动作和窗边光线体现物件的亲近感。",
+      "shape_motion": "动作从日常接触顺势展开，手指、织物和物件有细小而真实的迟滞。",
+      "texture": "针织、棉布、木纹与陶器保留温润差异，使用痕迹保持适量可见。",
+      "light_color": "窗光形成柔和方向性，室内反射补足暗面，暖色材质不失原有色相。",
+      "camera_edit": "轻缓跟随手部和视线，场景中景与触觉细节相接，空间位置保持稳定。",
+      "vfx_sound": "布料摩擦、陶器轻触与室外远声建立生活层次，蒸汽对应实际热源。",
+      "limits": "松弛感仍要有真实使用关系，不凭光斑、慢放或无来源蒸汽代替内容。",
+      "character_style": {
+        "zh": "人物衣料保留自然软褶，手指与既定日常物件自然接触，窗光落在面颊与袖口。",
+        "en": "Retain natural soft folds in the clothing; fingers naturally contact the established everyday object, with window light falling across the cheek and cuffs."
+      },
+      "scene_style": {
+        "zh": "窗边木桌、棉布和陶器保留温润触感，反射光让室内暗面仍有细节。",
+        "en": "A wooden table, cotton cloth, and ceramics beside the window retain warm tactile qualities, while reflected light preserves detail in the room's shadows."
+      },
+      "video_style": {
+        "zh": "镜头轻随既定日常使用动作，衣料与物件接触声贴合，窗外远声保持距离。",
+        "en": "The camera gently follows the established everyday use action, with matching sounds of fabric and object contact; outdoor ambience remains perceptibly distant."
+      }
+    },
+    {
+      "id": "S015",
+      "name": "几何舞台时尚",
+      "name_en": "Geometric Stage Fashion",
+      "family": "F03",
+      "medium": "真人时尚棚景摄制，以几何布景、服装剪影和身体线条构建图形关系。",
+      "shape_motion": "转肩、跨步与定姿形成清楚折线，动作顶点停留以展示剪裁和衣褶。",
+      "texture": "皮革、绸缎与硬质台面分别呈现反光宽度，服装体积不被灯色压平。",
+      "light_color": "硬边灯区与少量色面建立图形对比，面部和衣装仍保留立体层次。",
+      "camera_edit": "正面、侧面与俯视对应几何结构，切点围绕姿态顶点和轮廓变化。",
+      "vfx_sound": "鞋跟落地和衣料甩动强调节奏，图形转接沿已有形状与运动方向连接。",
+      "limits": "姿态应符合身体结构，图形化布景不自动使人物失重或服装任意变形。",
+      "character_style": {
+        "zh": "服装以利落肩线和立体褶皱塑形，人物转肩后定姿，手臂形成清晰折线。",
+        "en": "Sharp shoulder lines and sculptural folds shape the clothing; the person turns and holds a pose, with arms forming clearly readable angles."
+      },
+      "scene_style": {
+        "zh": "几何台阶与硬边色面交错，定向灯区分出台面高度，留出完整服装剪影。",
+        "en": "Geometric steps intersect with sharply edged color planes; directional light separates platform heights while leaving room for the complete clothing silhouette."
+      },
+      "video_style": {
+        "zh": "镜头在正侧与俯视间呼应布景结构，姿态顶点显露剪裁，鞋跟和衣料声清楚。",
+        "en": "Front, side, and overhead views echo the set geometry; held poses reveal tailoring, with distinct heel strikes and moving fabric sounds."
+      }
+    },
+    {
+      "id": "S016",
+      "name": "食物器物微距",
+      "name_en": "Food and Object Macro",
+      "family": "F03",
+      "medium": "实物微距摄制，以可触知的表面和材料变化展示食物或器物特征。",
+      "shape_motion": "沿切开、倾倒、融化或轻触的过程组织变化，黏度和重力决定形态。",
+      "texture": "突出酥脆断面、液体挂壁、釉面和细小划痕，区分湿润与油亮。",
+      "light_color": "掠射光揭示表面起伏，柔和反射控制高光，主体本色保持可识别。",
+      "camera_edit": "近距离沿纹理和接触面移动，焦点由表层转到剖面并保住关键形态。",
+      "vfx_sound": "碎裂、咀嚼或器皿碰触按画面实际内容选用，细声增强仍遵循材质。",
+      "limits": "不能让所有食物统一流浆或发光，热气与滴落应对应温度和材料状态。",
+      "character_style": {
+        "zh": "酥皮断面呈薄层碎屑，浓稠液体沿器壁缓缓挂落，釉面高光边界清楚。",
+        "en": "A flaky crust reveals thin broken layers, viscous liquid clings and slowly slides down the vessel, and glazed highlights have clear boundaries."
+      },
+      "scene_style": {
+        "zh": "简洁台面衬托食物与陶器，掠射光显出碎屑、细划痕和液面弯曲。",
+        "en": "A simple tabletop supports food and ceramics, while grazing light reveals crumbs, fine scratches, and the curvature of the liquid surface."
+      },
+      "video_style": {
+        "zh": "微距镜头由表层移向剖面，滴落按黏度和重力延展，碎裂与接触声贴合。",
+        "en": "The macro camera moves from surface to cross-section; dripping follows viscosity and gravity, with fracture and contact sounds matching the material changes."
+      }
+    },
+    {
+      "id": "S017",
+      "name": "运动赛事跟随",
+      "name_en": "Sports Event Tracking",
+      "family": "F03",
+      "medium": "真人运动摄制，以跟随视点、场地关系和真实身体负荷呈现竞技过程。",
+      "shape_motion": "加速、变向、接触与回收保持完整受力链，体能变化体现在呼吸与姿态。",
+      "texture": "运动织物、汗水、橡胶与场地颗粒分别可见，摩擦痕迹对应实际接触。",
+      "light_color": "日光或场馆灯保持场地照明逻辑，高亮汗珠不吞没动作与身体轮廓。",
+      "camera_edit": "跟拍维持行进方向和对手位置，远近景切换让动作目标与结果清楚。",
+      "vfx_sound": "脚步、器械碰撞、呼吸与观众远声分层，声音强调真实接触和距离。",
+      "limits": "不由赛事风格凭空增加运动能力；跟随路径和机位不得穿越运动主体。",
+      "character_style": {
+        "zh": "运动者重心随变向下沉，透气织物贴合肩背，汗珠与紧绷肌肉呈现负荷。",
+        "en": "The athlete lowers their center of gravity while changing direction; breathable fabric follows the shoulders and back, with sweat and tense muscles showing exertion."
+      },
+      "scene_style": {
+        "zh": "场地标线、地面颗粒与远处观众保留层次，照明方向贯穿整个运动区域。",
+        "en": "Markings on the playing surface, surface granules, and distant spectators remain layered and readable, with a consistent lighting direction across the entire area of play."
+      },
+      "video_style": {
+        "zh": "跟拍维持行进方向，完整呈现加速、接触与回收，脚步和呼吸反映真实负荷。",
+        "en": "Tracking maintains the direction of travel and shows acceleration, contact, and recovery completely, while footsteps and breathing convey the actual physical effort."
+      }
+    },
+    {
+      "id": "S018",
+      "name": "城市建筑延时",
+      "name_en": "Urban Architectural Timelapse",
+      "family": "F03",
+      "medium": "建筑实拍的时间压缩影像，以稳定结构对照光照、云层与城市流动。",
+      "shape_motion": "建筑形体固定，阴影迁移、云流与交通呈不同速度层，变化有时间依据。",
+      "texture": "保留玻璃幕墙、石材和金属接缝，远处重复结构避免跳变与闪烁。",
+      "light_color": "呈现太阳位置或灯具启闭带来的连续光变，曝光过渡平滑而有依据。",
+      "camera_edit": "固定机位或可追踪的缓慢路径维持透视，结构边缘为转接提供对应。",
+      "vfx_sound": "环境底声建立城市尺度，声景可概括时间流逝但不伪称逐帧同步。",
+      "limits": "时间压缩不改变建筑结构，移动机位须保持地标稳定且不凭空穿楼。",
+      "character_style": {
+        "zh": "建筑立面保持笔直结构，窗格与金属接缝清晰，行人与车流形成尺度参照。",
+        "en": "The building facade keeps straight structural lines, clear window grids, and metal joints, while pedestrians and traffic provide a readable reference for scale."
+      },
+      "scene_style": {
+        "zh": "玻璃、石材与道路构成稳定城市层次，云影和日照沿立面连续迁移。",
+        "en": "Glass, stone, and roads form stable urban layers, with cloud shadows and sunlight moving continuously across the building facades throughout the view."
+      },
+      "video_style": {
+        "zh": "稳定视点压缩云流与交通的时间，建筑边缘不漂移，明暗过渡保持连续。",
+        "en": "A stable viewpoint compresses the passage of clouds and traffic, while building edges remain fixed and changes between light and shadow stay continuous."
+      }
+    },
+    {
+      "id": "S019",
+      "name": "电影写实CG",
+      "name_en": "Cinematic Photoreal CG",
+      "family": "F04",
+      "medium": "三维渲染的电影写实影像，以可信比例、物理材质和受控调度组织观看。",
+      "shape_motion": "关节运动、重心转移和次级摆动相互协调，起落保留质量与惯性。",
+      "texture": "材质粗糙度、法线与反射形成一致尺度，磨损和污迹对应实际接触区域。",
+      "light_color": "具有明确来源的主光与反射光共同塑形，曝光和色彩随场景任务变化。",
+      "camera_edit": "虚拟机位采用可理解的空间路径，景别、遮挡和焦点服务动作信息。",
+      "vfx_sound": "粒子、布料和碎屑对受力产生响应，接触声随材质、体量和距离变化。",
+      "limits": "写实渲染不等于赋予超常行为，粒子密度和表面细节不能掩盖动作逻辑。",
+      "character_style": {
+        "zh": "三维人物比例可信，关节与衣物受力相互配合，表面粗糙度保留细微差异。",
+        "en": "The CG person has credible proportions, coordinated joint and clothing responses, and subtle variations in surface roughness across the body and garments."
+      },
+      "scene_style": {
+        "zh": "三维场景以材质尺度和接触阴影建立体量，主光与反射光对应清楚来源。",
+        "en": "The CG environment establishes mass through consistent material scale and contact shadows, with key light and reflected illumination coming from clearly identifiable sources."
+      },
+      "video_style": {
+        "zh": "虚拟镜头循清楚路径观察重心转移，布料与碎屑随后响应，接触声匹配体量。",
+        "en": "The virtual camera follows a clear path through weight shifts, with cloth and debris responding afterward and contact sounds matching the apparent mass."
+      }
+    },
+    {
+      "id": "S020",
+      "name": "实拍CG融合",
+      "name_en": "Live-Action and CG Integration",
+      "family": "F04",
+      "medium": "实拍底片与三维元素合成，以共同的光学、受光和遮挡关系建立统一画面。",
+      "shape_motion": "数字元素与实物在接触时同步受力，运动模糊和次级反应匹配底片。",
+      "texture": "数字表面细节与实拍锐度、颗粒和材质尺度相容，避免孤立的过度清晰。",
+      "light_color": "匹配现场光源方向、色温与环境反射，接触阴影和反光同时回应位置。",
+      "camera_edit": "虚拟相机跟随实际机位轨迹与畸变，遮挡边缘和空间视差保持稳定。",
+      "vfx_sound": "效果声与真实触点同步，混响和空气衰减与同一空间的实拍声一致。",
+      "limits": "融合只决定呈现方式，不能擅增事件；禁止漂浮接触、穿模和错误反射。",
+      "character_style": {
+        "zh": "实拍人物与数字物件在触点共同受力，袖口遮挡自然，反光在双方表面对应。",
+        "en": "The filmed person and CG object respond together at contact points, with natural sleeve occlusion and corresponding reflections across both surfaces."
+      },
+      "scene_style": {
+        "zh": "数字物件嵌入真实场地，接触阴影、环境反射与现场颗粒锐度保持一致。",
+        "en": "CG objects sit within a filmed location, matching its contact shadows, environmental reflections, image grain, and level of optical sharpness throughout the frame."
+      },
+      "video_style": {
+        "zh": "数字元素随实拍机位产生正确视差，遮挡和模糊稳定，效果声贴合实际触点。",
+        "en": "CG elements show correct parallax with the filmed camera movement; occlusion and blur remain stable, while effects sounds align with actual contact points."
+      }
+    },
+    {
+      "id": "S021",
+      "name": "游戏过场叙事",
+      "name_en": "Narrative Game Cinematic",
+      "family": "F04",
+      "medium": "实时或离线三维过场影像，结合清楚的角色设计、表演和叙事机位。",
+      "shape_motion": "预备、主动作和收势分层明确，姿态轮廓清楚，次级动作补足角色重量。",
+      "texture": "皮革、织物和硬质装备有可读的磨损层，细节密度服从主次设计。",
+      "light_color": "主光勾出角色与行动区域，场景色和局部强调色围绕叙事情绪组织。",
+      "camera_edit": "用建立镜头、角色关系与动作结果构成段落，切换保留位置和视线。",
+      "vfx_sound": "环境、装备与动作声分层同步，视觉强调只跟随已设定的事件机制。",
+      "limits": "过场风格不自动加入界面或新增技能，夸张姿态仍要保持身体与空间连贯。",
+      "character_style": {
+        "zh": "三维角色剪影清楚，皮革与织物装备分层，预备姿态和收势体现身体重量。",
+        "en": "The CG character has a clear silhouette and layered leather and fabric equipment, with anticipatory poses and follow-through communicating bodily weight."
+      },
+      "scene_style": {
+        "zh": "场景以明暗分区显出行动区域，材质磨损有主次，角色与背景保持清楚分离。",
+        "en": "Light and shadow define the action area, material wear has a clear hierarchy, and the character remains distinct from the background."
+      },
+      "video_style": {
+        "zh": "建立镜头交代关系后连接预备与主动作，切换保持位置，装备声跟随收势。",
+        "en": "An establishing view clarifies relationships before connecting anticipation and action; cuts preserve positions, with equipment sounds continuing through the character's follow-through."
+      }
+    },
+    {
+      "id": "S022",
+      "name": "硬表面机甲工业",
+      "name_en": "Hard-Surface Mecha and Industry",
+      "family": "F04",
+      "medium": "工业机械题材三维影像，以硬表面结构、连接方式和传动逻辑展示体量。",
+      "shape_motion": "转轴、活塞与连接件按结构顺序运动，加速与制动体现机械质量和行程。",
+      "texture": "喷涂金属、橡胶密封、加工纹和局部油污分工明确，磨损集中于受力处。",
+      "light_color": "顶灯与侧向检修灯塑造面板层次，窄高光沿倒角移动而非覆盖全部表面。",
+      "camera_edit": "整体镜头交代机械尺度，局部镜头呈现关节传动，机位避开不可能穿行。",
+      "vfx_sound": "马达转速、液压泄放与金属承载声对应动作阶段，碎屑和尘土受力后出现。",
+      "limits": "关节需有空间与动力路径，不能只为炫技变形，也不由机甲外观推导新武器。",
+      "character_style": {
+        "zh": "机甲面板倒角清楚，活塞与转轴逐级衔接，密封胶圈和受力磨损各有位置。",
+        "en": "The mecha has clearly beveled panels, sequentially connected pistons and pivots, and precisely placed rubber seals and wear marks at load-bearing points."
+      },
+      "scene_style": {
+        "zh": "工业空间保留检修平台与结构梁，顶灯在喷涂金属上形成分明的窄幅反光。",
+        "en": "The industrial space retains maintenance platforms and structural beams, with overhead lamps producing distinct narrow reflections across painted metal surfaces at different depths."
+      },
+      "video_style": {
+        "zh": "镜头由整体承重转向关节传动，活塞依次启动和制动，马达与液压声对应变化。",
+        "en": "The camera moves from overall loading to joint transmission, showing pistons activating and braking in sequence, with matching motor and hydraulic sounds."
+      }
+    },
+    {
+      "id": "S023",
+      "name": "数字人近景",
+      "name_en": "Digital Human Close-up",
+      "family": "F04",
+      "medium": "数字人三维近景，以面部形变、眼部结构和细微表演形成可信的人物存在。",
+      "shape_motion": "眼球、眼睑和面颊协同运动，微表情有起落，嘴唇与下颌保持结构联系。",
+      "texture": "皮肤层次、唇部粗糙度与眼部湿润分区表达，避免蜡感和均匀毛孔贴图。",
+      "light_color": "宽柔光与局部眼神光揭示面部体积，皮下散射适量且保留明暗边界。",
+      "camera_edit": "近景保持适度透视，焦点围绕表情任务移动，不用持续环绕掩盖表演。",
+      "vfx_sound": "呼吸与口腔细声对应微动，若有台词则口形、停顿和发声时机共同校验。",
+      "limits": "高细节不能替代表演，眼神、牙齿和嘴角形变须稳定，避免无意的恐怖谷。",
+      "character_style": {
+        "zh": "数字人眼睑贴合眼球，唇部粗糙度与湿润眼缘分明，面颊随表情轻微形变。",
+        "en": "The digital human's eyelids follow the eyeballs, lip roughness contrasts with moist eye rims, and the cheeks deform subtly with changing expressions."
+      },
+      "scene_style": {
+        "zh": "简洁三维背景保留柔和层次，宽柔光塑造面部体积，小幅眼神光位置稳定。",
+        "en": "A simple CG background retains soft layers, with broad light shaping the facial volume and a small catchlight remaining stable in position."
+      },
+      "video_style": {
+        "zh": "近景观察眼球、眼睑和面颊的协同微动，表情缓缓起落，呼吸声随身体变化。",
+        "en": "The close-up observes coordinated micro-movements of eyes, eyelids, and cheeks; expressions gradually emerge and settle as breathing changes with the body."
+      }
+    },
+    {
+      "id": "S024",
+      "name": "微观科学可视化",
+      "name_en": "Microscopic Scientific Visualization",
+      "family": "F04",
+      "medium": "基于科学模型的三维解释影像，以结构、尺度和过程关系呈现微观对象。",
+      "shape_motion": "按已知机制组织扩散、结合或形变，时间压缩与夸张应区分于真实速率。",
+      "texture": "膜层、颗粒和纤维以不同表面与透明度区分，细节受模型证据范围约束。",
+      "light_color": "光色用于区分结构与状态，透明体保留边界，伪色不能冒充天然可见色。",
+      "camera_edit": "由整体尺度进入局部关系，剖面和穿行显示层次，视点变化保持方位线索。",
+      "vfx_sound": "可用轻微提示声辅助识别过程，必须作为解释性声音而非微观实录。",
+      "limits": "模型简化须可说明，颜色、发光和运动表达不构成实验测量或新机制证据。",
+      "character_style": {
+        "zh": "膜层、纤维与颗粒具有不同透明度和表面结构，结合位置清楚，尺度关系稳定。",
+        "en": "Membranes, fibers, and particles have distinct transparency and surface structures, with clearly defined binding locations and stable relationships of relative scale."
+      },
+      "scene_style": {
+        "zh": "分层微观空间以剖面显出内部关系，结构用清楚伪色区分，透明边界保持可读。",
+        "en": "A layered microscopic space reveals internal relationships in cross-section, using distinct explanatory colors to separate structures while keeping transparent boundaries legible."
+      },
+      "video_style": {
+        "zh": "镜头由整体进入局部结构，扩散与结合按已知顺序展开，视点移动保留尺度线索。",
+        "en": "The camera moves from the overall arrangement into local structures; diffusion and binding follow known sequences while viewpoint changes preserve clues to scale."
+      }
+    },
+    {
+      "id": "S025",
+      "name": "卡通三维",
+      "name_en": "Cartoon 3D",
+      "family": "F05",
+      "medium": "风格化三维动画，以简化体块、清楚剪影和富有弹性的表演传达情绪。",
+      "shape_motion": "预备与回弹加强动作可读性，挤压拉伸维持体积感，重叠动作区分主次。",
+      "texture": "简洁哑光和少量可辨材料结合，表面细节服从形体，不强加真人微观肤质。",
+      "light_color": "宽柔光塑造圆润体块，鲜明色块保持层次，阴影有助于角色离地与接触。",
+      "camera_edit": "构图优先展示动作轮廓，景别和机位围绕表演落点变化，空间关系清楚。",
+      "vfx_sound": "弹性与接触声可适度夸张，形变强调和视觉线条依附实际动作而出现。",
+      "limits": "夸张不改变既有能力和世界规则，避免任意拉断肢体或连续变换角色比例。",
+      "character_style": {
+        "zh": "角色由圆润体块构成，轮廓简洁，表情清楚，衣物以大形褶皱区分材质。",
+        "en": "The character uses rounded volumes, a simple silhouette, and readable expressions, with broad clothing folds distinguishing materials without overwhelming the underlying forms."
+      },
+      "scene_style": {
+        "zh": "场景用鲜明色块和简化物件建立层次，柔光塑造体积，接触阴影标明位置。",
+        "en": "The setting builds layers from clear color blocks and simplified objects, with soft light shaping volume and contact shadows defining positions."
+      },
+      "video_style": {
+        "zh": "动作以预备、主姿态与回弹展开，挤压拉伸保留体积，接触声随形变落点出现。",
+        "en": "Actions unfold through anticipation, a principal pose, and rebound; squash and stretch retain apparent volume, with contact sounds landing alongside deformation."
+      }
+    },
+    {
+      "id": "S026",
+      "name": "三维赛璐璐线稿",
+      "name_en": "Cel-Shaded 3D with Ink Outlines",
+      "family": "F05",
+      "medium": "三维模型配合分阶着色与描边，结合立体调度和二维线面阅读习惯。",
+      "shape_motion": "关键姿态轮廓鲜明，停姿与局部跟随形成层次，形变保护线稿和表情。",
+      "texture": "大色面和少量图案表达材质，轮廓粗细随形体变化，避免写实噪点侵入。",
+      "light_color": "有限明暗阶带出体积，暖冷色面可替代连续渐变，受光分界保持连贯。",
+      "camera_edit": "机位选择保证轮廓分离，角度变化显出三维关系，切点呼应关键姿态。",
+      "vfx_sound": "线条、平面闪光与动作声同步强调接触，视觉符号不能变成角色新增能力。",
+      "limits": "描边不得穿透前景或在面部乱爬，分阶阴影不能随镜头无故跳变。",
+      "character_style": {
+        "zh": "角色以清楚描边和大色面塑形，表情线条精简，关节转折保持鲜明剪影。",
+        "en": "Clear outlines and broad color areas shape the character, with economical facial lines and joint bends that maintain a distinct, readable silhouette."
+      },
+      "scene_style": {
+        "zh": "场景以有限明暗阶和冷暖色面分层，物件边线清楚，三维纵深保持可读。",
+        "en": "The setting separates layers through limited shadow steps and warm or cool color planes, with clear object outlines and readable three-dimensional depth."
+      },
+      "video_style": {
+        "zh": "鲜明关键姿态接局部跟随，描边随体块稳定转动，平面强调只依附实际接触。",
+        "en": "Strong key poses lead into localized follow-through, outlines rotate stably with the forms, and flat graphic accents remain attached to actual contacts."
+      }
+    },
+    {
+      "id": "S027",
+      "name": "手绘贴图三维",
+      "name_en": "Hand-Painted Textured 3D",
+      "family": "F05",
+      "medium": "三维形体配合手绘贴图，以稳定的笔触、简化材质和立体视差共同呈现。",
+      "shape_motion": "动作弧线柔和而有重量，关节活动保留体块，运动不使贴图游移或沸腾。",
+      "texture": "笔刷痕、色层与绘制磨损附着物体表面，细节密度随主次和距离变化。",
+      "light_color": "柔和体积照明与绘制明暗协调，避免重复阴影使原有色层变脏。",
+      "camera_edit": "缓移和转角展示笔触与形体的关系，切换保持场景色层和表面方向。",
+      "vfx_sound": "柔和材质声与实际动作一致，笔触化尘屑可沿运动路径出现并有落点。",
+      "limits": "手绘感不能只靠全屏滤镜，纹理应贴合对象，结构和受力不随笔触任意漂移。",
+      "character_style": {
+        "zh": "三维角色表面保留宽窄笔触与叠色，衣褶以绘制色层表达，体块转折柔和。",
+        "en": "The CG character retains broad and fine brush marks with layered colors; painted tonal shifts describe clothing folds over softly turning volumes."
+      },
+      "scene_style": {
+        "zh": "手绘木纹、石面和植被色层附着三维结构，柔和照明保留可读笔触。",
+        "en": "Hand-painted wood grain, stone surfaces, and layered foliage colors adhere to the three-dimensional structures, with soft lighting preserving their readable brushwork."
+      },
+      "video_style": {
+        "zh": "柔和动作弧线保持重量，镜头缓移显出立体视差，笔触稳定附着物体表面。",
+        "en": "Gentle movement arcs retain weight as a slow camera move reveals three-dimensional parallax, while painted brush marks stay fixed to object surfaces."
+      }
+    },
+    {
+      "id": "S028",
+      "name": "玩具微缩",
+      "name_en": "Toy Miniature CG",
+      "family": "F05",
+      "medium": "模拟玩具与微缩布景的三维影像，通过制造痕迹和小尺度摄影感建立趣味。",
+      "shape_motion": "动作有清楚的关节段落和轻微定格感，起落与物件摇摆体现小体量。",
+      "texture": "树脂接缝、植绒、纸板和缩微布料保留手作差异，细节符合玩具尺度。",
+      "light_color": "台面式柔光与局部小灯塑造布景，亮部反映树脂、纸面和纤维差异。",
+      "camera_edit": "低位近看微缩结构，选择性浅焦衬托尺度，关键动作与主体仍须完整可读。",
+      "vfx_sound": "细小塑料扣合、木质轻敲与微型物件碰触形成触感，音量符合呈现尺度。",
+      "limits": "不把真人皮肤细节套给玩偶，接缝和关节须连贯，不能靠全面虚化伪装微缩。",
+      "character_style": {
+        "zh": "玩偶保留树脂接缝与简化关节，微缩衣料略显厚实，表情以清楚形块呈现。",
+        "en": "The toy figure retains resin seams and simplified joints, with slightly thick miniature clothing and expressions conveyed through clearly defined shapes."
+      },
+      "scene_style": {
+        "zh": "纸板建筑、植绒地面与小型灯具构成微缩布景，边缘保留可见手作痕迹。",
+        "en": "Cardboard buildings, flocked ground, and tiny lamps form a miniature set, with visible traces of hand construction retained along the edges."
+      },
+      "video_style": {
+        "zh": "玩偶动作分段清楚并有轻微停顿，近处摇摆显示小体量，塑料与木质触声清脆。",
+        "en": "Toy movements have clear segments and slight pauses; small nearby wobbles convey low mass, accompanied by crisp plastic and wooden contact sounds."
+      }
+    },
+    {
+      "id": "S029",
+      "name": "低多边形",
+      "name_en": "Low-Poly 3D",
+      "family": "F05",
+      "medium": "低多边形三维影像，以可见平面、简化轮廓和有限材质形成几何秩序。",
+      "shape_motion": "用少量关节和清楚运动弧线表达动作，转身与变形保持面片结构可读。",
+      "texture": "面片色差与有限粗糙度替代高频贴图，边缘和法线转折保持一致。",
+      "light_color": "定向光强调不同平面的明度差，有限色组区分主体、地面与远景。",
+      "camera_edit": "稳定视点或适量转角显出几何结构，切换依循轮廓方向与空间位置。",
+      "vfx_sound": "短促触声与简化颗粒反馈对应接触，声音保持材料指向而不追求繁复密度。",
+      "limits": "简化不等于拓扑破碎，不能用平滑噪点或写实毛孔覆盖面片设计逻辑。",
+      "character_style": {
+        "zh": "角色以清楚面片和简化关节构成，色差显出体块转折，轮廓保留识别特征。",
+        "en": "The character uses clear polygonal facets and simplified joints, with color differences revealing changes in volume and a silhouette retaining recognizable features."
+      },
+      "scene_style": {
+        "zh": "地形与建筑由大块平面构成，有限色组区分远近，定向光强调棱面关系。",
+        "en": "Terrain and buildings consist of broad planar forms, with a limited palette separating depth and directional light emphasizing relationships between angular surfaces."
+      },
+      "video_style": {
+        "zh": "动作沿简洁弧线展开，转角显出连续面片结构，已有碎屑简化为少量几何颗粒。",
+        "en": "Actions follow simple arcs as changes of angle reveal continuous faceted structures, while existing debris is simplified into a few geometric particles."
+      }
+    },
+    {
+      "id": "S030",
+      "name": "几何极简CG",
+      "name_en": "Minimal Geometric CG",
+      "family": "F05",
+      "medium": "几何体主导的三维动画，以少量形状、空间间隔和有目的的运动表达关系。",
+      "shape_motion": "平移、旋转与尺度变化各有明确作用，起停和回稳组织视觉重心转移。",
+      "texture": "哑光、柔性塑料或细砂表面保持简洁，接缝和反射只保留必要信息。",
+      "light_color": "宽柔光显出圆角和悬接关系，以有限色组与明度差维持视觉层级。",
+      "camera_edit": "正交或轻透视机位让形状清楚，转接依靠位置、形状与运动方向的对应。",
+      "vfx_sound": "轻敲、滑动与空气掠过声标明起停和接触，声音密度随实际动作变化。",
+      "limits": "几何变化须服从既定对象规则，不用无休止自转或装饰粒子填满留白。",
+      "character_style": {
+        "zh": "主体由圆角方体、球体与圆柱构成，哑光表面简洁，形状之间保持清楚间隔。",
+        "en": "The subject consists of rounded boxes, spheres, and cylinders, with simple matte surfaces and clearly maintained spacing between the individual forms."
+      },
+      "scene_style": {
+        "zh": "少量几何体分布在干净空间，宽柔光显出圆角和接触，有限色组区分主次。",
+        "en": "A few geometric forms occupy a clean space; broad soft light reveals rounded edges and contacts, while a limited palette establishes visual hierarchy."
+      },
+      "video_style": {
+        "zh": "几何体按明确方向平移、旋转并回稳，形状匹配连接画面，轻触声标明落点。",
+        "en": "Geometric forms translate and rotate along clear directions before settling, with shape matches connecting views and light contact sounds marking each landing."
+      }
+    },
+    {
+      "id": "S031",
+      "name": "现代日漫剧情",
+      "name_en": "Contemporary Anime Drama",
+      "family": "F06",
+      "medium": "以干净数字线稿与分区平涂塑造人物，绘画背景承接剧情空间。",
+      "shape_motion": "表演由视线、口形和肩颈微动推进，停顿与明确关键姿势交替。",
+      "texture": "轮廓粗细稳定，衣褶以少量色形说明，填色边界清楚且不浮动。",
+      "light_color": "以受光色块和单级投影组织明暗，环境反射使用有限的辅助色。",
+      "camera_edit": "中近景承接视线与反应，切点落在表情转折，背景透视保持连续。",
+      "vfx_sound": "情绪可用轻微图形强调，环境声维持空间，口形与对白起止对齐。",
+      "limits": "不以真人毛孔替代绘制层次，不让五官比例、发型与衣纹逐镜漂移。",
+      "character_style": {
+        "zh": "清晰日漫线稿、平涂肤色与简洁衣褶，面部比例固定，视线和肩颈姿态细腻。",
+        "en": "Clean anime linework, flat skin colors and simplified clothing folds; keep facial proportions fixed, with nuanced eye direction and restrained neck and shoulder poses."
+      },
+      "scene_style": {
+        "zh": "绘画背景保留透视结构，以清楚的受光色块区分前后景，局部细节围绕视觉重心分布。",
+        "en": "Painted backgrounds retain clear perspective, with defined light shapes separating foreground and distance; distribute local detail around the visual focus."
+      },
+      "video_style": {
+        "zh": "视线、口形和肩颈微动承接角色表演，停顿后转入关键姿势，在反应变化处切镜。",
+        "en": "Connect performances through eye direction, mouth shapes and slight neck and shoulder movement; alternate holds with key poses, cutting when reactions change."
+      }
+    },
+    {
+      "id": "S032",
+      "name": "战斗作画",
+      "name_en": "Action Sakuga Animation",
+      "family": "F06",
+      "medium": "以二维关键原画、形变中间画与绘制效果层组织可读的动作交换。",
+      "shape_motion": "蓄势压缩、突发加速、接触停顿与回收分明，夸张形变依附动作路径。",
+      "texture": "运动轮廓可拉伸成拖影，冲击瞬间简化细节，恢复姿势时找回固定设计。",
+      "light_color": "平涂色块维持人物识别，接触闪白或反差突变只突出实际受力节点。",
+      "camera_edit": "机位围绕攻防方向与落点变化，动势匹配连接切镜，关键接触留在画内。",
+      "vfx_sound": "速度线、尘屑和冲击形随动作发生，破风、接触与落地声分层对应。",
+      "limits": "不把残像变成分身能力，不用持续闪白遮挡接触，也不让夸张破坏身份。",
+      "character_style": {
+        "zh": "保持角色标志轮廓与服装色块，蓄势姿态压缩重心，四肢拉伸仍指向清楚的动作路径。",
+        "en": "Preserve signature silhouettes and clothing colors; compress the center of gravity in anticipation poses, keeping stretched limbs aligned with clearly readable motion paths."
+      },
+      "scene_style": {
+        "zh": "空间透视围绕动作落点展开，地面与障碍物位置稳定，简化背景细节以突出攻防方向。",
+        "en": "Arrange spatial perspective around action landing points; keep ground planes and obstacles fixed, simplifying background detail to clarify the directions of attack and defense."
+      },
+      "video_style": {
+        "zh": "以蓄势、加速、接触停顿和回收组织动作，拖影沿肢体路径展开，冲击声准确落在接触点。",
+        "en": "Structure movement through anticipation, acceleration, contact holds and recovery; extend smears along limb paths and place impact sounds precisely at contact."
+      }
+    },
+    {
+      "id": "S033",
+      "name": "清新日常",
+      "name_en": "Fresh Everyday Anime",
+      "family": "F06",
+      "medium": "以轻盈二维线稿、柔和底色与细致生活物件构成日常动画画面。",
+      "shape_motion": "眨眼、呼吸和小幅手势带出表演，动作有自然迟疑，风吹物件各自响应。",
+      "texture": "干净线条配低对比填色，布料与器物用少量细节区分，背景笔触轻薄。",
+      "light_color": "柔亮天光与浅暖室内光相接，阴影偏清透辅色，保留舒展的留白。",
+      "camera_edit": "稳定构图容纳人物和生活环境，物件插镜与视线衔接，缓移有明确观察目标。",
+      "vfx_sound": "风声、衣料轻响和器物碰触塑造生活节奏，点状高光仅作材质提示。",
+      "limits": "不靠过曝抹去空间，不把所有物件同步摆动，也不强行添加夸张情绪符号。",
+      "character_style": {
+        "zh": "轻盈线稿描绘舒展的日常姿态，浅色衣装与清透阴影相配，表情靠细小视线变化呈现。",
+        "en": "Light linework describes relaxed everyday poses; pale clothing pairs with translucent shadows, while subtle changes in eye direction carry the expression."
+      },
+      "scene_style": {
+        "zh": "柔亮天光铺过生活空间，浅暖器物与清透阴影相配，留白和轻薄背景笔触保持空气感。",
+        "en": "Soft daylight spreads across everyday spaces; warm pale objects pair with translucent shadows, while open areas and light background brushwork preserve an airy feeling."
+      },
+      "video_style": {
+        "zh": "眨眼、呼吸与小幅手势自然错开，风吹物件分别响应，以轻微衣料声和器物声承接停顿。",
+        "en": "Offset blinks, breathing and small gestures naturally; let windblown objects respond individually, using soft fabric and object sounds to carry the pauses."
+      }
+    },
+    {
+      "id": "S034",
+      "name": "复古赛璐璐",
+      "name_en": "Retro Cel Animation",
+      "family": "F06",
+      "medium": "采用赛璐璐式勾线平涂与手绘背景组合，前景分层呈现模拟摄影质感。",
+      "shape_motion": "关键姿势与保留画面交替，局部循环服务呼吸和环境，转头轮廓清晰转换。",
+      "texture": "平涂面保留微弱颜料不匀与套色边缘，颗粒轻量统一，不污染角色轮廓。",
+      "light_color": "有限色盘与硬边阴影构成画面，暖色高光和偏冷暗部保持色层分离。",
+      "camera_edit": "通过画层平移、推近和匹配剪接组织观看，视差遵守前后景层级。",
+      "vfx_sound": "绘制烟尘与闪光沿画层叠加，模拟录音质感适度，动作音仍保持清晰。",
+      "limits": "不把抖动、错位和污点堆成复古感，不将赛璐璐人物渲染成圆润立体模型。",
+      "character_style": {
+        "zh": "赛璐璐式清楚勾线与有限色块塑造人物，硬边阴影贴合形体，服装和发型轮廓稳定。",
+        "en": "Define characters through clear cel style outlines and a limited palette; fit hard edged shadows to their forms and preserve clothing and hair silhouettes."
+      },
+      "scene_style": {
+        "zh": "手绘背景保留轻微颜料纹理，暖亮部与冷暗部层次分明，前后景可见分层布置。",
+        "en": "Hand painted backgrounds retain slight pigment texture, with distinct warm highlights and cool shadows; foreground and distant elements have clearly arranged layers."
+      },
+      "video_style": {
+        "zh": "关键姿势与保留画面交替，局部循环和画层平移维持节奏，轻微颗粒贯穿相邻画面。",
+        "en": "Alternate key poses with held drawings; sustain rhythm through localized cycles and layer movement, maintaining subtle grain consistently across neighboring images."
+      }
+    },
+    {
+      "id": "S035",
+      "name": "机械硬派",
+      "name_en": "Mechanical Hard Surface Anime",
+      "family": "F06",
+      "medium": "以结构准确的二维机械线稿、分件平涂与工业背景建立硬质动画观感。",
+      "shape_motion": "动作服从关节轴、连杆和惯性，启动、负载与制动分别呈现重量变化。",
+      "texture": "装甲接缝、螺栓与磨耗沿结构分布，线条密度区分受力件和外壳。",
+      "light_color": "硬边明暗切分金属平面，局部反光沿折面移动，警示色强调功能部位。",
+      "camera_edit": "先交代机械体和地面的尺度关系，局部特写说明传动，切镜保持运动方向。",
+      "vfx_sound": "液压、齿轮、锁扣与震动声按机构响应，火花只出现在实际摩擦或接触处。",
+      "limits": "不让装甲随意伸缩，不添加无依据的漂浮机件，不用密集细线掩盖结构错误。",
+      "character_style": {
+        "zh": "机械角色以准确关节轴和分件轮廓造型，接缝、螺栓与警示色清楚，姿态体现承重。",
+        "en": "Shape mechanical characters around accurate joint axes and separate component silhouettes; clarify seams, bolts and warning colors, with poses that communicate weight bearing."
+      },
+      "scene_style": {
+        "zh": "工业场景以结构透视和尺度参照定位机械体，硬边光影划分金属平面，磨耗围绕接触部位。",
+        "en": "Industrial environments locate machinery through structural perspective and scale references; hard light shapes divide metal planes, with wear concentrated around contact areas."
+      },
+      "video_style": {
+        "zh": "关节、连杆与装甲依次响应启动和制动，惯性震动落回承重点，机构音效逐项对应运动。",
+        "en": "Let joints, linkages and armor respond sequentially during starts and braking; settle inertial vibration into weight bearing points, matching mechanism sounds to each movement."
+      }
+    },
+    {
+      "id": "S036",
+      "name": "手绘长片背景",
+      "name_en": "Hand Painted Feature Animation Backgrounds",
+      "family": "F06",
+      "medium": "以精绘二维环境为主体，角色线稿和平涂层与背景的笔触密度协调。",
+      "shape_motion": "人物动作清楚简练，树影、水面与云层有各自变化周期，静态空间承接时间。",
+      "texture": "前景笔触与物件细节较密，远景边缘柔化，保留手绘色层和局部留白。",
+      "light_color": "用统一天光、环境色与距离衰减组织纵深，亮部仍可见绘画色层。",
+      "camera_edit": "广景先建立环境关系，缓慢观察细节，层间视差与背景透视协调。",
+      "vfx_sound": "环境微动与风、水、虫鸣建立空间深度，细碎尘光只在合理光区可见。",
+      "limits": "不让背景笔触吞没人物轮廓，不把每层等速平移，也不以全景模糊代替远近。",
+      "character_style": {
+        "zh": "清楚人物轮廓搭配简洁平涂，色彩融入环境天光，细节密度低于背景视觉重心。",
+        "en": "Pair clear character silhouettes with simple flat colors; integrate their palette with environmental daylight and keep detail density below the background focal area."
+      },
+      "scene_style": {
+        "zh": "精绘环境保留分层笔触，前景物件清楚而远景边缘柔和，统一天光连接不同距离的色层。",
+        "en": "Detailed painted environments retain layered brushwork; foreground objects stay clear while distant edges soften, with unified daylight connecting color layers across different distances."
+      },
+      "video_style": {
+        "zh": "稳定环境构图容纳简练人物动作，树影、水面和云层各自变化，缓移以协调视差揭示空间。",
+        "en": "Use stable environmental compositions for concise character movement; vary tree shadows, water and clouds independently, revealing space through slow movement with coordinated parallax."
+      }
+    },
+    {
+      "id": "S037",
+      "name": "扁平矢量",
+      "name_en": "Flat Vector Animation",
+      "family": "F07",
+      "medium": "以封闭矢量色形与少量线条构建画面，图形层级直接传达主体关系。",
+      "shape_motion": "几何轮廓通过位移、旋转和适度形变运动，缓入缓出强调动作意图。",
+      "texture": "色面洁净平整，边缘清晰，纹理只在需要区分信息的局部有限出现。",
+      "light_color": "用有限色盘、相邻色差和色块覆盖建立层次，阴影作为明确图形使用。",
+      "camera_edit": "以构图重排、局部放大和图形匹配衔接，移动方向引导视觉阅读顺序。",
+      "vfx_sound": "线条扩散、色块弹性和图形擦除响应事件，轻击与滑动声对应运动。",
+      "limits": "不强塞写实反射与散景，不让形变抹除主体特征，也不用过量弹跳干扰信息。",
+      "character_style": {
+        "zh": "几何轮廓与封闭色块塑造人物，五官简练但比例稳定，姿势用清楚剪影传达动作意图。",
+        "en": "Build characters from geometric silhouettes and closed color shapes; keep simplified facial proportions stable and communicate movement intentions through clearly readable poses."
+      },
+      "scene_style": {
+        "zh": "场景以有限色盘组织平整色面，通过遮挡、尺寸和相邻色差建立层级，轮廓清晰可读。",
+        "en": "Organize flat scene shapes with a limited palette; establish hierarchy through overlap, scale and neighboring color contrast, keeping silhouettes clear and readable."
+      },
+      "video_style": {
+        "zh": "色形以位移、旋转和适度形变完成动作，缓入缓出强调意图，图形匹配连接构图变化。",
+        "en": "Animate shapes through translation, rotation and restrained deformation; use easing to emphasize intent and graphic matches to connect changes in composition."
+      }
+    },
+    {
+      "id": "S038",
+      "name": "线描有限动画",
+      "name_en": "Limited Line Drawing Animation",
+      "family": "F07",
+      "medium": "以稀疏手绘线条和保留纸面构成画面，少量重绘承担主要表演。",
+      "shape_motion": "完整姿势保持与局部替换交替，眼、口、手的变化分别承担叙事信息。",
+      "texture": "线宽与笔压有细微变化，轮廓可轻度呼吸，固定五官和身体比例不漂移。",
+      "light_color": "以纸面明度和线条疏密区分层次，可用少量淡色块标示重点区域。",
+      "camera_edit": "稳定画框突出姿态变化，局部移框跟随关注点，留白成为构图的一部分。",
+      "vfx_sound": "擦线、重描或短促符号强调动作，环境声延续被保留画面中的时间。",
+      "limits": "不把无意义线抖当作生命感，不让所有部位同时重绘，也不自动补满颜色。",
+      "character_style": {
+        "zh": "稀疏线条保留笔压变化，稳定五官比例与清楚身体姿态，少量线段描绘衣褶和手势。",
+        "en": "Sparse lines retain changes in pen pressure; preserve stable facial proportions and clear body poses, using only a few strokes for folds and gestures."
+      },
+      "scene_style": {
+        "zh": "大面积纸面留白围绕稀疏环境线条，物件以关键轮廓定位，少量淡色块突出空间重点。",
+        "en": "Broad areas of exposed paper surround sparse environmental lines; locate objects through essential contours and use a few pale shapes to emphasize spatial focal points."
+      },
+      "video_style": {
+        "zh": "姿势保留与眼口手局部替换交替，轻微重描维持线条生命感，环境声延续静止画面时间。",
+        "en": "Alternate held poses with localized eye, mouth and hand replacements; subtle redrawing keeps lines alive while environmental sounds sustain time within still images."
+      }
+    },
+    {
+      "id": "S039",
+      "name": "漫画动态图",
+      "name_en": "Motion Comic Panels",
+      "family": "F07",
+      "medium": "以漫画分格、墨线和网点画面为基础，用局部动画激活静态叙事。",
+      "shape_motion": "姿势多保持原画，视线、手势和前后层位移选择性运动，重点依阅读顺序转移。",
+      "texture": "墨线、排线与网点保持印刷图形感，格间留白和画框边缘清楚。",
+      "light_color": "用黑白面积与有限强调色建立对比，明暗服从每格重心和跨格连续。",
+      "camera_edit": "镜头在分格内推移或跨格转接，阅读路径明确，画格关系随叙事重点调整。",
+      "vfx_sound": "冲击形、速度线与局部震动激活动作，声音焦点随当前画格移动。",
+      "limits": "不让全部分格同时争夺注意，不以任意镜头旋转破坏画格，也不自动生成文字。",
+      "character_style": {
+        "zh": "人物保留漫画墨线、排线和网点阴影，标志轮廓稳定，关键姿态适合在单幅画格内阅读。",
+        "en": "Preserve comic ink lines, hatching and halftone shadows on characters; keep signature silhouettes stable and make key poses readable within individual panels."
+      },
+      "scene_style": {
+        "zh": "环境以漫画画格组织，黑白面积与有限强调色突出重心，格间留白清楚连接阅读路径。",
+        "en": "Organize environments into comic panels; use black and white masses with limited accent colors to emphasize focal points, connecting the reading path through clear gutters."
+      },
+      "video_style": {
+        "zh": "在保留漫画原画上选择性移动视线、手势和前后层，推移与跨格转接依次传递注意焦点。",
+        "en": "Selectively animate eyes, gestures and depth layers over held comic artwork; use within panel movement and panel transitions to pass attention in sequence."
+      }
+    },
+    {
+      "id": "S040",
+      "name": "木刻版画",
+      "name_en": "Woodcut Print Animation",
+      "family": "F07",
+      "medium": "用刀刻式黑白形、刻痕和套色块构成二维动画，保留凸版印刷的造型逻辑。",
+      "shape_motion": "轮廓以明确姿势分段变化，动作转折简练有力，刻线随形体整体组织。",
+      "texture": "粗细刀痕、木纹与局部缺墨可见，纹理走向服务体积而非任意闪烁。",
+      "light_color": "以大面积黑白对置和少量套色建立明暗，亮部由留白或反刻纹产生。",
+      "camera_edit": "稳定或缓移画框强化版面构图，剪接依轮廓、方向和黑白面积匹配。",
+      "vfx_sound": "碎屑可化为短刻线与块面，木质摩擦和干脆触击对应动作，避免持续噪声覆盖。",
+      "limits": "不把刻痕当照片滤镜贴满画面，不用柔亮渐变冲淡刀感，不让木纹随机游移。",
+      "character_style": {
+        "zh": "人物以有力黑白轮廓和沿形刻痕塑造，衣褶转为明确刀线，标志性五官与姿态可辨。",
+        "en": "Define characters through strong black and white silhouettes and carved marks following their forms; turn folds into deliberate cuts while preserving recognizable faces and poses."
+      },
+      "scene_style": {
+        "zh": "环境以黑白块面和少量套色构成，木纹与刀痕沿建筑地形组织，留白形成亮部。",
+        "en": "Build environments from black and white masses with limited overprinted color; organize wood grain and cuts along structures and terrain, using exposed paper for highlights."
+      },
+      "video_style": {
+        "zh": "明确姿势分段推进动作，刻线跟随形体整体变化，切镜用轮廓和黑白面积匹配保持连贯。",
+        "en": "Advance actions through distinct successive poses; let carved lines follow the overall form and maintain continuity through cuts matching silhouettes and black and white masses."
+      }
+    },
+    {
+      "id": "S041",
+      "name": "数字剪纸",
+      "name_en": "Digital Paper Cutout Animation",
+      "family": "F07",
+      "medium": "以数字裁切纸片与平面拼接构成主体，虚拟分层保留剪纸的图形边缘。",
+      "shape_motion": "身体分件围绕连接点摆动，纸片位移、翻折与替换清楚，动作强调轮廓。",
+      "texture": "纸面纤维和切口边缘轻量可见，同一纸片纹理固定附着于形状。",
+      "light_color": "纸片本色构成色盘，浅层投影说明覆盖顺序，明暗不追求立体塑料感。",
+      "camera_edit": "正面或轻侧视呈现层间关系，平移和纸片遮挡完成转接，层次先后稳定。",
+      "vfx_sound": "纸屑、翻折和剪切图形对应事件，纸张摩擦与轻拍声提示材料变化。",
+      "limits": "不把纸片任意软化成液体，不让层级交叉穿帮，不混同实体折纸的真实体积。",
+      "character_style": {
+        "zh": "人物由边缘清楚的彩纸分件拼成，连接点与标志轮廓稳定，纸面纤维随对应部件保持。",
+        "en": "Assemble characters from colored paper pieces with clear edges; stabilize connection points and signature silhouettes, keeping paper fibers attached to their corresponding parts."
+      },
+      "scene_style": {
+        "zh": "平面纸片以覆盖关系构成环境，浅层投影标明先后，纸面本色与少量纤维纹理清晰。",
+        "en": "Construct environments through overlapping flat paper pieces; shallow shadows identify layer order, while the paper's own colors and subtle fiber textures remain clear."
+      },
+      "video_style": {
+        "zh": "纸片围绕连接点摆动并以明确替换改变姿势，层间平移和纸片遮挡转接伴随轻微纸响。",
+        "en": "Swing pieces around connection points and change poses through clear replacements; accompany layer movement and paper occlusion transitions with subtle paper sounds."
+      }
+    },
+    {
+      "id": "S042",
+      "name": "像素逐帧",
+      "name_en": "Frame Drawn Pixel Animation",
+      "family": "F07",
+      "medium": "在稳定像素网格中逐幅绘制角色与场景，用像素簇构建轮廓和细节。",
+      "shape_motion": "动作依关键姿势和像素级重绘推进，位移保持网格一致，轮廓跳变有意控制。",
+      "texture": "统一的是单个像素的显示尺寸与网格；像素簇可大小各异，用有限色阶和有序抖色区分材质。",
+      "light_color": "有限调色板通过色阶和冷暖区分明暗，发光以受控像素簇扩展表达。",
+      "camera_edit": "整数网格平移或切换景别保持像素清晰，场景分层移动遵守统一网格。",
+      "vfx_sound": "尘点、溅射和闪光用离散像素重绘，短促合成或拟音按事件准确触发。",
+      "limits": "不用“统一大小／方形像素簇”：簇是塑造轮廓的像素组，大小形状可不同；禁用模糊抗锯齿、像素尺寸漂移和不等比缩放。",
+      "character_style": {
+        "zh": "人物以像素尺寸统一的像素簇塑造，有限色阶划分面部和衣装，关键姿势轮廓清楚且身份固定。",
+        "en": "Build characters with pixel clusters made of consistently sized pixels; use limited color ramps for faces and clothing, preserving clear key pose silhouettes and stable identity."
+      },
+      "scene_style": {
+        "zh": "场景遵守统一像素网格，有限色盘与有序抖色区分材质，前后景通过色阶和遮挡展开。",
+        "en": "Keep scenes on a consistent pixel grid; separate materials with a limited palette and ordered dithering, establishing depth through color ramps and overlap."
+      },
+      "video_style": {
+        "zh": "关键姿势以像素级重绘衔接，位移与分层移动贴合统一网格，离散像素特效对应动作事件。",
+        "en": "Connect key poses through pixel level redrawing; align movement and scrolling layers with one grid, matching discrete pixel effects to action events."
+      }
+    },
+    {
+      "id": "S043",
+      "name": "水彩",
+      "name_en": "Watercolor Animation",
+      "family": "F08",
+      "medium": "以透明水彩色层、湿画晕染和留白构成绘画动画，线稿可轻量参与。",
+      "shape_motion": "动作由稳定轮廓与选择性重绘推进，色层轻微流动而物体结构保持。",
+      "texture": "纸纹、积色、水痕与边缘回流局部可见，颜料变化服从纸面和形状。",
+      "light_color": "亮部主要来自纸白，透明叠色塑造阴影，冷暖过渡保持通透而不泛灰。",
+      "camera_edit": "留出观看色层与轮廓的时间，缓移或图形匹配衔接，背景与人物笔触协调。",
+      "vfx_sound": "水汽、雨痕和扩散可用湿边色晕表现，细微水声与环境声依情境进入。",
+      "limits": "不让晕染吞没身份轮廓，不将所有颜色持续融化，不强制人物出现真人皮肤。",
+      "character_style": {
+        "zh": "人物以稳定轻线和透明水彩塑造，纸白保留面部亮处，衣装可见积色而五官轮廓清楚。",
+        "en": "Shape characters with stable light lines and transparent watercolor; reserve paper white for facial highlights, allowing pigment pooling on clothing while keeping facial contours clear."
+      },
+      "scene_style": {
+        "zh": "透明水彩层叠构成环境，湿边晕染与纸纹局部可见，纸白和冷暖叠色区分空间层次。",
+        "en": "Build environments through transparent watercolor layers; reveal wet edges and paper grain locally, separating spatial layers through paper white and warm and cool glazes."
+      },
+      "video_style": {
+        "zh": "轮廓以选择性重绘推进动作，颜料边缘轻微呼吸，湿画扩散保持物体结构并响应局部变化。",
+        "en": "Advance movement through selective contour redrawing; let pigment edges breathe subtly, keeping wet color diffusion tied to local changes without losing object structure."
+      }
+    },
+    {
+      "id": "S044",
+      "name": "水墨",
+      "name_en": "Ink Wash Animation",
+      "family": "F08",
+      "medium": "以墨线、浓淡墨团和宣纸留白构成画面，笔势同时承担造型与空间。",
+      "shape_motion": "动作依起笔、行笔和收势展开，留白中的停顿与浓墨运动形成节奏。",
+      "texture": "飞白、洇边与干湿笔触可辨，墨色扩散沿纸面发生，主体轮廓有取舍。",
+      "light_color": "墨色浓淡承担明暗，留白表示光和空间，少量设色在重心处保持节制。",
+      "camera_edit": "构图随笔势和虚实引导观看，平移或墨迹遮挡转接，空间锚点仍清楚。",
+      "vfx_sound": "墨迹飞散和水痕扩张对应笔势，风、水和轻摩擦声延续留白中的运动。",
+      "limits": "不把模糊当水墨，不以墨团遮盖动作因果，不让角色随每次洇化改变身份。",
+      "character_style": {
+        "zh": "人物以有取舍的墨线与浓淡墨面塑造，飞白顺着姿态，关键五官和标志轮廓保持稳定。",
+        "en": "Shape characters with selective ink lines and tonal washes; let dry brush gaps follow their poses while preserving essential facial features and signature silhouettes."
+      },
+      "scene_style": {
+        "zh": "宣纸留白承接环境空间，浓淡墨层区分远近，干湿笔触沿山石建筑的结构展开。",
+        "en": "Use exposed xuan paper for environmental space; separate distances through layered ink values, directing dry and wet brushwork along the forms of rocks and buildings."
+      },
+      "video_style": {
+        "zh": "动作按起势、行笔和收势展开，墨边洇化与飞白响应方向，留白停顿保留清楚空间锚点。",
+        "en": "Develop movement through preparation, flowing strokes and settling gestures; let ink bleeding and dry brush gaps follow direction, retaining clear spatial anchors during pauses."
+      }
+    },
+    {
+      "id": "S045",
+      "name": "油彩厚涂",
+      "name_en": "Impasto Oil Paint Animation",
+      "family": "F08",
+      "medium": "以可见厚油彩、刮刀色块和覆盖笔触构成逐幅绘画，颜料体积参与造型。",
+      "shape_motion": "大形随关键姿势明确重绘，笔触沿受力方向转换，局部厚色保持体积连续。",
+      "texture": "颜料脊、刮痕与混色颗粒可见，表面起伏依附形体而非全屏随机蠕动。",
+      "light_color": "光色通过厚薄色层、冷暖对照与局部颜料反光组织，暗部保留综合色。",
+      "camera_edit": "构图和切点优先维护大色块关系，缓移让笔触可读，避免无目的快速扫视。",
+      "vfx_sound": "飞溅与烟尘可转化为厚涂形块，摩擦和接触声对应实体动作而非笔刷装饰。",
+      "limits": "不让厚涂改变脸部骨架，不把表面起伏当角色溶解，不以油亮高光覆盖所有区域。",
+      "character_style": {
+        "zh": "人物由厚油彩色面塑造，笔触沿面部与衣装结构铺陈，颜料脊清楚而五官骨架稳定。",
+        "en": "Build characters from thick oil color planes; direct strokes along facial and clothing structures, keeping paint ridges visible while stabilizing the underlying facial construction."
+      },
+      "scene_style": {
+        "zh": "环境以刮刀色块和覆盖笔触组织，冷暖关系区分空间，局部颜料反光显出厚薄起伏。",
+        "en": "Organize environments through palette knife shapes and overlapping strokes; separate space through warm and cool relationships, revealing paint thickness with localized surface reflections."
+      },
+      "video_style": {
+        "zh": "关键姿势带动大色块明确重绘，笔触顺受力方向转换，局部颜料起伏保持连续且不吞没轮廓。",
+        "en": "Redraw major color masses clearly with each key pose; redirect strokes along forces, maintaining continuous local paint relief without obscuring the silhouettes."
+      }
+    },
+    {
+      "id": "S046",
+      "name": "粉彩蜡笔",
+      "name_en": "Pastel and Crayon Animation",
+      "family": "F08",
+      "medium": "以粉彩铺色、蜡笔线条与有齿纸面构成画面，保留干性绘画的摩擦感。",
+      "shape_motion": "姿势以柔韧轮廓重绘，线条可轻微跳动，色面变化紧随形体而不散失。",
+      "texture": "粉粒、蜡笔断线与纸齿清楚，擦抹形成局部柔边，边缘保留手绘粗细。",
+      "light_color": "哑光色面以叠擦和邻色建立明暗，亮色保留粉感，避免整体发光。",
+      "camera_edit": "以清楚构图和适度留白承接笔触，切镜匹配主要形状与色面重心。",
+      "vfx_sound": "粉尘与划痕可作轻量图形响应，干擦、脚步和衣料声按画面动作组织。",
+      "limits": "不把粉粒随机闪烁当质感，不让蜡笔线不断换色，不用高光把纸面变成塑料。",
+      "character_style": {
+        "zh": "人物以粉彩哑光色面和蜡笔断线塑造，纸齿穿过局部颜色，五官与衣装标志保持清楚。",
+        "en": "Shape characters with matte pastel masses and broken crayon lines; let paper tooth show through selected colors while preserving clear facial and clothing identifiers."
+      },
+      "scene_style": {
+        "zh": "环境色面保留粉粒与纸齿，局部叠擦形成柔边，哑光邻色关系区分近处物件和远景。",
+        "en": "Retain pastel particles and paper tooth in environmental color masses; create soft edges through local rubbing and distinguish nearby objects from distance through matte neighboring colors."
+      },
+      "video_style": {
+        "zh": "柔韧轮廓随姿势重绘，色面紧随形体变化，蜡笔断线轻微跳动并保留一致纸面摩擦感。",
+        "en": "Redraw supple contours with changing poses; keep color masses attached to their forms, allowing slight movement in broken crayon lines with consistent paper friction."
+      }
+    },
+    {
+      "id": "S047",
+      "name": "铅笔素描",
+      "name_en": "Graphite Sketch Animation",
+      "family": "F08",
+      "medium": "以石墨轮廓、排线和擦痕构成单色绘画动画，纸面明度参与体积塑造。",
+      "shape_motion": "结构线带动姿势变化，重心和关节先清楚成立，局部排线随后响应形体。",
+      "texture": "笔压、石墨颗粒与交叉排线可见，擦除痕迹轻量保留，线条疏密有组织。",
+      "light_color": "通过纸白、灰调和深石墨区分受光层次，亮暗边缘服从形体转折。",
+      "camera_edit": "稳定构图便于阅读结构，局部推近观察表情或动作支点，切点匹配姿态。",
+      "vfx_sound": "短线拖尾与石墨尘点强调运动，呼吸、触碰和步伐声维持具体动作感。",
+      "limits": "不以全面污灰替代阴影，不让辅助线破坏结构，不把线条抖动当关节漂移。",
+      "character_style": {
+        "zh": "石墨轮廓与有组织的排线塑造人物，纸白保留受光面，关节和重心明确，五官结构稳定。",
+        "en": "Define characters through graphite contours and organized hatching; reserve paper white for lit planes, clarify joints and weight distribution, and keep facial construction stable."
+      },
+      "scene_style": {
+        "zh": "环境通过纸白、灰调与深石墨分层，交叉排线沿物体转折展开，局部擦痕保留手绘过程感。",
+        "en": "Layer environments through paper white, gray tones and deep graphite; direct cross hatching around object forms, retaining local erasure marks as traces of drawing."
+      },
+      "video_style": {
+        "zh": "结构线先带动关节和重心变化，排线随后响应体积，保留画面与局部重绘形成素描节奏。",
+        "en": "Let structural lines lead changes in joints and weight, with hatching following volume; alternate held images and localized redrawing to establish a sketching rhythm."
+      }
+    },
+    {
+      "id": "S048",
+      "name": "纸纹拼贴绘本",
+      "name_en": "Textured Paper Collage Storybook",
+      "family": "F08",
+      "medium": "以印刷纸纹、手绘色纸和撕切拼贴组成绘本画面，图形与材料共同叙事。",
+      "shape_motion": "完整纸形的姿态替换结合局部小动作，撕边和拼缝随所属形状稳定移动。",
+      "texture": "纤维、印刷颗粒与不规则撕边可辨，纹理密度按人物和背景阅读需要分配。",
+      "light_color": "纸张本色形成温和色盘，明暗由叠层、邻色和绘画阴影共同提示。",
+      "camera_edit": "以绘本跨页式构图和局部观看组织画面，形状匹配或翻页式遮挡衔接。",
+      "vfx_sound": "纸屑与贴片位移强调局部变化，翻页、轻擦和物件声随实际事件出现。",
+      "limits": "不让纹理拼接掩盖人物身份，不把每块纸都做成浮雕，不要求画面自动出现文字。",
+      "character_style": {
+        "zh": "人物由手绘色纸与撕切纸形拼成，纤维和印刷颗粒轻量可见，五官与服装标志清楚稳定。",
+        "en": "Assemble characters from painted papers and torn shapes; keep fibers and printed grain subtly visible while preserving clear, stable facial features and clothing identifiers."
+      },
+      "scene_style": {
+        "zh": "绘本式环境保留纸张本色和不规则撕边，叠层与邻色提示纵深，纹理密度围绕阅读重点分配。",
+        "en": "Storybook environments retain natural paper colors and irregular torn edges; indicate depth through layering and neighboring colors, allocating texture density around the reading focus."
+      },
+      "video_style": {
+        "zh": "完整纸形以姿态替换结合局部小动作推进，撕边纹理随形状移动，遮挡转接保留绘本阅读节奏。",
+        "en": "Advance whole paper shapes through pose replacements and small localized movements; keep torn textures attached, using occlusion transitions to preserve a storybook reading rhythm."
+      }
+    },
+    {
+      "id": "S049",
+      "name": "黏土",
+      "name_en": "Clay Stop Motion",
+      "family": "F09",
+      "medium": "以实体黏土偶和微缩场景逐步摆拍，真实体积与手工塑形共同构成画面。",
+      "shape_motion": "重心、支撑与接触逐姿势落实，软质局部可压缩回弹，表情替换保持设计。",
+      "texture": "指纹、压痕和轻微表面修补可见，痕迹附着于材料，身份轮廓连续。",
+      "light_color": "现场灯光照出黏土哑光体积和接触阴影，曝光与光源位置跨姿势稳定。",
+      "camera_edit": "构图先确认偶与布景尺度，移动需保持稳定定位，切镜承接姿势和接触状态。",
+      "vfx_sound": "尘屑与碎块可用实体替换件表达，黏附、挤压和落地声准确对应材料反馈。",
+      "limits": "不把脸形漂移当手工感，不让脚底滑移或悬空承重，不以持续表面蠕动取代动作。",
+      "character_style": {
+        "zh": "实体黏土人物保留轻微指纹和压痕，哑光体积清楚，面部比例、发型与衣装轮廓稳定。",
+        "en": "Keep subtle fingerprints and pressure marks on physical clay characters; show clear matte volume while preserving stable facial proportions, hairstyles and clothing silhouettes."
+      },
+      "scene_style": {
+        "zh": "微缩黏土场景保留塑形痕迹和真实接触阴影，现场灯光方向稳定，物件尺度与角色相配。",
+        "en": "Retain sculpting marks and real contact shadows in miniature clay environments; keep on set lighting direction stable and match object scale to the characters."
+      },
+      "video_style": {
+        "zh": "逐姿势落实支撑和接触，黏土局部压缩后回弹，表情替换保持身份，动作音对应材料受力。",
+        "en": "Establish support and contact pose by pose; let local clay compression rebound, preserving identity across facial replacements and matching action sounds to material forces."
+      }
+    },
+    {
+      "id": "S050",
+      "name": "毛毡布偶",
+      "name_en": "Felt Puppet Stop Motion",
+      "family": "F09",
+      "medium": "以毛毡、布料覆面的实体骨架偶摆拍，缝制结构与软质轮廓共同塑造角色。",
+      "shape_motion": "骨架关节驱动明确姿势，布料与绒毛有局部滞后，落脚和抓握具备支撑。",
+      "texture": "短绒、缝线与布片接缝可见，纤维方向跟随部件，避免全身绒毛随机翻动。",
+      "light_color": "柔和侧光显出绒毛边缘和织物层次，布景照明与阴影保持现场连续。",
+      "camera_edit": "中景建立偶与道具关系，近景观察缝线和表情，移镜维持可核对的布景位置。",
+      "vfx_sound": "布料轻擦、填充挤压和落脚声体现软质重量，飞尘须有具体动作来源。",
+      "limits": "不把绒毛闪动误当动作，不让缝线和五官跨姿势换位，不使软偶脱离关节限制。",
+      "character_style": {
+        "zh": "毛毡覆面的实体布偶保留短绒、缝线与布片接缝，五官固定，骨架支撑下的姿态清楚。",
+        "en": "Physical felt covered puppets retain short fibers, stitching and fabric seams; keep facial features fixed and make poses clearly supported by their internal armatures."
+      },
+      "scene_style": {
+        "zh": "织物微缩布景以柔和侧光显出纤维层次，道具尺度与布偶相配，真实接触阴影保持清楚。",
+        "en": "Reveal fiber layers in textile miniature sets with soft side light; match prop scale to the puppets and maintain clearly visible physical contact shadows."
+      },
+      "video_style": {
+        "zh": "骨架驱动姿态变化，衣料与绒毛局部滞后，落脚抓握有真实支撑，细微布擦声对应接触。",
+        "en": "Let armatures drive pose changes while fabric and fibers lag locally; support steps and grips physically, matching subtle fabric friction sounds to contact."
+      }
+    },
+    {
+      "id": "S051",
+      "name": "木偶关节",
+      "name_en": "Articulated Wooden Puppet Stop Motion",
+      "family": "F09",
+      "medium": "以木质关节偶和实体布景进行摆拍，铰接结构与木材重量成为表演特征。",
+      "shape_motion": "关节围绕固定轴转动，动作分节清楚，抬举、摆动和制动显出惯性。",
+      "texture": "木纹、刀刻面和关节接缝可见，表面磨损固定在对应部位。",
+      "light_color": "侧向现场光勾出木材体面与关节阴影，暖木色和布景冷暖关系明确。",
+      "camera_edit": "全身构图说明关节运动范围，局部镜头观察转轴与受力，切点承接摆动方向。",
+      "vfx_sound": "木质轻敲、铰链摩擦与落地声体现结构，振动余势随接触逐渐收束。",
+      "limits": "不让木块软化伸缩，不隐藏关节后强行超限扭转，不用形变掩盖关节穿插。",
+      "character_style": {
+        "zh": "木质人物保留木纹、刀刻面和清楚关节接缝，固定转轴塑造分节轮廓，姿态体现材料重量。",
+        "en": "Wooden characters retain grain, carved planes and clear joint seams; fixed pivot axes define segmented silhouettes, with poses that communicate the material's weight."
+      },
+      "scene_style": {
+        "zh": "实体布景以侧向灯光勾出木材体面，近处道具与木偶尺度一致，接触阴影说明支撑关系。",
+        "en": "Use side lighting on physical sets to reveal wooden planes; keep nearby props at the puppet's scale and clarify support relationships with contact shadows."
+      },
+      "video_style": {
+        "zh": "木偶围绕固定关节轴分节运动，摆动后以惯性余势逐步收束，木质轻敲与铰链声对应接触。",
+        "en": "Move wooden puppets in articulated segments around fixed joint axes; gradually settle residual swings, matching wooden taps and hinge sounds to physical contact."
+      }
+    },
+    {
+      "id": "S052",
+      "name": "折纸实体",
+      "name_en": "Physical Origami Stop Motion",
+      "family": "F09",
+      "medium": "以真实折纸模型和纸质微缩布景摆拍，折线、折面与纸张厚度参与造型。",
+      "shape_motion": "动作围绕可行折痕和纸片连接处变化，翻折先后明确，支撑点保持成立。",
+      "texture": "纸纤维、折痕压线与局部翘边可见，纸面图案跟随折面而不滑动。",
+      "light_color": "现场斜光区分折面方向，纸张本色和真实遮挡阴影共同建立体积。",
+      "camera_edit": "以能看清折面关系的角度观察，转接匹配折线或轮廓，避免丢失支撑位置。",
+      "vfx_sound": "翻折、弹纸和纸边触碰声对应姿势变化，替换纸件保持折痕与颜色连贯。",
+      "limits": "不让纸张无痕拉伸，不穿透相邻折面，不把任意变形当作折叠结构。",
+      "character_style": {
+        "zh": "实体折纸角色由清楚折面和压线构成，纸纤维与局部翘边可见，标志轮廓和纸面图案固定。",
+        "en": "Build physical origami characters from clear folded planes and creases; reveal paper fibers and slight lifted edges while keeping signature silhouettes and printed patterns stable."
+      },
+      "scene_style": {
+        "zh": "纸质微缩环境保留折线、纸厚和覆盖关系，斜向现场光区分折面，接触阴影呈现真实体积。",
+        "en": "Paper miniature environments retain creases, paper thickness and overlaps; angled on set light distinguishes folded planes, with contact shadows establishing real volume."
+      },
+      "video_style": {
+        "zh": "折纸围绕可行折痕依次翻折，支撑点保持成立，纸面图案跟随折面移动，弹纸声对应回弹。",
+        "en": "Fold paper sequentially around feasible creases, maintaining valid support points; keep surface patterns attached to each plane and match paper snapping sounds to rebounds."
+      }
+    },
+    {
+      "id": "S053",
+      "name": "实物替换定格",
+      "name_en": "Physical Replacement Stop Motion",
+      "family": "F09",
+      "medium": "以预制实体姿势件、表情件或连续形态件逐一替换摆拍，材料和定位统一。",
+      "shape_motion": "替换序列按动作弧线推进，部件从起势到落稳清楚，连接点与重心连续。",
+      "texture": "树脂、木材或橡胶等已定材料在替换件间保持一致，接缝不干扰角色辨识。",
+      "light_color": "同一现场光照下校准各替换件表面响应，阴影方向、接触位置和曝光稳定。",
+      "camera_edit": "锁定或可靠控制机位使替换可读，构图和切点连接状态，布景位置可核对。",
+      "vfx_sound": "碎裂、溅射等由连续实体件呈现，声音跟随每个可见阶段而非随机叠加。",
+      "limits": "不以换件为由改变五官与服装，不把定位跳动当风格，不让形态序列擅加能力。",
+      "character_style": {
+        "zh": "实体角色使用同材质预制表情与姿态件，五官、衣装和连接点一致，表面细节保持稳定。",
+        "en": "Use prefabricated facial and pose pieces of one material for physical characters; keep features, clothing, connection points and surface details consistent across replacements."
+      },
+      "scene_style": {
+        "zh": "实体布景保持定位与现场光照稳定，替换件接触阴影和表面响应一致，物件比例始终可核对。",
+        "en": "Keep physical set registration and on set lighting stable; maintain consistent contact shadows and surface responses across replacement pieces, preserving verifiable object proportions."
+      },
+      "video_style": {
+        "zh": "连续实体件沿明确动作弧线逐次替换，连接点与重心衔接稳定，阶段音效对应可见形态变化。",
+        "en": "Replace successive physical pieces along clear action arcs; maintain stable connection points and weight transitions, matching staged sounds to visible changes in form."
+      }
+    },
+    {
+      "id": "S054",
+      "name": "实体皮影",
+      "name_en": "Physical Shadow Puppet Animation",
+      "family": "F09",
+      "medium": "以镂刻皮革或硬纸影偶、幕布和真实背光构成平面表演，透光关系清楚。",
+      "shape_motion": "影偶在幕面附近沿关节轴摆动，轮廓转向和遮挡推进动作，层次先后明确。",
+      "texture": "镂刻纹样、染色透光与幕布纤维可见，影偶边缘随离幕距离改变清晰度。",
+      "light_color": "背光形成轮廓和透色，光场亮度稳定，颜色由材料透射而非立体反光产生。",
+      "camera_edit": "正面或轻微偏角保留幕面可读性，以影形进出和遮挡转接组织观看。",
+      "vfx_sound": "关节轻响、步伐与物件触碰按动作出现，影形伸缩需有真实光距变化。",
+      "limits": "不以正面补光抹去影形，不让平面影偶长出立体体积，不把操纵杆误生成人体。",
+      "character_style": {
+        "zh": "实体影偶保留镂刻纹样和染色透光，关节连接与标志轮廓清楚，平面造型贴近幕面。",
+        "en": "Physical shadow puppets retain carved patterns and colored translucency; clarify joint connections and signature silhouettes, keeping their flat forms close to the screen."
+      },
+      "scene_style": {
+        "zh": "幕布纤维与稳定背光构成舞台，染色材料透出有限色彩，前后影层通过遮挡保持清楚。",
+        "en": "Create a stage from visible screen fibers and stable backlighting; transmit limited colors through dyed materials, keeping front and rear shadow layers distinct through overlap."
+      },
+      "video_style": {
+        "zh": "影偶沿关节轴贴近幕面摆动，轮廓转向与遮挡推进动作，离幕变化有据，触碰声对应接触。",
+        "en": "Swing puppets around joint axes near the screen; advance action through silhouette turns and overlap, keeping changes in puppet-to-screen distance physically motivated and matching sounds to contact."
+      }
+    },
+    {
+      "id": "S055",
+      "name": "转描实拍",
+      "name_en": "Live Action Rotoscope",
+      "family": "F10",
+      "medium": "以实拍表演为动作依据转绘二维轮廓与色面，保留摄影空间和手绘选择。",
+      "shape_motion": "重心、细微表情和动作节奏承接实拍，绘画取舍突出关键轮廓与姿态。",
+      "texture": "转绘线条和色面保留手绘差异，边缘变化受控，跟随同一身体结构。",
+      "light_color": "将实拍明暗归纳为可读绘画色层，保留主要光向和相邻镜头的色彩关系。",
+      "camera_edit": "沿用拍摄动作连续和空间轴线，剪接重视表演转折，绘制层稳定跟随画面。",
+      "vfx_sound": "绘画拖尾或局部笔触对应实际运动，原有环境与动作声可保留空间依据。",
+      "limits": "不把描线闪烁当任意脸形变化，不让衣纹脱离身体，不将画面风格化视作新能力。",
+      "character_style": {
+        "zh": "以实拍体态为依据转绘清楚轮廓和概括色面，面部结构稳定，细微表情保留表演痕迹。",
+        "en": "Rotoscope clear contours and simplified color planes from filmed body shapes; keep facial construction stable and preserve traces of performance in subtle expressions."
+      },
+      "scene_style": {
+        "zh": "摄影空间转绘为有取舍的线条和色层，主要透视与光向清楚，局部笔触保留手绘差异。",
+        "en": "Translate photographed spaces into selective lines and color layers; retain clear perspective and primary light direction, allowing local brushwork to show drawn variation."
+      },
+      "video_style": {
+        "zh": "转绘动作承接实拍的重心和表情节奏，轮廓变化跟随身体结构，剪接落在表演转折处。",
+        "en": "Base rotoscoped movement on filmed weight shifts and expressive timing; keep changing contours tied to body structure and cut at changes in performance."
+      }
+    },
+    {
+      "id": "S056",
+      "name": "真人加二维特效",
+      "name_en": "Live Action with Drawn Effects",
+      "family": "F10",
+      "medium": "以真人实拍为主体，二维绘制线形、涂色与图案层依附具体动作合成。",
+      "shape_motion": "真人动作保持自然重量，绘制层按接触、速度或情绪节奏出现并及时消退。",
+      "texture": "真人、衣物和环境保留摄影材质，二维层保持线条或平涂特征，边界有意区分。",
+      "light_color": "实拍光源保持自洽，图形色彩与画面协调，只有获许可的发光效果影响环境。",
+      "camera_edit": "通过跟踪、遮挡与运动匹配固定绘制层，切镜承接真人动作和图形的尾态。",
+      "vfx_sound": "接触线、擦痕和强调形响应可见事件，动作声维持真实来源，图形声适量同步。",
+      "limits": "不让绘制层漂浮穿人，不为装饰自动添加能量攻击，不用全屏图形遮盖动作因果。",
+      "character_style": {
+        "zh": "真人角色保留摄影材质与稳定身份，局部二维线形贴合姿态，图形轮廓和实拍身体清楚区分。",
+        "en": "Preserve photographic materials and stable identity on live action characters; fit localized drawn shapes to their poses, keeping graphic contours distinct from filmed bodies."
+      },
+      "scene_style": {
+        "zh": "实拍环境保留原有光向和物件材质，二维色形贴合表面透视，通过正确遮挡融入空间。",
+        "en": "Preserve existing light direction and object materials in filmed environments; fit drawn color shapes to surface perspective and integrate them through correct occlusion."
+      },
+      "video_style": {
+        "zh": "真人动作保持自然受力，二维强调形按接触与速度出现，跟踪和遮挡稳定，声音对应可见事件。",
+        "en": "Keep natural physical forces in live performances; introduce drawn emphasis in response to contacts and motion speed, stabilizing tracking and occlusion while matching sounds to visible events."
+      }
+    },
+    {
+      "id": "S057",
+      "name": "三维加手绘特效",
+      "name_en": "Three Dimensional Animation with Drawn Effects",
+      "family": "F10",
+      "medium": "以三维角色和场景为结构基础，手绘线条、色块或逐幅效果层补充动作反馈。",
+      "shape_motion": "三维动作保持体积和惯性，二维效果可用夸张形变突出接触及方向。",
+      "texture": "主体材质稳定，手绘效果保留笔触与轮廓差异，两种表面语言有意并置。",
+      "light_color": "三维光照提供空间关系，手绘色块选择性呼应亮暗，发光反馈遵循既定规则。",
+      "camera_edit": "镜头运动保持三维空间连续，绘制效果跟随接触面、遮挡和透视缩放。",
+      "vfx_sound": "手绘尘屑、冲击形与短线沿实际作用展开，声音保持接触、摩擦和余响层次。",
+      "limits": "不让二维层无故改变主体体积，不以绘制特效添加能力，不让笔触穿透无关物体。",
+      "character_style": {
+        "zh": "三维人物保持稳定体积与材质，局部手绘轮廓和效果色块强调姿态，笔触与主体清楚并置。",
+        "en": "Keep stable volume and materials on three dimensional characters; emphasize poses with localized drawn contours and effect shapes, clearly juxtaposing brushwork with the underlying subjects."
+      },
+      "scene_style": {
+        "zh": "三维场景提供清楚透视与接触关系，手绘色块和线条依附实际表面，遮挡与光向保持协调。",
+        "en": "Three dimensional environments provide clear perspective and contact relationships; attach drawn shapes and lines to real surfaces, coordinating occlusion and light direction."
+      },
+      "video_style": {
+        "zh": "三维动作保持重量与惯性，手绘冲击形沿接触方向逐幅展开，缩放遮挡稳定，音效对应受力阶段。",
+        "en": "Maintain weight and inertia in three dimensional movement; draw impact shapes frame by frame along contact directions, preserving scale and occlusion while matching sounds to stages of force."
+      }
+    },
+    {
+      "id": "S058",
+      "name": "多平面拼贴",
+      "name_en": "Multiplane Mixed Media Collage",
+      "family": "F10",
+      "medium": "将照片、印刷图形和绘画碎片分布于多个平面，以分层摄影或合成组织空间。",
+      "shape_motion": "完整素材片层保持自身形状，差速位移、旋转与遮挡改变层间关系。",
+      "texture": "不同来源的纸纹、网点和照片颗粒可并存，边缘裁切与材料身份明确。",
+      "light_color": "保留素材差异并统一主色关系，层间投影用于说明深度，避免各层争亮。",
+      "camera_edit": "沿多平面穿行或平移产生差异视差，切镜匹配素材轮廓和视觉重心。",
+      "vfx_sound": "材料碎片与图形遮挡完成转接，声音层级跟随前后景和注意焦点变化。",
+      "limits": "不把各平面等速滑动当纵深，不让照片人物比例随意扭曲，不以拼贴添加剧情能力。",
+      "character_style": {
+        "zh": "人物由边缘清楚的照片与绘画片层拼合，面部身份固定，素材颗粒和纸纹保留各自特征。",
+        "en": "Assemble characters from clearly edged photographic and painted layers; keep facial identity fixed while allowing image grain and paper textures to retain their distinct qualities."
+      },
+      "scene_style": {
+        "zh": "照片、印刷图形与绘画碎片分布在多层平面，裁切边缘可辨，主色统一而材料差异保留。",
+        "en": "Distribute photographs, printed graphics and painted fragments across multiple planes; keep cut edges recognizable, unifying dominant colors while retaining differences between materials."
+      },
+      "video_style": {
+        "zh": "素材片层以差速位移和遮挡产生视差，镜头沿层间关系移动，声音焦点随前后景变化转移。",
+        "en": "Generate parallax through differently moving material layers and occlusion; move the camera according to layer relationships, shifting sound focus as foreground and background change."
+      }
+    },
+    {
+      "id": "S059",
+      "name": "光绘长曝光",
+      "name_en": "Light Painting Long Exposure",
+      "family": "F10",
+      "medium": "以实际发光物的运动和曝光累积形成光绘，可将连续曝光图像组织为动态。",
+      "shape_motion": "光迹随光源路径逐步积累，运动主体可有自然拖影，轨迹消长说明时间顺序。",
+      "texture": "光轨保留亮芯、色边与暗部颗粒，曝光累积有边界，背景细节不被普遍抹去。",
+      "light_color": "暗环境承托有限光色，亮度与轨迹叠加相关，真实发光物才产生相应环境反光。",
+      "camera_edit": "稳定机位便于阅读光迹，必要移动需保留固定环境参照，转接承接轨迹方向。",
+      "vfx_sound": "光迹是曝光结果而非实体碰撞物，开关、步伐或装置声对应实际来源。",
+      "limits": "不把光轨默认当能量武器，不让静物无故发光，不以过曝遮掉主体和环境参照。",
+      "character_style": {
+        "zh": "人物保留可辨姿态和身份轮廓，真实发光物在运动路径留下亮轨，拖影与曝光累积一致。",
+        "en": "Keep recognizable poses and identity silhouettes on figures; real moving light sources leave bright trails along their paths, with motion blur consistent with accumulated exposure."
+      },
+      "scene_style": {
+        "zh": "暗环境保留固定物件参照，有限光色形成清楚轨迹，真实反光对应发光物位置与表面方向。",
+        "en": "Retain fixed object references within dark environments; use limited light colors for clear trails, with physical reflections matching source positions and surface orientations."
+      },
+      "video_style": {
+        "zh": "光源路径通过曝光累积逐步显现，光轨消长交代时间先后，固定环境参照连接连续画面。",
+        "en": "Reveal light source paths progressively through accumulated exposure; use growing and fading trails to communicate temporal order, connecting successive images through fixed environmental references."
+      }
+    },
+    {
+      "id": "S060",
+      "name": "连续梦境材质转换",
+      "name_en": "Continuous Dreamlike Material Transitions",
+      "family": "F10",
+      "medium": "在同一空间结构上连续切换绘画、纸张与实体材质，转换本身成为影像语言。",
+      "shape_motion": "主体轮廓和动作路径延续，材质边界沿表面渐次推进，变换前后重心相接。",
+      "texture": "纸纤维、颜料笔触与实体表面各有可辨阶段，过渡区域保留对应关系。",
+      "light_color": "光向与主色在转换中连续，材质反射和透光随表面变化调整，避免全景闪变。",
+      "camera_edit": "连续运动、遮挡或表面映射承接材质转化，固定锚点帮助观众辨识同一空间。",
+      "vfx_sound": "摩擦、纸响与实体触声随可见材质交替，声音过渡沿同一接触事件延续。",
+      "limits": "材质转换不自动授予角色变身能力，不让五官身份和空间方位随换材漂移。",
+      "character_style": {
+        "zh": "人物身份与标志轮廓固定，纸纤维、颜料笔触和实体表面沿同一形体递变，五官位置连续。",
+        "en": "Keep character identity and signature silhouettes fixed; transition paper fibers, paint strokes and physical surfaces along the same form, maintaining continuity in facial feature positions."
+      },
+      "scene_style": {
+        "zh": "场景主结构和空间锚点固定，纸纹、颜料与实体表面沿接缝递变，光向和主色保持连续。",
+        "en": "Keep primary scene structures and spatial anchors fixed; transition paper textures, paint and physical surfaces along seams, maintaining continuous light direction and dominant colors."
+      },
+      "video_style": {
+        "zh": "材质边界沿同一表面逐步推进，动作与重心跨转换延续，纸响和实体触声随接触事件自然交替。",
+        "en": "Advance material boundaries progressively across the same surface; continue movement and weight through transitions, naturally alternating paper and solid contact sounds within each contact event."
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: KATIL-skill
+  short_description: V3.7.5 通用影视导演：默认事件分镜与Seedance 2.5按需适配
+  default_prompt: 使用 $katil-skill 按任务加载影视模块，默认按无时间码事件序编排，保留指定画风、速度、强度与事件，先修复容量和状态冲突，再交付完整提示词；媒体检查、外部评审和实际视频验证分别记录。
+policy:
+  allow_implicit_invocation: true

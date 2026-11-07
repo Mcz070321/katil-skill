@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0.0",
+  "rules": [
+    {
+      "rule_id": "REF",
+      "authority": {
+        "path": "references/reference-and-task-handling.md",
+        "anchor": "katil-ref"
+      },
+      "authority_sha256": "fec062bdcb55b91c0eb1ebeac2388265468d136a55a3d32c80135cdf6ee74df2",
+      "rule_revision": "1.2.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of REF@1.2.0",
+          "rule_revision": "1.2.0",
+          "summary_sha256": "7d22d1f1f933cc0562a2c7fb3becaed34eb3254fc3d77861c824ef70768ee1c2"
+        }
+      ],
+      "depends_on": [
+        "TIME"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-07",
+      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
+    },
+    {
+      "rule_id": "SOUND",
+      "authority": {
+        "path": "references/defaults-and-medium.md",
+        "anchor": "katil-sound"
+      },
+      "authority_sha256": "97e2a9a473c8caabae9c03a81f950a6dcfa9a0aacbb0c6e845d049f9b80a7011",
+      "rule_revision": "1.0.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of SOUND@1.0.0",
+          "rule_revision": "1.0.0",
+          "summary_sha256": "a3208afef4a9bf24172fc6cd53d582de25c968be3a7bdbf0d2f3fce26c812ebd"
+        }
+      ],
+      "depends_on": [],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-07",
+      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
+    },
+    {
+      "rule_id": "SPACE",
+      "authority": {
+        "path": "references/spatial-coordinate-system.md",
+        "anchor": "katil-space"
+      },
+      "authority_sha256": "a724f7c5df0f27b616d020753e22a9277b564523bcf5093422dc6f682c2f9644",
+      "rule_revision": "1.1.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of SPACE@1.1.0",
+          "rule_revision": "1.1.0",
+          "summary_sha256": "edc40367b1292a2a5a471a0415486b316ddc086b4016c7c20421d5d6b7bbef85"
+        }
+      ],
+      "depends_on": [
+        "TIME"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-07",
+      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
+    },
+    {
+      "rule_id": "WITNESS",
+      "authority": {
+        "path": "references/shot-execution-contract.md",
+        "anchor": "katil-witness"
+      },
+      "authority_sha256": "2ee024cde9f37aca22325fcea148d1904ee4cd81c524cbbe9862d197725ac9bd",
+      "rule_revision": "1.2.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of WITNESS@1.2.0",
+          "rule_revision": "1.2.0",
+          "summary_sha256": "c39a67acc3a28c80455c8103629c54a83411419de7f22571f018e8001648c6b7"
+        }
+      ],
+      "depends_on": [
+        "TIME"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-07",
+      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
+    },
+    {
+      "rule_id": "DELIVERY",
+      "authority": {
+        "path": "references/prompt-delivery-and-language.md",
+        "anchor": "katil-delivery"
+      },
+      "authority_sha256": "043850eb374a2942ecfb5e68cc4e3acbcf0facea68e5719dd8428f4565296883",
+      "rule_revision": "1.2.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of DELIVERY@1.2.0",
+          "rule_revision": "1.2.0",
+          "summary_sha256": "f091d14d06f394918252b3b85a6aecd0c3f679e21fb6e753c865080800315cda"
+        }
+      ],
+      "depends_on": [
+        "TIME"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-07",
+      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
+    },
+    {
+      "rule_id": "CONTINUITY",
+      "authority": {
+        "path": "references/viewpoint-and-continuity.md",
+        "anchor": "katil-continuity"
+      },
+      "authority_sha256": "fe21e128b123faf5dfe9260ff4a89d541cd3bc719b5ee88db109fae9b6f49b8a",
+      "rule_revision": "1.1.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of CONTINUITY@1.1.0",
+          "rule_revision": "1.1.0",
+          "summary_sha256": "53fe62c58ef0b68377c67e0b04fdc9332bf4fa5dd4c70db9bd1930113a3d6c46"
+        }
+      ],
+      "depends_on": [
+        "TIME"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-07",
+      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
+    },
+    {
+      "rule_id": "ADAPTER",
+      "authority": {
+        "path": "references/model-adaptation.md",
+        "anchor": "katil-adapter"
+      },
+      "authority_sha256": "278d77d3e70ffa0f3579dab489c23a5203649db95ea29e2483047a53f1042117",
+      "rule_revision": "1.2.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of ADAPTER@1.2.0",
+          "rule_revision": "1.2.0",
+          "summary_sha256": "84b8ecee93ee146310590a887b37f994f1efd1b0c86dbf300ba452c29b166905"
+        }
+      ],
+      "depends_on": [
+        "REF",
+        "DELIVERY",
+        "TIME"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-07",
+      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
+    },
+    {
+      "rule_id": "SEEDANCE",
+      "authority": {
+        "path": "references/seedance-2.5.md",
+        "anchor": "katil-seedance"
+      },
+      "authority_sha256": "cae5b015849348418412525fbf6891f26cd570dc5555d92f357c0f128bbf23b8",
+      "rule_revision": "1.2.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of SEEDANCE@1.2.0",
+          "rule_revision": "1.2.0",
+          "summary_sha256": "780a5a859e16ecd566f4aae0c85288ba2044dc8fd9882afa34619265b63598c4"
+        }
+      ],
+      "depends_on": [
+        "ADAPTER",
+        "REF",
+        "SOUND",
+        "SPACE",
+        "WITNESS",
+        "DELIVERY",
+        "CONTINUITY",
+        "TIME"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-07",
+      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
+    },
+    {
+      "rule_id": "TIME",
+      "authority": {
+        "path": "references/general-creative-core.md",
+        "anchor": "katil-time"
+      },
+      "rule_revision": "1.0.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of TIME@1.0.0",
+          "rule_revision": "1.0.0",
+          "summary_sha256": "435fffcc35f54c6c10707a87737bf9405c57982484914dc954b0746b7ea0471f"
+        }
+      ],
+      "depends_on": [],
+      "authority_sha256": "8dde2bb1b8771b0229ae6a94377f1bb471d081b3e3d48b7800d07811ba982688",
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-07",
+      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
+    }
+  ]
+}

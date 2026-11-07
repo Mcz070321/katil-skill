@@ -1,0 +1,1158 @@
+{
+  "schema_version": "1.0.0",
+  "model_family": "seedance",
+  "model_version": "2.5",
+  "adapter_revision": "0.1.0",
+  "artifact_kind": "document_level_natural_language_adapter",
+  "submission_ready": false,
+  "scope_note": "Document-level natural-language adaptation only; not a Production/API request schema. Documented capabilities are public statements and have not been observed through generation. Backend revisions and unverified surface parameters remain unknown.",
+  "provenance_note": "Source provider/surface identify the claim target; publisher identifies the author. S1-JIMENG uses the same official S1 announcement solely for its explicit Jimeng Web selection route. Model-level claims do not transfer to a provider surface.",
+  "sources": {
+    "S1": {
+      "canonical_url": "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
+      "provider": "bytedance_seed",
+      "surface": "public_model_documentation",
+      "publisher": "bytedance_seed",
+      "kind": "official_model_documentation",
+      "scope": "model",
+      "checked_on": "2026-11-05",
+      "model_family": "seedance",
+      "model_version": "2.5"
+    },
+    "S1-JIMENG": {
+      "canonical_url": "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
+      "provider": "jimeng",
+      "surface": "web",
+      "publisher": "bytedance_seed",
+      "kind": "official_model_availability",
+      "scope": "provider_surface",
+      "checked_on": "2026-11-05",
+      "model_family": "seedance",
+      "model_version": "2.5"
+    },
+    "S2": {
+      "canonical_url": "https://help.runwayml.com/hc/en-us/articles/53542207042323-Creating-with-Seedance-2-5",
+      "provider": "runway",
+      "surface": "tools",
+      "publisher": "runway",
+      "kind": "official_provider_documentation",
+      "scope": "provider_surface",
+      "checked_on": "2026-11-05",
+      "model_family": "seedance",
+      "model_version": "2.5"
+    }
+  },
+  "profiles": [
+    {
+      "id": "seedance-2.5-public-baseline",
+      "provider": "bytedance_seed",
+      "surface": "public_model_documentation",
+      "mode": "baseline",
+      "model_family": "seedance",
+      "model_version": "2.5",
+      "backend_model_revision": null,
+      "observed_status": "not_tested",
+      "capabilities": {
+        "output_duration": {
+          "value": {
+            "max": 30
+          },
+          "unit": "seconds",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S1",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "Maximum per single generation; no minimum or step is established here."
+        },
+        "prompt_length": {
+          "value": null,
+          "unit": "characters",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested",
+          "notes": "The official model announcement does not give a character limit."
+        },
+        "references_total": {
+          "value": null,
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested",
+          "notes": "No combined maximum is inferred from the separate modality counts."
+        },
+        "reference_images": {
+          "value": {
+            "max": 30
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S1",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_videos": {
+          "value": {
+            "max": 10
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S1",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_audio": {
+          "value": {
+            "max": 10
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S1",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_video_duration_per_file": {
+          "value": null,
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_file",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "reference_video_total_duration": {
+          "value": null,
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "timestamp_editing": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S1",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "Model-level statement of timestamp-targeted editing; not a claim of frame-accurate timing or availability in every provider UI."
+        },
+        "multi_round_extension": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S1",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "aspect_ratio": {
+          "value": null,
+          "unit": "ratio",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "output_resolution": {
+          "value": null,
+          "unit": "vertical_pixels",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        }
+      }
+    },
+    {
+      "id": "runway-tools-reference",
+      "provider": "runway",
+      "surface": "tools",
+      "mode": "reference",
+      "model_family": "seedance",
+      "model_version": "2.5",
+      "backend_model_revision": null,
+      "observed_status": "not_tested",
+      "capabilities": {
+        "output_duration": {
+          "value": {
+            "min": 4,
+            "max": 30,
+            "auto": true
+          },
+          "unit": "seconds",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "prompt_length": {
+          "value": {
+            "max": 15000
+          },
+          "unit": "characters",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "references_total": {
+          "value": {
+            "max": 50
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_images": {
+          "value": {
+            "max": 30
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_videos": {
+          "value": {
+            "max": 10
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_audio": {
+          "value": {
+            "max": 10
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_video_duration_per_file": {
+          "value": {
+            "max": 30
+          },
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_file",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "The 30-second bound is per reference video file, not a total across reference videos."
+        },
+        "reference_video_total_duration": {
+          "value": null,
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested",
+          "notes": "A total-duration budget across reference videos is not documented; do not substitute the per-file bound or infer a total."
+        },
+        "aspect_ratio": {
+          "value": {
+            "choices": [
+              "Auto",
+              "21:9",
+              "16:9",
+              "4:3",
+              "1:1",
+              "3:4",
+              "9:16"
+            ]
+          },
+          "unit": "ratio",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "output_resolution": {
+          "value": {
+            "choices": [
+              480,
+              720,
+              1080
+            ]
+          },
+          "unit": "vertical_pixels",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "resolution_control": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "audio_generation": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "output_format": {
+          "value": {
+            "choices": [
+              "MP4",
+              "MOV"
+            ]
+          },
+          "unit": "format",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "timestamp_guidance": {
+          "value": "approximate_pacing_not_frame_accurate",
+          "unit": "enum",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "Runway FAQ: timestamps guide pacing and key beats; use postproduction for frame-level timing."
+        }
+      }
+    },
+    {
+      "id": "runway-tools-keyframe",
+      "provider": "runway",
+      "surface": "tools",
+      "mode": "keyframe",
+      "model_family": "seedance",
+      "model_version": "2.5",
+      "backend_model_revision": null,
+      "observed_status": "not_tested",
+      "capabilities": {
+        "output_duration": {
+          "value": {
+            "min": 4,
+            "max": 30,
+            "auto": true
+          },
+          "unit": "seconds",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "prompt_length": {
+          "value": {
+            "max": 15000
+          },
+          "unit": "characters",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "references_total": {
+          "value": {
+            "max": 50
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_images": {
+          "value": {
+            "max": 30
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_videos": {
+          "value": {
+            "max": 10
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_audio": {
+          "value": {
+            "max": 10
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_video_duration_per_file": {
+          "value": {
+            "max": 30
+          },
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_file",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "The 30-second bound is per reference video file, not a total across reference videos."
+        },
+        "reference_video_total_duration": {
+          "value": null,
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested",
+          "notes": "A total-duration budget across reference videos is not documented; do not substitute the per-file bound or infer a total."
+        },
+        "aspect_ratio": {
+          "value": {
+            "choices": [
+              "Auto",
+              "21:9",
+              "16:9",
+              "4:3",
+              "1:1",
+              "3:4",
+              "9:16"
+            ]
+          },
+          "unit": "ratio",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "output_resolution": {
+          "value": {
+            "choices": [
+              480,
+              720,
+              1080
+            ]
+          },
+          "unit": "vertical_pixels",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "resolution_control": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "audio_generation": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "output_format": {
+          "value": {
+            "choices": [
+              "MP4",
+              "MOV"
+            ]
+          },
+          "unit": "format",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "timestamp_guidance": {
+          "value": "approximate_pacing_not_frame_accurate",
+          "unit": "enum",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "Runway FAQ: timestamps guide pacing and key beats; use postproduction for frame-level timing."
+        },
+        "first_last_frames": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "keyframes_with_references": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "FAQ explicitly permits first and last frames in addition to the references."
+        }
+      }
+    },
+    {
+      "id": "runway-tools-edit",
+      "provider": "runway",
+      "surface": "tools",
+      "mode": "edit",
+      "model_family": "seedance",
+      "model_version": "2.5",
+      "backend_model_revision": null,
+      "observed_status": "not_tested",
+      "capabilities": {
+        "output_duration": {
+          "value": {
+            "matches": "source_video_duration"
+          },
+          "unit": "seconds",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": false,
+          "notes": "Matches the input duration with no duration control; the FAQ warns that editing can shift the length slightly."
+        },
+        "prompt_length": {
+          "value": {
+            "max": 15000
+          },
+          "unit": "characters",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "references_total": {
+          "value": {
+            "max": 50
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_images": {
+          "value": {
+            "max": 30
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_videos": {
+          "value": {
+            "max": 10
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_audio": {
+          "value": {
+            "max": 10
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_video_duration_per_file": {
+          "value": {
+            "max": 30
+          },
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_file",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "The 30-second bound is per reference video file, not a total across reference videos."
+        },
+        "reference_video_total_duration": {
+          "value": null,
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested",
+          "notes": "A total-duration budget across reference videos is not documented; do not substitute the per-file bound or infer a total."
+        },
+        "aspect_ratio": {
+          "value": {
+            "matches": "source_video_aspect_ratio"
+          },
+          "unit": "ratio",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": false
+        },
+        "output_resolution": {
+          "value": null,
+          "unit": "vertical_pixels",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested",
+          "notes": "The mode table shows no resolution control. It does not establish the output resolution for this mode."
+        },
+        "resolution_control": {
+          "value": false,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "audio_generation": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "output_format": {
+          "value": {
+            "choices": [
+              "MP4",
+              "MOV"
+            ]
+          },
+          "unit": "format",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "timestamp_guidance": {
+          "value": "approximate_pacing_not_frame_accurate",
+          "unit": "enum",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "Runway FAQ: timestamps guide pacing and key beats; use postproduction for frame-level timing."
+        },
+        "source_video_required": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        }
+      }
+    },
+    {
+      "id": "runway-tools-extend",
+      "provider": "runway",
+      "surface": "tools",
+      "mode": "extend",
+      "model_family": "seedance",
+      "model_version": "2.5",
+      "backend_model_revision": null,
+      "observed_status": "not_tested",
+      "capabilities": {
+        "output_duration": {
+          "value": {
+            "min": 4,
+            "max": 30,
+            "auto": true
+          },
+          "unit": "seconds",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "prompt_length": {
+          "value": {
+            "max": 15000
+          },
+          "unit": "characters",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "references_total": {
+          "value": {
+            "max": 50
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_images": {
+          "value": {
+            "max": 30
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_videos": {
+          "value": {
+            "max": 10
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_audio": {
+          "value": {
+            "max": 10
+          },
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "reference_video_duration_per_file": {
+          "value": {
+            "max": 30
+          },
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_file",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "The 30-second bound is per reference video file, not a total across reference videos."
+        },
+        "reference_video_total_duration": {
+          "value": null,
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested",
+          "notes": "A total-duration budget across reference videos is not documented; do not substitute the per-file bound or infer a total."
+        },
+        "aspect_ratio": {
+          "value": {
+            "matches": "source_video_aspect_ratio"
+          },
+          "unit": "ratio",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": false
+        },
+        "output_resolution": {
+          "value": null,
+          "unit": "vertical_pixels",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested",
+          "notes": "The mode table shows no resolution control. It does not establish the output resolution for this mode."
+        },
+        "resolution_control": {
+          "value": false,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "audio_generation": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "output_format": {
+          "value": {
+            "choices": [
+              "MP4",
+              "MOV"
+            ]
+          },
+          "unit": "format",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "configurable": true
+        },
+        "timestamp_guidance": {
+          "value": "approximate_pacing_not_frame_accurate",
+          "unit": "enum",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "Runway FAQ: timestamps guide pacing and key beats; use postproduction for frame-level timing."
+        },
+        "source_video_required": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "extension_directions": {
+          "value": [
+            "forward",
+            "backward"
+          ],
+          "unit": "enum",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested"
+        },
+        "output_extent": {
+          "value": "new_footage_only",
+          "unit": "enum",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": "S2",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "Returns a standalone clip containing only the new footage at the set duration; the original video is unchanged."
+        }
+      }
+    },
+    {
+      "id": "jimeng-web-unverified",
+      "provider": "jimeng",
+      "surface": "web",
+      "mode": "unverified",
+      "model_family": "seedance",
+      "model_version": "2.5",
+      "backend_model_revision": null,
+      "observed_status": "not_tested",
+      "capabilities": {
+        "model_selection_available": {
+          "value": true,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": "S1-JIMENG",
+          "checked_on": "2026-11-05",
+          "evidence_status": "documented",
+          "observed_status": "not_tested",
+          "notes": "S1 states: Jimeng Web -> Video Generation -> Select Seedance 2.5. This confirms the public route, not current account access or exact parameters."
+        },
+        "available_modes": {
+          "value": null,
+          "unit": "enum",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "output_duration": {
+          "value": null,
+          "unit": "seconds",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "prompt_length": {
+          "value": null,
+          "unit": "characters",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "references_total": {
+          "value": null,
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "reference_images": {
+          "value": null,
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "reference_videos": {
+          "value": null,
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "reference_audio": {
+          "value": null,
+          "unit": "count",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "reference_video_duration_per_file": {
+          "value": null,
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_file",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "reference_video_total_duration": {
+          "value": null,
+          "unit": "seconds",
+          "direction": "input",
+          "scope": "per_request_total",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "aspect_ratio": {
+          "value": null,
+          "unit": "ratio",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "output_resolution": {
+          "value": null,
+          "unit": "vertical_pixels",
+          "direction": "output",
+          "scope": "per_output",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        },
+        "resolution_control": {
+          "value": null,
+          "unit": "boolean",
+          "direction": "input",
+          "scope": "per_request",
+          "source_id": null,
+          "checked_on": "2026-11-05",
+          "evidence_status": "unknown",
+          "observed_status": "not_tested"
+        }
+      }
+    }
+  ]
+}

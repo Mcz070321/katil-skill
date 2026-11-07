@@ -1,0 +1,472 @@
+{
+  "description": "Reviewer-only criteria; do not show to independent executors before outputs. Media-dependent observations stay UNKNOWN without actual media.",
+  "cases": [
+    {
+      "id": "M01",
+      "text_criteria": [
+        "不加载2.5适配专题",
+        "保持无动作文戏及指定声音、固定机位"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "无目标模型却加入2.5专属参数"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M02",
+      "text_criteria": [
+        "启用2.5适配并保持30秒、高速、双方存活和各一剑",
+        "平台未知不套Runway参数"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M03",
+      "text_criteria": [
+        "不擅自选2.5或虚构平台参数",
+        "保持静物和单语范围"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "把即梦等同Seedance2.5"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M04",
+      "text_criteria": [
+        "比较提及不触发模型适配",
+        "保持静音及通用稿"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "因资料提及切换模型"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M05",
+      "text_criteria": [
+        "结束2.5/Runway参数作用域",
+        "保留已有剧情时长而不虚构新模型能力"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "残留2.5专属提交参数"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M06",
+      "text_criteria": [
+        "继承已确认模型和前段尾态",
+        "不重播踏台阶或重问模型",
+        "写出放伞过程及落点"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M07",
+      "text_criteria": [
+        "锁定右镰矛左铜锤、各方物品数量",
+        "反击和终极一斩有关键可见因果",
+        "保留断臂、镰矛落点、伤势及未确认死亡"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "为稳定降低速度/强度或删去主动反击",
+        "擅自宣布鬼怪死亡"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M08",
+      "text_criteria": [
+        "冲击帧由同一次接触触发",
+        "恢复到原击后续且受创不复原"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "冲击帧后重放斩击或刷新伤势"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M09",
+      "text_criteria": [
+        "两张板仍只对应两人两剑",
+        "标记板排版/展示姿势不入帧",
+        "不从未知图像编造已观察特征"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "把多个视图当多个人物/武器"
+      ],
+      "media_dependent_checks": [
+        "图像实际身份匹配"
+      ]
+    },
+    {
+      "id": "M10",
+      "text_criteria": [
+        "无参考声明、无如有参考图、无虚构@键",
+        "保留简单事件与8秒"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M11",
+      "text_criteria": [
+        "分别描述锁帧图及语义图，不写全图禁入帧",
+        "平台混用能力未核验，不能声称就绪"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "给锁帧图同时写绝不入帧"
+      ],
+      "media_dependent_checks": [
+        "实际图像与起尾动作兼容"
+      ]
+    },
+    {
+      "id": "M12",
+      "text_criteria": [
+        "地标、尺度、上下关系及主动越轴可读",
+        "左膝损伤和最后未倒下连续"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "将巨物缩小/弱化或改写结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M13",
+      "text_criteria": [
+        "组织一条相容连续旋转升降轨迹",
+        "保持15秒真一镜及交握尾态"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "以切镜冒充真一镜"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M14",
+      "text_criteria": [
+        "保留微时间线与4秒总长",
+        "块外说明模型不保证逐帧命中，不把保留文字当成功执行"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "按2–6秒建议重排用户锁定时点"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M15",
+      "text_criteria": [
+        "区分30秒新增与60秒目标",
+        "仅在渠道核验后称可用Extend；当前不称已使用或已合并"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "将两次输出称一次原生60秒"
+      ],
+      "media_dependent_checks": [
+        "前片尾态真实性及接缝"
+      ]
+    },
+    {
+      "id": "M16",
+      "text_criteria": [
+        "承接手部占用并连续收剑",
+        "明确只有文字衔接，不声称平台Extend已执行"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M17",
+      "text_criteria": [
+        "说明返回8秒新片、原片不变、另行组装38秒",
+        "区分计划连续与实际无缝验证"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "说返回已合并38秒文件"
+      ],
+      "media_dependent_checks": [
+        "实际声画接缝"
+      ]
+    },
+    {
+      "id": "M18",
+      "text_criteria": [
+        "锁定8–10秒修改对象及区间外保留意图",
+        "Edit时长/画幅随源，不保证外区间像素绝对不变"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "虚构Edit自由设置时长/画幅"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M19",
+      "text_criteria": [
+        "保留高速、双人各一刀和未结束尾态",
+        "不把禁音乐误作静音"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M20",
+      "text_criteria": [
+        "英文复制块保留中文原句标点、说话者和一次发声",
+        "没有自动英语配音或字幕"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M21",
+      "text_criteria": [
+        "使用公开模型基线，不套Runway具体参数",
+        "只给单语执行稿，渠道必要状态块外且简短"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M22",
+      "text_criteria": [
+        "保留犹豫、僵住与回抱表演节奏",
+        "不强塞攻防/受击/回合"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M23",
+      "text_criteria": [
+        "核对真实字符量并压缩冗余",
+        "保留全部锁定事件与12秒，不静默删故事",
+        "不把本地字符预检认证为平台提交成功"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M24",
+      "text_criteria": [
+        "只交付一个完整中文执行稿",
+        "不外加母稿/英文/状态表"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M25",
+      "text_criteria": [
+        "保留外观、真实品牌与遇水乳化过程",
+        "不新增美白吸收治疗等功效，不因默认无字删除真实包装"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "添加新产品功效或战斗"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M26",
+      "text_criteria": [
+        "保留不揭示和门不开的开放终点",
+        "以表演与声源变化组织，不为完整因果拍出怪物"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M27",
+      "text_criteria": [
+        "指出当前组合不成立并给有条件的实际选项",
+        "不声称禁令覆盖强制入口机制"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "假设未核验模式可切换后称已就绪"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M28",
+      "text_criteria": [
+        "具体指出同图两要求互斥，需要用户取舍",
+        "不静默移除任何锁定要求"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M29",
+      "text_criteria": [
+        "保留效果/环境音，不关闭全部Audio",
+        "不加音乐或对白"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M30",
+      "text_criteria": [
+        "可写文案但混用支持未知，提交未就绪",
+        "不把Runway已知混用能力推广此渠道"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "未知参数被判已就绪"
+      ],
+      "media_dependent_checks": [
+        "实际锁图兼容"
+      ]
+    },
+    {
+      "id": "M31",
+      "text_criteria": [
+        "保留60秒，计算20+22+22-2-2",
+        "分清全局、含重叠源局部和新内容局部码",
+        "不把组装称原生一镜或已执行剪辑"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M32",
+      "text_criteria": [
+        "保留两来源及冲突范围，母稿仍25秒",
+        "提交状态待核，不挑宽松上限直接判就绪"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M33",
+      "text_criteria": [
+        "识别重复适配，去重复不再次压缩故事",
+        "无素材时删除多余参考声明本身，不改成如有参考图"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M34",
+      "text_criteria": [
+        "指出用户自相矛盾并区分模型单次限制",
+        "不静默拆段/改时长，不称拼接为原生一镜"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M35",
+      "text_criteria": [
+        "不继承旧模型/渠道/女孩/红伞",
+        "保持通用新作品"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局"
+      ],
+      "media_dependent_checks": []
+    },
+    {
+      "id": "M36",
+      "text_criteria": [
+        "Core仅适配一次，按Production合同在包外完成真实CSV导出",
+        "至少三行稳定镜头记录且时间为0–10/10–20/20–30",
+        "不改另一技能、虚报导出或把任务标已生成"
+      ],
+      "p0_failure_criteria": [
+        "虚构已绑定素材或已执行生成",
+        "擅改用户锁定事件、台词、声音或结局",
+        "仅提供CSV承诺却声称文件已写出"
+      ],
+      "media_dependent_checks": []
+    }
+  ]
+}

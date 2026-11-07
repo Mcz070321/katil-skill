@@ -1,0 +1,60 @@
+{
+  "description": "保留两个未取得旧样本的记录，新增本次已取得视频与用户提供提示词的诊断样本；可用证据范围分别记录，不代表已完成A/B。",
+  "samples": [
+    {
+      "filename": "1000034265.mp4",
+      "attribution": "用户第二版提示词",
+      "attribution_source": "用户口述，2026-11-04",
+      "file_status": "not_obtained",
+      "prompt_status": "not_obtained",
+      "parameters_status": "not_obtained",
+      "observations": null,
+      "usable_as_baseline": false
+    },
+    {
+      "filename": "1000034266.mp4",
+      "attribution": "DeepSeek 与用户融合的提示词",
+      "attribution_source": "用户口述，2026-11-04",
+      "file_status": "not_obtained",
+      "prompt_status": "not_obtained",
+      "related_draft": "同题材《血月傩》30 秒整合版交付稿（工作区文件，未随技能包分发），是否与成片输入逐字一致未确认",
+      "parameters_status": "not_obtained",
+      "observations": null,
+      "usable_as_baseline": false
+    },
+    {
+      "filename": "1000034429.mp4",
+      "attribution": "用户报告为KATIL V3.6.2实战片，并在本会话提供对应提示词",
+      "attribution_source": "用户会话，2026-11-05",
+      "file_status": "obtained_in_session_not_bundled",
+      "prompt_status": "user_provided_in_session_excerpt_bundled",
+      "prompt_excerpt": "tests/fixtures/temple_battle_excerpt.md",
+      "reference_images_status": "本次会话未取得用于该片的两张原始角色图",
+      "parameters_status": "模型、版本、种子、参考绑定与总生成次数未知",
+      "file_metadata": {
+        "duration_seconds": 30.048005,
+        "width": 1470,
+        "height": 630,
+        "fps": 24
+      },
+      "observations": {
+        "evidence": "全片稀疏抽帧与关键段密集抽帧，不等于原速观看",
+        "visible": [
+          "人物保持两名主要交战者，祭庙中有香炉破坏与倒柱残留",
+          "约25秒可见刺入，随后接较横向彩色剑气与敌人倒地；与原稿唯一右下向左上终斩存在差异",
+          "已查看抽帧中的环境异变与前中段水墨表现弱于原稿要求"
+        ],
+        "unknown": [
+          "原速动作流畅度与停滞时长",
+          "音效、配乐和音画同步",
+          "未覆盖原始全部帧，不能排除极短冲击帧",
+          "参考图是否有原样插帧及武器设计是否完全一致",
+          "输出偏差的具体根因"
+        ]
+      },
+      "usable_as_baseline": false
+    }
+  ],
+  "ab_comparison": "not_performed",
+  "note": "旧样本可以按已取得的证据范围诊断；规则或版本提升仍需固定任务、素材、模型与参数，多次新生成并实际观看。"
+}

@@ -1,0 +1,97 @@
+{
+  "description": "保留V3.6.1与V3.6.2历史任务，新增V3.6.2与V3.6.3祭庙战对照。均为待执行任务；未实际生成并观看前保持PENDING_VIDEO。",
+  "cases": [
+    {
+      "id": "G01",
+      "label": "样本A 悬空古城战斗",
+      "request": "悬空古城上的双人战斗，双方主动攻防、兵器接触，特效遮挡中仍能看清破防与最终击中。",
+      "focus": [
+        "双方主动攻防",
+        "兵器接触与受力",
+        "特效遮挡下的关键变化",
+        "破防与最终击中"
+      ],
+      "positive_control": false,
+      "comparison": "V3.6.1 vs V3.6.2",
+      "runs_min": 3,
+      "evidence_required": true,
+      "legacy_sample": {
+        "filename": "1000034265.mp4",
+        "attribution": "用户第二版提示词",
+        "attribution_source": "用户口述，2026-11-04",
+        "file_status": "not_obtained",
+        "original_prompt": "未取得",
+        "known_parameters": "未取得",
+        "usable_as_baseline": false,
+        "note": "归属已按用户口述记录，但文件、原始提示词与生成参数均未取得；只能作为失败方向参考，不能当作 V3.6.1 基线。"
+      }
+    },
+    {
+      "id": "G02",
+      "label": "样本B 傩庙融合战斗",
+      "request": "傩庙内斩鬼师与血傀的融合战斗，彩色水墨特效与恐怖压迫，空间在庙内、纸扎长街与血河间转场，终幕不得提前停滞。",
+      "focus": [
+        "彩色水墨材质是否被泛化成普通光效",
+        "恐怖压迫与空间转场",
+        "尾段是否过早进入胜利姿态",
+        "终幕动作是否真正完成"
+      ],
+      "positive_control": false,
+      "comparison": "V3.6.1 vs V3.6.2",
+      "runs_min": 3,
+      "evidence_required": true,
+      "legacy_sample": {
+        "filename": "1000034266.mp4",
+        "attribution": "DeepSeek 与用户融合的提示词",
+        "attribution_source": "用户口述，2026-11-04",
+        "file_status": "not_obtained",
+        "original_prompt": "未取得原始输入文本",
+        "related_draft": "同题材《血月傩》30 秒整合版交付稿（工作区文件，未随技能包分发），是否与成片输入逐字一致未确认",
+        "known_parameters": "未取得",
+        "usable_as_baseline": false,
+        "note": "归属已按用户口述记录；交付稿只能作为同题材参考，不能冒充原始提示词，也不能当作 V3.6.1 基线。"
+      }
+    },
+    {
+      "id": "G03",
+      "label": "样本C 高密度但因果清楚",
+      "request": "30 秒高密度连续动作，双方高速移动、多次攻防且因果清楚；每个主要阶段都有主动目标、行动、对手反应与战局变化。",
+      "focus": [
+        "动作密度是否被新规则过度压缩",
+        "每个阶段是否仍有主动目标→行动→反应→战局变化",
+        "是否变慢、变平淡"
+      ],
+      "positive_control": true,
+      "comparison": "V3.6.1 vs V3.6.2",
+      "runs_min": 3,
+      "evidence_required": true,
+      "baseline_note": "正向对照，用于发现为了减少无效运动而误删有效攻防的回归。"
+    },
+    {
+      "id": "G04",
+      "label": "祭庙双兵器战与强效果保留",
+      "request": "严格30秒：斩鬼师对祭祀鬼武士，连续极速攻防，主角右手单刃刀、腰侧空鞘，鬼武士双手月牙戟与左后腰笼锤。普通参考图只用于一致性，不直接入帧。每次攻击有彩色水墨，多次全画幅冲击帧；祭庙先异变阴殿、再折为棺井，地标与损坏持续；最终只完成一次右下至左上的终斩，同一次剑气造成宏观破坏，保留倒地、兵器落点和主角受伤喘息。战术细节可自行设计。",
+      "focus": [
+        "顺序动作是否承载得下，是否用停滞或省略关键接触补偿",
+        "关键破防与终斩因果、双兵器取用、手脚及支点转换",
+        "极速、高强度水墨、多次全画幅冲击帧、两次异变是否保留并可辨",
+        "终斩是否被改成额外刺击接另一击，刀路与后果是否连续",
+        "身份、腰侧空鞘、伤势、建筑与兵器尾态是否持续"
+      ],
+      "positive_control": true,
+      "comparison": "V3.6.2 vs V3.6.3",
+      "runs_min": 3,
+      "evidence_required": true,
+      "diagnostic_source": "tests/fixtures/temple_battle_excerpt.md",
+      "reference_status": "需补齐同一组原始角色图并固定绑定；本包不含角色参考图",
+      "source_sample": {
+        "filename": "1000034429.mp4",
+        "prompt_status": "用户已在会话提供对应提示词；测试附件只保留标明范围的节选",
+        "parameters_status": "生成模型、版本、种子、绑定和生成次数未知；文件编码信息不等于生成参数",
+        "evidence_level": "抽帧与密集抽帧；未验证原速流畅度或音画同步",
+        "usable_as_controlled_baseline": false
+      },
+      "baseline_note": "旧视频仅用于诊断。两版须从相同任务与素材新生成，不拿已挑选旧片冒充同条件基线。不得给旧片补造模型设置。"
+    }
+  ]
+}

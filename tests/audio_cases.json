@@ -1,0 +1,61 @@
+{
+  "description": "V3.6.2 声音默认判断样本：检查是否按任务目的分型，而不是统一无 BGM；只提供输入与预期，需独立判断。",
+  "cases": [
+    {
+      "id": "A01",
+      "request": "为一首已发行的电子流行歌曲做 30 秒 MV，歌曲本身未指定。",
+      "intent": "让音乐成为结构和剪辑的一部分",
+      "expected_decision": "music_led",
+      "required_behavior": [
+        "按歌曲类型、节拍与段落功能组织画面",
+        "音乐与剪辑点同步"
+      ],
+      "forbidden_behavior": [
+        "擅自指定一首具体歌曲",
+        "改成无音乐的纯环境声版本"
+      ]
+    },
+    {
+      "id": "A02",
+      "request": "恐怖短片，只用环境声、心跳和脚步，不要配乐。",
+      "intent": "用声音设计积累压迫",
+      "expected_decision": "sound_design_led",
+      "required_behavior": [
+        "保留环境声、心跳与脚步",
+        "按恐怖节奏安排静默"
+      ],
+      "forbidden_behavior": [
+        "擅自加入旋律配乐",
+        "用音乐替代声音设计"
+      ]
+    },
+    {
+      "id": "A03",
+      "request": "15 秒运动鞋广告，明确要求按鼓点卡点剪辑，产品在第三次重拍出现。",
+      "intent": "用节奏强化产品记忆点",
+      "expected_decision": "music_led",
+      "required_behavior": [
+        "音乐节拍驱动剪辑",
+        "第三次重拍对应产品出现"
+      ],
+      "forbidden_behavior": [
+        "去掉音乐只留环境声",
+        "把产品出现放在任意节拍"
+      ]
+    },
+    {
+      "id": "A04",
+      "request": "纪录片片段：夜班护士的十二小时，无配乐、无旁白。",
+      "intent": "让观众理解她的工作与选择",
+      "expected_decision": "information_led",
+      "required_behavior": [
+        "保留同期声与环境声",
+        "信息由画面和人物原话承载"
+      ],
+      "forbidden_behavior": [
+        "擅自加入配乐或旁白",
+        "用音乐替人物下结论"
+      ]
+    }
+  ]
+}
