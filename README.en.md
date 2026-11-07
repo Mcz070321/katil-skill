@@ -9,6 +9,7 @@
   <p>
     <a href="README.md"><b>中文</b></a> ·
     <a href="SKILL.md">Skill entry</a> ·
+    <a href="docs/requirement-optimizer.en.md">Requirement optimizer</a> ·
     <a href="CHANGELOG.md">Changelog</a> ·
     <a href="#quick-start">Quick start</a>
   </p>
@@ -97,6 +98,23 @@ Say **KATIL** or **提示词 skill** in the conversation, or simply describe the
 
 What you should get: a confirmed task contract → at most one necessary follow-up question → character / location / video prompts → a Chinese copy block plus an equivalent English copy block → a short pre-delivery self-check kept outside the blocks.
 
+## Companion tool: the requirement optimizer
+
+Half of what KATIL can do is set by the request you give it. If all you have is one idea, a pile of scattered notes, an old prompt, a passage of source prose or feedback on a generation, run it through the companion **requirement optimizer** first and hand KATIL something it can execute.
+
+- Chinese edition: [docs/requirement-optimizer.md](docs/requirement-optimizer.md)
+- English edition: [docs/requirement-optimizer.en.md](docs/requirement-optimizer.en.md)
+
+Three steps:
+
+1. Give the file to any text-capable AI as its working rules for this round; upload it directly in chats that accept files.
+2. State your raw idea. If you have source text, reference images, a previous prompt or a generated result, provide the actual content with it.
+3. Send the single code block it returns to the assistant running KATIL-skill, re-attaching the same material.
+
+It works on the layer *above* the skill — the "I can't say what I want" layer. It splits a vague request into goal and experience, must-keep items, focus areas, design latitude and delivery scope, and keeps hard constraints, preferences and undetermined details apart. It will not write your storyboard, invent plot you never mentioned, or lock a duration or aspect ratio you never specified.
+
+Two boundaries worth stating: the optimizer produces a **requirement brief for KATIL**, not a final video prompt, and it neither carries attachments nor installs KATIL. The file itself notes that it was organised from the V3.7.2 working method — if your KATIL is newer, the rules of the installed skill and your request for that round win.
+
 ## What the output looks like
 
 The blocks below are a **format illustration** — they show event order, positive description and the Chinese/English correspondence. They are not a quality claim.
@@ -175,7 +193,8 @@ katil-skill/
 │  └─ model-capabilities/seedance-2.5.json
 ├─ rules/rule-registry.yaml  9 authoritative rules with summary hashes
 ├─ scripts/                7 validation / lookup scripts
-├─ tests/                  166 software tests, 100 regression cases and fixtures
+├─ tests/                  167 software tests, 100 regression cases and fixtures
+├─ docs/                   Companion tool: the requirement optimizer (zh + en)
 └─ assets/                 Icon and bilingual banners
 ```
 
