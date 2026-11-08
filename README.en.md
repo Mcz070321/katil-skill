@@ -15,11 +15,11 @@
   </p>
 
   <p>
-    <a href="https://github.com/Mcz070321/katil-skill/releases"><img alt="version 3.7.5" src="https://img.shields.io/badge/version-3.7.5-2f2f2f?style=flat-square"></a>
+    <a href="https://github.com/Mcz070321/katil-skill/releases"><img alt="version 3.9.0" src="https://img.shields.io/badge/version-3.9.0-2f2f2f?style=flat-square"></a>
     <img alt="MIT license" src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square">
     <a href="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml"><img alt="checks passing" src="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml/badge.svg"></a>
-    <img alt="167 tests passed" src="https://img.shields.io/badge/tests-167%20passed-2ea44f?style=flat-square">
-    <img alt="200 abilities" src="https://img.shields.io/badge/abilities-200-8957e5?style=flat-square">
+    <img alt="184 tests" src="https://img.shields.io/badge/tests-184-2ea44f?style=flat-square">
+    <img alt="240 abilities" src="https://img.shields.io/badge/abilities-240-8957e5?style=flat-square">
     <img alt="60 styles" src="https://img.shields.io/badge/styles-60-d29922?style=flat-square">
   </p>
 </div>
@@ -41,7 +41,7 @@ It also assumes no model. The default output is platform-agnostic; the Seedance 
 - **Not a genre template pack.** There is no "action template" or "horror template" to fill in; modules load on demand, and each decision domain has exactly one lead.
 - **Not a prompt beautifier.** It changes events, causality, observation paths and capacity — not adjectives.
 - **Not a video model or an editor.** It does not generate video, transcode files, or repair media.
-- **It does not promise what it cannot show.** Without an actual generation and a real viewing pass, it will not claim the footage improved.
+- **It does not promise what it cannot show.** Every conclusion carries an evidence level (EV0–EV3): a structural pass is written as "structure passes", and without a real generation watched end to end it never becomes "the footage improved". Rules: [references/evidence-and-claims.md](references/evidence-and-claims.md).
 
 > **Language note:** the skill body — `SKILL.md`, references and rules — is authored in Chinese and is the canonical source. Delivered prompts are bilingual by default (a complete Chinese block and a complete English block). You can write requests in English; the reference documents themselves are not translated.
 
@@ -65,6 +65,7 @@ It also assumes no model. The default output is platform-agnostic; the Seedance 
 6. **Independent bilingual copy blocks** — every segment gets one complete, clean, paste-ready block per language. The English block is not a summary; changing either version means updating the other.
 7. **Repair before delivery** — capacity, state continuity, hand occupancy and support points, and end-state support are checked item by item. Found conflicts are fixed in the prompt body, not noted internally.
 8. **Layered acceptance** — text acceptance can run now; video acceptance requires a real generation and a real viewing pass. They are recorded separately, and small samples are marked "uncertain".
+9. **Evidence levels (EV0–EV3)** — design, text-and-structure, single-generation observation, and repeated same-condition blind review are labelled separately: an EV1 structural PASS never becomes a footage PASS, and anything not watched in full stays "pending". Model facts are likewise split into official documentation, platform measurements and unverified assumptions; official docs alone cannot justify "compatible".
 
 ## Quick start
 
@@ -139,9 +140,9 @@ A few deliberate choices: no timecodes, no adjective stacking, no "do not…" ex
 
 ## Ability and style libraries
 
-- **200 character-ability cards (C01–C20)** — across realistic, sci-fi and fantasy worlds. Each card is organised as mechanism and use / action and response / effect description / limits and counters / camera and sound / residue and continuity, so an ability is never a cost-free win button.
+- **240 ability cards (C01–C24)** — C01–C20 are character abilities across realistic, sci-fi and fantasy worlds; C21–C24 add non-combat screen effects for any genre: commercial macro and product effects, natural phenomena and macro spectacle, dream logic and surreal transitions, and uncanny folklore atmospheres. Each card is organised as mechanism and use / action and response / effect description / limits and counters / camera and sound / residue and continuity, so an ability is never a cost-free win button.
 - **60 visual-style recipes (F01–F10)** — from live-action documentary to Japanese 2D animation, traditional painting media, stop motion and experimental hybrid work. Each recipe ships character-image, location-image and video style fragments **in both Chinese and English**.
-- **9 authoritative rules** — with SHA-256 provenance and summary blocks, in [rules/rule-registry.yaml](rules/rule-registry.yaml).
+- **10 authoritative rules** — with SHA-256 provenance and summary blocks, in [rules/rule-registry.yaml](rules/rule-registry.yaml). EVIDENCE 1.0.0 defines the evidence levels and the boundaries of release claims.
 
 Both libraries are read-only lookups; you never have to open the full JSON:
 
@@ -176,9 +177,9 @@ F06 日式二维动画: S031-S036
 katil-skill/
 ├─ SKILL.md                Skill entry: the nine-step flow and the "read by task" routing table
 ├─ manifest.yaml           Version, compatibility range, validation scope (machine-readable)
-├─ CHANGELOG.md            Version history (currently 3.7.5)
+├─ CHANGELOG.md            Version history (currently 3.9.0)
 ├─ agents/openai.yaml      Runtime manifest: display name, summary, default prompt
-├─ references/             37 topic documents + 3 data directories
+├─ references/             41 topic documents + 3 data directories
 │  ├─ general-creative-core.md      Task contract, module authority, TIME rules
 │  ├─ action-and-shot-compiler.md   Action staging and critical causality
 │  ├─ narrative-and-performance.md  Drama, dialogue, relationships
@@ -188,12 +189,13 @@ katil-skill/
 │  ├─ sound-and-rhythm.md           Four sound layers and rhythm
 │  ├─ prompt-delivery-and-language.md  Copy blocks, bilingual delivery, locked dialogue
 │  ├─ general-acceptance.md / video-acceptance-testing.md  Two acceptance levels
-│  ├─ ability-library/abilities.json    200 ability cards
+│  ├─ evidence-and-claims.md        Evidence levels EV0–EV3 and claim boundaries
+│  ├─ ability-library/abilities.json    240 ability cards
 │  ├─ style-library/styles.json         60 style cards
 │  └─ model-capabilities/seedance-2.5.json
-├─ rules/rule-registry.yaml  9 authoritative rules with summary hashes
+├─ rules/rule-registry.yaml  10 authoritative rules with summary hashes
 ├─ scripts/                7 validation / lookup scripts
-├─ tests/                  167 software tests, 100 regression cases and fixtures
+├─ tests/                  184 software tests, 117 regression cases and fixtures
 ├─ docs/                   Companion tool: the requirement optimizer (zh + en)
 └─ assets/                 Icon and bilingual banners
 ```
@@ -211,25 +213,25 @@ python scripts/style_library.py --validate
 python scripts/run_regression.py --cases tests --out regression_result.json
 ```
 
-Current state (2026-11-07; run locally on Windows 11 / Python 3.12.7 / pytest 7.4.4, with the same checks on GitHub Actions Linux + Python 3.12):
+Current state (2026-11-08; run locally on Windows 11 / Python 3.12.7 / pytest 7.4.4, with the same checks on GitHub Actions Linux + Python 3.12):
 
 | Check | Result |
 | --- | --- |
-| `pytest tests` | **167 passed** (Linux CI, symlink case included); **166 passed, 1 skipped** (Windows, local) |
-| `rule_registry_check.py` | PASS, 9 rules; semantic equivalence UNKNOWN (manual review required) |
+| `pytest tests` | **184 passed** (Linux CI, symlink case included); **183 passed, 1 skipped** (Windows, local) |
+| `rule_registry_check.py` | PASS, 10 rules; semantic equivalence UNKNOWN (manual review required) |
 | `model_profile_check.py` | PASS (structure and provenance links only); semantic_support is always UNKNOWN |
-| `ability_library.py --validate` | PASS, 200 entries, C01–C20 |
+| `ability_library.py --validate` | PASS, 240 entries, C01–C24 |
 | `style_library.py --validate` | PASS, 60 entries, F01–F10 |
-| `run_regression.py` | 100 cases structurally checked: 96 UNKNOWN + 4 PENDING_VIDEO |
+| `run_regression.py` | 117 cases structurally checked: 111 UNKNOWN + 6 PENDING_VIDEO |
 
-**The boundary, stated up front:** everything above is text-level and software-level validation. `validation_scope` in [manifest.yaml](manifest.yaml) says it plainly — `E1: fixed text tasks and software tests; no real-model/video claim`. This repository ships no real-model generation or footage-review evidence, and does not treat "structure checks pass" as "the picture got better". The historical evidence folders referenced in `tests/README.md` (`results/v3.x`) were offline release records and are not distributed with the skill package.
+**The boundary, stated up front:** everything above is text-level and software-level validation, recorded as **EV1** under the [evidence levels](references/evidence-and-claims.md). `validation_scope` in [manifest.yaml](manifest.yaml) says it plainly — `EV1: fixed text tasks and software tests; no real-model/video claim`. This repository ships no real-model generation or footage-review evidence, and does not treat "structure checks pass" as "the picture got better". Structured acceptance cases (T34–T43, C04) additionally carry `must_hold` / `must_reject` assertions; missing, duplicated or intersecting arrays are treated as structural errors. The historical evidence folders referenced in `tests/README.md` (`results/v3.x`) were offline release records and are not distributed with the skill package.
 
 ## Version and compatibility
 
-- Current version **3.7.5** (2026-11-07), release channel `stable`
+- Current version **3.9.0** (2026-11-08), release channel `stable`
 - Compatibility: `compatible_core: ">=3.7.0,<4.0.0"`
-- Ability library 1.8.0 / style library 1.9.0
-- History in [CHANGELOG.md](CHANGELOG.md); scope of this release in [references/release-v3.7.5.md](references/release-v3.7.5.md)
+- Ability library 2.0.0 (240 entries) / style library 1.9.0 (60 entries)
+- History in [CHANGELOG.md](CHANGELOG.md); scope of this release in [references/release-v3.9.0.md](references/release-v3.9.0.md)
 - Rule governance and hash synchronisation in [references/rule-registry-maintenance.md](references/rule-registry-maintenance.md)
 
 ## FAQ
@@ -267,7 +269,7 @@ Code and documentation are MIT — see [LICENSE](LICENSE). Rights to the images,
 <details>
 <summary><b>Why is there no before/after comparison in the README?</b></summary>
 
-Because no same-task, same-model-version, multi-generation A/B has been run and watched. Putting a cherry-picked clip here as proof is exactly what this project argues against. To evaluate it, run your own A/B following [references/video-acceptance-testing.md](references/video-acceptance-testing.md) — and accept that a small sample cannot establish statistical significance.
+Because no same-task, same-model-version, multi-generation A/B has been run and watched. Putting a cherry-picked clip here as proof is exactly what this project argues against — under the 3.9.0 evidence levels it would not even reach EV2. To evaluate it, run your own A/B following [references/video-acceptance-testing.md](references/video-acceptance-testing.md) — and accept that a small sample cannot establish statistical significance.
 </details>
 
 ## Contributing
@@ -292,5 +294,5 @@ Third-party visual and VFX study sources are listed in [references/style-study-s
 ---
 
 <div align="center">
-  <sub>KATIL-skill · V3.7.5 · Storyboards written for people, instructions written for models.</sub>
+  <sub>KATIL-skill · V3.9.0 · Storyboards written for people, instructions written for models.</sub>
 </div>

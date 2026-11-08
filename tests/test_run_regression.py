@@ -13,7 +13,7 @@ MEDIA_CACHE = tempfile.TemporaryDirectory(prefix='katil-unit-media-')
 
 
 def run_runner(cases, responses=None, prompts=None):
-    args = [sys.executable, str(SCRIPT), '--cases', str(cases)]
+    args = [sys.executable, '-B', str(SCRIPT), '--cases', str(cases)]
     if responses is not None:
         args += ['--responses', str(responses)]
     if prompts is not None:
@@ -24,7 +24,7 @@ def run_runner(cases, responses=None, prompts=None):
 
 def write_minimal_suite(root):
     routing = []
-    for i in range(1, 17):
+    for i in range(1, 21):
         case = {
             'id': i,
             'request': '用例 %d' % i,
@@ -32,7 +32,7 @@ def write_minimal_suite(root):
             'prohibited_or_caution': '无',
         }
         if i >= 13:
-            case['concept_mode'] = ['约束型', '约束型', '极简型', '作者型'][i - 13]
+            case['concept_mode'] = ['约束型', '约束型', '极简型', '作者型', '约束型', '约束型', '极简型', '作者型'][i - 13]
         routing.append(case)
     (root / 'routing_cases.json').write_text(json.dumps({'cases': routing}, ensure_ascii=False), encoding='utf-8')
     (root / 'execution_cases.json').write_text(json.dumps({'cases': [
@@ -120,9 +120,9 @@ class RunnerTests(unittest.TestCase):
         proc, report = run_runner(ROOT / 'tests')
         self.assertEqual(proc.returncode, 0, proc.stderr)
         self.assertEqual(report['suite']['status'], 'PASS')
-        self.assertEqual(len(report['results']), 100)
-        self.assertEqual(report['summary']['UNKNOWN'], 96)
-        self.assertEqual(report['summary']['PENDING_VIDEO'], 4)
+        self.assertEqual(len(report['results']), 117)
+        self.assertEqual(report['summary']['UNKNOWN'], 111)
+        self.assertEqual(report['summary']['PENDING_VIDEO'], 6)
         self.assertEqual(report['summary']['PASS'], 0)
 
     def test_minimal_suite_is_valid(self):
@@ -393,7 +393,7 @@ from run_regression import build_results
 class LocalRepairTests(unittest.TestCase):
     def test_registry_runs_under_non_utf8_default(self):
         env = dict(os.environ, PYTHONUTF8='0', PYTHONIOENCODING='utf-8')
-        result = subprocess.run([sys.executable, str(ROOT / 'scripts/rule_registry_check.py')],
+        result = subprocess.run([sys.executable, '-B', str(ROOT / 'scripts/rule_registry_check.py')],
                                 cwd=ROOT, env=env, capture_output=True, text=True, encoding='utf-8')
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
@@ -467,13 +467,26 @@ def add_adaptation(root):
     return path,data
 
 class AdaptationRegressionTests(unittest.TestCase):
-    def test_real_suite_has_100_pending_tasks(self):
+    def test_real_suite_has_117_pending_tasks(self):
         proc,report=run_runner(ROOT/'tests')
         self.assertEqual(proc.returncode,0,proc.stderr)
-        self.assertEqual(len(report['results']),100)
+        self.assertEqual(len(report['results']),117)
         self.assertEqual(report['suite']['counts']['adaptation'],36)
-        self.assertEqual(report['summary']['UNKNOWN'],96)
-        self.assertEqual(report['summary']['PENDING_VIDEO'],4)
+        self.assertEqual(report['suite']['counts']['generation'],6)
+        self.assertEqual(report['summary']['UNKNOWN'],111)
+        self.assertEqual(report['summary']['PENDING_VIDEO'],6)
+
+    def test_structured_case_requires_both_assertion_fields(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);write_minimal_suite(root)
+            path=root/'execution_cases.json'
+            data=json.loads(path.read_text(encoding='utf-8'))
+            data['cases'].append({'id':'T34','request':'一次带墨色剑气的斩击','criteria':['源头、路径与兑现可见'],'must_hold':['剑气从刀锋离体并落到目标']})
+            path.write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
+            proc,report=run_runner(root)
+            self.assertEqual(proc.returncode,2,proc.stderr)
+            self.assertEqual(report['suite']['status'],'FAIL')
+            self.assertTrue(any('T34' in finding and 'must_reject' in finding for finding in report['suite']['findings']),report['suite']['findings'])
 
     def invalid_case(self,mutate):
         with tempfile.TemporaryDirectory() as tmp:
@@ -540,7 +553,7 @@ class V375ToolingAndLibraryTests(unittest.TestCase):
             reg_path.write_text(json.dumps(data, ensure_ascii=False), encoding='utf-8')
             self.assertTrue(check(r))
             synced = sync(r)
-            self.assertEqual(len(synced), 9)
+            self.assertEqual(len(synced), 10)
             self.assertEqual(check(r), [])
 
     def test_consolidated_ability_and_style_libraries_validate(self):
@@ -549,11 +562,37 @@ class V375ToolingAndLibraryTests(unittest.TestCase):
         ab_cat, ab_cards = ability_library.load_library()
         ab_res = ability_library.validate(ab_cat, ab_cards)
         self.assertEqual(ab_res['result'], 'PASS')
-        self.assertEqual(ab_res['count'], 200)
+        self.assertEqual(ab_res['count'], 240)
         st_cat, st_cards = style_library.load_library()
         st_res = style_library.validate(st_cat, st_cards)
         self.assertEqual(st_res['result'], 'PASS')
         self.assertEqual(st_res['count'], 60)
+
+    def test_v380_all_240_cards_and_index_lint_clean(self):
+        import ability_library
+        import block_lint
+        ab_cat, ab_cards = ability_library.load_library()
+        self.assertEqual(len(ab_cat['categories']), 24)
+        for card in ab_cards:
+            txt = "```\n分镜01：" + " ".join([card["mechanism"], card["action"], card["vfx"], card["counter_limit"], card["camera_sound"], card["residue"]]) + "\n```"
+            rep = block_lint.inspect(txt, timing_policy="forbid")
+            t_findings = [f for f in rep["groups"][0]["timing"]["findings"] if "没有可识别的时间区间" not in f and "未提供目标时长" not in f]
+            self.assertEqual(t_findings, [], f"Card {card['id']} triggered timing findings: {t_findings}")
+            self.assertEqual(rep["checks"]["timing_policy"]["findings"], [], f"Card {card['id']} triggered timing_policy")
+            self.assertEqual(rep["checks"]["duplicated_or_internal_text"]["findings"], [], f"Card {card['id']} triggered purity findings")
+        idx_text = (ROOT / "references/ability-library/index.md").read_text(encoding="utf-8")
+        self.assertIn("共240种，24类，每类10种；ID为A001—A240", idx_text)
+        for i in range(1, 25):
+            self.assertIn(f"| C{i:02d} ", idx_text)
+            self.assertIn(f"### C{i:02d} ", idx_text)
+
+    def test_v381_a224_name_is_canonical_in_card_and_index(self):
+        import ability_library
+        _, cards = ability_library.load_library()
+        a224 = next(card for card in cards if card['id'] == 'A224')
+        self.assertEqual(a224['name'], '走廊重力翻转')
+        idx_text = (ROOT / 'references/ability-library/index.md').read_text(encoding='utf-8')
+        self.assertIn('A224 走廊重力翻转；', idx_text)
 
 
 if __name__ == '__main__':

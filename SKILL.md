@@ -2,17 +2,17 @@
 name: katil-skill
 description: Use when 用户说“提示词skill／提示词 skill／KATIL”，指定Seedance 2.5影视提示词，或需要通用 AI 影视创作与导演：电影分镜、剧情短片、文戏表演、动作战斗、恐怖悬疑、爱情、科幻奇幻、现实主义、广告、动画、故事板、长视频及配套角色／场景图提示词。纯转码、压缩和文件修复不触发影视创作。
 metadata:
-  integration-version: "3.7.5"
-  integration-revision: "v3.7.5-slim-and-tooling-2026-11-07"
+  integration-version: "3.9.0"
+  integration-revision: "v3.9.0-evidence-and-delivery-2026-11-08"
   display-name: "KATIL-skill"
   user-alias: "提示词skill"
-  ability-count: "200"
+  ability-count: "240"
   style-count: "60"
-  ability-library-version: "1.8.0"
+  ability-library-version: "2.0.0"
   style-library-version: "1.9.0"
 ---
 
-# KATIL-skill V3.7.5 · 通用导演核心与 Seedance 2.5 按需适配
+# KATIL-skill V3.9.0 · 通用导演核心与 Seedance 2.5 按需适配
 
 KATIL 是**通用 AI 影视创作与导演系统**，不是动作、高速战斗或某一种画风的专用模板。它先理解这次要创作什么，再按维度给模块分配决策权；不预设题材、画风、速度、特效强度或镜头语言。动作、恐怖、爱情、广告、动画都只是可选维度；通用核心负责理解、编排、裁决与验收，专业模块负责深度。
 
@@ -35,7 +35,7 @@ KATIL 是**通用 AI 影视创作与导演系统**，不是动作、高速战斗
    - **空间模式与战术意图锁定：** 空间先选 S1 屏幕坐标（默认，表演／动作／普通叙事）、S2 世界坐标（建筑／产品／科学可视化，可用尺寸与方位）、S3 混合（复杂动作／巨物／空战，内部世界图＋屏幕投影）；180 度轴线是 S1／S3 保持方向感的基线，支持有可见证据的动态越轴，实验／梦境／蒙太奇可以有意打破。动作交锋中**锁定角色的战术意图与敌我相对参照**（明确区分“迎敌前压、后撤卸力、诱敌拉扯、绕背换位、转身撤离”并保留可见对手／地标参照，避免“同一瞬间进退混写”或“无参照迎面空跑”造成像逃跑又像进攻的误导）。
    - **视觉材质：** 指定水墨、流体、手绘、定格或混合媒介时按需读[视觉材质与媒介语法](references/visual-material-grammar.md)，核对形态、演化和互动；不把风格名当作效果本身。
    - **声音与节奏：** 声音分对白、环境、动作／Foley、音乐四层；声音目的（音乐主导／声音设计主导／信息主导／未指定）与文字按[默认矩阵](references/defaults-and-medium.md)判断。运镜、空间与声音分别读[导演运镜](references/camera-direction.md)、[空间描述三模式](references/spatial-coordinate-system.md)、[声音与节奏](references/sound-and-rhythm.md)。
-7. **按通用标准验收，冲突先返修再交付。** 成稿前执行[镜头执行契约](references/shot-execution-contract.md)的“容量与交付前返修”；动作加查[动作编排](references/action-and-shot-compiler.md)的关键因果、手脚与支点占用，多种强效果并存按[特效与受创](references/effects-and-damage.md)组织主次。保留用户指定速度、强度、材质与必经事件，先优化技能自行补全的编排；已发现的过载或状态冲突不能原样交付。日常创作执行跨类型轻量质量自检（核对契约完整性、意图、叙事、人物、空间、风格、时长承载、声音、可执行性与动作方向／接触／尾态）；需要做系统性验收、版本横向评测、同条件 A/B 或路由抽检时，分别读取[通用验收](references/general-acceptance.md)、[动作视频验收](references/video-acceptance-testing.md)与[路由回归](references/routing-regression.md)；抽检时用 `tests/routing_cases.json` 的固定样本作输入，样本只提供输入与预期，不代表已通过。文字验收与视频验收分开；未实际生成并观看，不宣称成片改善。按下一步判断是否需要模型执行适配，再按[完整复制块](references/prompt-delivery-and-language.md)编交付正文；推演与自检留块外。
+7. **按通用标准验收，冲突先返修再交付。** 成稿前执行[镜头执行契约](references/shot-execution-contract.md)的“容量与交付前返修”；动作加查[动作编排](references/action-and-shot-compiler.md)的关键因果、手脚与支点占用，多种强效果并存按[特效与受创](references/effects-and-damage.md)组织主次。保留用户指定速度、强度、材质与必经事件，先优化技能自行补全的编排；已发现的过载或状态冲突不能原样交付。日常创作执行跨类型轻量质量自检（核对契约完整性、意图、叙事、人物、空间、风格、时长承载、声音、可执行性与动作方向／接触／尾态）；需要做系统性验收、版本横向评测、同条件 A/B 或路由抽检时，分别读取[通用验收](references/general-acceptance.md)、[动作视频验收](references/video-acceptance-testing.md)与[路由回归](references/routing-regression.md)；抽检时用 `tests/routing_cases.json` 的固定样本作输入，样本只提供输入与预期，不代表已通过。文字验收与视频验收分开；未实际生成并观看，不宣称成片改善。需要写发布结论、版本对比或跨模型证据声明时，按[证据等级与声明边界](references/evidence-and-claims.md)标注 EV0–EV3，不把结构 PASS 写成成片 PASS。按下一步判断是否需要模型执行适配，再按[完整复制块](references/prompt-delivery-and-language.md)编交付正文；推演与自检留块外。
 8. **按需模型适配。** 已明确目标模型时按下方适配路由选择内置模块；未指定模型不加载。适配在导演设计后重组执行表达，保护母稿与用户硬要求，不把渠道参数变成全类型默认。
 9. **按需反馈修订。** 用户提供成片、抽帧、音轨或具体反馈时，按[成片故障诊断](references/video-failure-diagnostics.md)区分观察、推断与不确定，定位最小失败接点；未提供结果不自动进行此步，不虚报重测。
 
@@ -70,9 +70,10 @@ KATIL 是**通用 AI 影视创作与导演系统**，不是动作、高速战斗
 | 素材职责、锁帧、编辑或延长 | [参考与任务处理](references/reference-and-task-handling.md) |
 | 用户回传失败结果、局部修订 | [反馈修订](references/feedback-repair.md) |
 | 通用文字验收、类型专项检查、版本横向比较 | [通用验收](references/general-acceptance.md) |
+| 发布结论、证据等级、跨模型能力来源声明 | [证据等级与声明边界](references/evidence-and-claims.md) |
 | 实际动作视频验收、版本 A/B、失败复现与回归 | [动作视频验收](references/video-acceptance-testing.md) |
 | 跨类型路由回归、版本升级抽检 | [路由回归](references/routing-regression.md) |
-| 风格转换或新能力设计 | [60种风格](references/style-library.md)／[200种能力](references/ability-library.md)，只检索相关卡 |
+| 风格转换、新能力或非战斗视效（微距／天象／转场／怪谈）设计 | [60种风格](references/style-library.md)／[240种能力与全类型视效](references/ability-library.md)，只检索相关卡 |
 | 需要动作具体写法对比 | [局部示例](references/combat-writing-examples.md)，只在动作任务读 |
 
 普通任务从通用核心、多维任务契约与交付开始；条件命中再加专题，不遍历整库。内部兼容模块共用本技能规则。
@@ -81,14 +82,17 @@ KATIL 是**通用 AI 影视创作与导演系统**，不是动作、高速战斗
 
 普通创作只用本入口与命中的专题，交付自然语言提示词。跨集正典、API工程适配、结构化导出或实验评价明确命中时，读取[扩展边界](references/production-boundary.md)；已登记模型的自然语言适配由Core完成。普通任务不探测扩展、注册表或历史账本；扩展缺失不阻止Core创作。
 
-<!-- SUMMARY of ADAPTER@1.2.0 -->
-已有母稿时保留来源并派生执行稿；首轮只要执行稿时先整理契约、事件链、观察点与首尾态，再直接编写并核对。模型适配只重组表达，不静默改动硬要求；默认按指定语言和范围交付事件序执行稿，精确时间范围沿用 TIME 规则。素材、母稿、渠道或模式变化后重核受影响项；文字保真、提交兼容性与真实视频证据分别记录。
-<!-- END SUMMARY of ADAPTER@1.2.0 -->
-<!-- SUMMARY of SEEDANCE@1.2.0 -->
-明确指定Seedance 2.5，或同一作品已确认目标的续段，才读取通用适配与2.5专题；无版本的产品名、否定、比较或资料提及不触发，新作品不继承旧目标。当前只提供自然语言执行适配；渠道未知不套Runway参数，具体模式先核实再写参考声明，未知提交条件不称就绪，不虚构素材键或执行结果。非动作任务按其题材编排，默认按无时间码事件序交付，精确同步、编辑窗口与重叠换算沿用 TIME 规则。
-<!-- END SUMMARY of SEEDANCE@1.2.0 -->
+<!-- SUMMARY of ADAPTER@1.3.0 -->
+已有母稿时保留来源并派生执行稿；首轮只要执行稿时先整理契约、事件链、观察点与首尾态，再直接编写并核对。模型适配只重组表达，不静默改动硬要求；默认按指定语言和范围交付事件序执行稿，精确时间范围沿用 TIME 规则。素材、母稿、渠道或模式变化后重核受影响项；文字保真、提交兼容性与真实视频证据分别记录。模型事实分官方文档、平台实测与未验证假设；官方文档不能单独支撑 COMPATIBLE，兼容需实测或同任务观察。
+<!-- END SUMMARY of ADAPTER@1.3.0 -->
+<!-- SUMMARY of EVIDENCE@1.0.0 -->
+发布、验收与模型来源声明按 EV0–EV3 标注：EV0 设计、EV1 文本与结构、EV2 单次生成观察、EV3 同条件多次加独立盲评。EV1 不得写成视频或模型通过；无视频保持 PENDING_VIDEO；模型事实分 official、platform_measured、unverified_assumption，官方文档不能单独支撑 COMPATIBLE。
+<!-- END SUMMARY of EVIDENCE@1.0.0 -->
+<!-- SUMMARY of SEEDANCE@1.3.0 -->
+明确指定Seedance 2.5，或同一作品已确认目标的续段，才读取通用适配与2.5专题；无版本的产品名、否定、比较或资料提及不触发，新作品不继承旧目标。当前只提供自然语言执行适配；渠道未知不套Runway参数，具体模式先核实再写参考声明，未知提交条件不称就绪，不虚构素材键或执行结果。素材说明写清提取什么、排除什么、是否入帧；时间写法先判事件序还是用户明确锁定秒轴，只给总长不自动切秒轴，不混用。非动作任务按其题材编排，默认按无时间码事件序交付，精确同步、编辑窗口与重叠换算沿用 TIME 规则。
+<!-- END SUMMARY of SEEDANCE@1.3.0 -->
 
-规则的权威定位与摘要版本见 `rules/rule-registry.yaml`，只在维护和冲突审查时读取；版本验收范围见[发布验证](references/release-v3.7.5.md)，仅升级审查时读。机器检查运行 `python scripts/rule_registry_check.py`；维护格式、摘要边界和哈希更新见[注册表维护](references/rule-registry-maintenance.md)。内容完整性通过不证明语义或成片质量。现有摘要只作路由与提醒，细节由对应权威专题裁决；用户明确要求始终优先。
+规则的权威定位与摘要版本见 `rules/rule-registry.yaml`，只在维护和冲突审查时读取；版本验收范围见[发布验证](references/release-v3.9.0.md)，仅升级审查时读。机器检查运行 `python scripts/rule_registry_check.py`；维护格式、摘要边界和哈希更新见[注册表维护](references/rule-registry-maintenance.md)。内容完整性通过不证明语义或成片质量。现有摘要只作路由与提醒，细节由对应权威专题裁决；用户明确要求始终优先。
 
 ## 持续要求
 
@@ -106,9 +110,9 @@ KATIL 是**通用 AI 影视创作与导演系统**，不是动作、高速战斗
 <!-- SUMMARY of SPACE@1.1.0 -->
 - **空间连续。** 空间地标与光源连续。空间交付按 S1／S2／S3：S1 屏幕坐标（画面左／右、前景／中景／远景）与具象地标，不写罗盘方位与抽象米数；S2 世界坐标用于建筑、产品、科学可视化，可按用户要求写尺寸、坐标、楼层与方位；S3 复杂动作／巨物／空战用内部世界图＋屏幕投影，必要时加一句尺度说明。叙事默认保持空间可读；180 度轴线是工具，实验／梦境／蒙太奇可以有意打破，但要让观众感到这是选择而非事故。动作任务中，远程攻防优先前后景同框锚定。
 <!-- END SUMMARY of SPACE@1.1.0 -->
-<!-- SUMMARY of CONTINUITY@1.1.0 -->
-- **身份、持物与视点连续：** 身份、物品数量与受创连续。持物可按剧情换手／收放，先有过程再更新；既定手别优先。严格人眼 POV 不外拍自己，真一镜沿连续机位路径分阶段组织；跨段由准确尾态进入下一动作，局部时间表达沿用 TIME 规则；遮挡保留关键因果的观察依据。
-<!-- END SUMMARY of CONTINUITY@1.1.0 -->
+<!-- SUMMARY of CONTINUITY@1.2.0 -->
+- **身份、持物与视点连续：** 身份、物品数量与受创连续。持物可按剧情换手／收放，先有过程再更新；既定手别优先。严格人眼 POV 不外拍自己；真一镜写清起幅观察状态、主体锁点、转向／航点、环境变化作证，沿连续机位路径分阶段组织；跨段由准确尾态进入下一动作，局部时间表达沿用 TIME 规则；遮挡保留关键因果的观察依据。
+<!-- END SUMMARY of CONTINUITY@1.2.0 -->
 <!-- SUMMARY of SOUND@1.0.0 -->
 - **声音与文字：** 声音与文字按[默认矩阵](references/defaults-and-medium.md)：未经要求不擅自加入音乐、字幕、画面文字与额外旁白，音乐主导、声音设计主导与信息主导任务按目的判断；用户明确指定或原著必要内心声／叙述按原载体保留。
 <!-- END SUMMARY of SOUND@1.0.0 -->

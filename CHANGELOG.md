@@ -1,8 +1,48 @@
+# V3.9.0 · 2026-11-08
+
+- **证据等级（EV0–EV3）**：新增 references/evidence-and-claims.md，区分设计与文本/结构、单次生成观察、同条件盲评；每句结论必须写等级、对象与范围，EV1 不得写成视频或模型通过，结构 PASS 不得改成成片 PASS，无视频保持 PENDING_VIDEO。
+- **模型事实来源分层**：model-adaptation.md 写入 official／platform_measured／unverified_assumption；官方文档只支持 documented，不能单独判 COMPATIBLE；兼容需平台实测或同任务 EV2／EV3，未知数值与未注明来源不得填充。
+- **验收边界**：video-acceptance-testing.md 说明文字验收 EV1、单次全片观察 EV2、同条件多次加盲评 EV3；P0／P1 不定义证据等级。
+- **结构化断言**：T34–T43 与 C04 增加 must_hold／must_reject，run_regression.py 校验两数组非空、无重复、无交集，缺项退出 2。
+- **跨版本对照**：新增 G05（终斩可观察性与后果连续）、G06（高速双人交锋阶段可读性），均为 V3.8.1 对 V3.8.2、runs_min 3，未评审前 PENDING_VIDEO。
+- **注册表**：新增 EVIDENCE 1.0.0，ADAPTER 1.2.0→1.3.0；其余 8 条不变，SKILL.md 摘要、registry 标记与哈希同步。
+- **回归与契约**：新增 tests/test_v390_evidence.py 6 个测试；结构回归117项（111 UNKNOWN＋6 PENDING_VIDEO），单元测试184项（183通过、1跳过）。
+- **版本同步**：主技能与动作入口 3.9.0，revision 为 v3.9.0-evidence-and-delivery-2026-11-08；manifest、agents 描述、库索引标题、回归运行器同步。
+- **验证范围**：文本、结构与软件测试为 EV1；没有真实视频、盲评或艺术质量评审，不声称成片通过。详见 references/release-v3.9.0.md。
+
+# V3.8.2 · 2026-11-08
+
+- **特效规则（E1–E5）**：把源头、路径、兑现点，爆炸三层，峰值身份锚，环境承接写入 effects-and-damage.md；把特效层与实体层的附着边界写入 visual-material-grammar.md。无源全屏光斑、先烟花后补环、峰值丢失主体、只有角色光边均判无效。
+- **动作规则（A1–A4）**：对手按可达状态应答（闪／格／受），命中承认分流、不默认震屏，点名落点决定局部材料与功能，可见打击至少带动一种当场介质；写入 action-and-shot-compiler.md。
+- **镜头与连续（C1–C3）**：每次切镜换观看任务，跨尺度允许硬切并保留共有地标，真一镜写清起幅、主体锁点、航点与环境作证；C1／C2 写入 camera-direction.md，C3 写入 viewpoint-and-continuity.md。
+- **Seedance（S1–S2）**：素材说明写清提取、排除、是否入帧；时间写法在事件序与用户锁定秒轴之间二选一，不混用；写入 seedance-2.5.md。
+- **注册表**：CONTINUITY 1.1.0→1.2.0，SEEDANCE 1.2.0→1.3.0；其余 7 条不变，SKILL.md 摘要与 registry 标记、哈希同步。
+- **回归与契约**：新增 R17–R20、T34–T43、C04 共15条；新增 tests/test_v382_contract.py 8 个契约测试；当前结构回归115项（111 UNKNOWN＋4 PENDING_VIDEO），单元测试177项（176通过、1跳过）。
+- **版本同步**：主技能与动作入口 3.8.2，revision 为 v3.8.2-camera-action-vfx-contracts-2026-11-08；manifest、agents 描述、库索引标题、回归运行器同步。主包与动作入口文件数见发布报告。
+- **验证范围**：文本、结构与软件测试为 E1；没有真实视频、盲评或艺术质量评审，不声称成片通过。详见 references/release-v3.8.2.md。
+
+# V3.8.1 · 2026-11-08
+
+- **卡名与发布说明对齐**：A224 在 `abilities.json` 与 `ability-library/index.md` 统一为「走廊重力翻转」；`release-v3.8.0.md` 的 C23 描述改为实际卡名「镜廊慢拍错位／雨滴悬停升空／画布融化入实」。
+- **回归文档校正**：`tests/README.md` 的无响应文本项由 76 改为 96；删除包内不存在的 `results/release_manifest.json` 指向；80 项／76 UNKNOWN 明确标为 V3.7.2 历史口径。
+- **测试覆盖**：新增 A224 规范名回归测试；全量 169 项中 168 通过、1 跳过（`symlinks unsupported`），不再写成全部通过。
+- **版本同步**：主技能与动作兼容入口均为 3.8.1，manifest、agents 描述、库索引标题与回归运行器版本同步；主包 71 个文件，含动作入口共 76 个文件。
+
+# V3.8.0 · 2026-11-08
+
+- **全类型影视视效库扩充（`v2.0.0`，200 → 240 项）**：在保留原有 `C01–C20`（200 项动作、科幻、奇幻角色技能）的基础上，于单文件 `references/ability-library/abilities.json` 中新增 4 类共 40 项**非战斗全类型影视视效卡（`C21–C24`，`A201–A240`）**：
+  - `C21 商业微距与产品视效`（`A201–A210`：水油乳化、冰块入水冠冕、精密悬浮拆解、风洞流线、丝绸流波、液态汞珠、香氛焦斑、纳米脉冲、日晷光影、油脂拉花）；
+  - `C22 自然天象与宏观奇观`（`A211–A220`：极光折卷、深海荧光涡流、双月潮汐、穹顶圣光、四季延时枯荣、雷暴云墙、灰幕日食、荒原蜃景、星环流火、云海雾瀑）；
+  - `C23 心理梦境与超现实转场`（`A221–A230`：空间碎镜剥落、地面液化深潜、镜廊慢拍错位、走廊重力翻转、胶片烧穿闪回、轮廓风化散沙、雨滴悬停升空、瞳孔缩入换景、室内拉伸荒原、画布融化入实）；
+  - `C24 怪谈异变与诡异氛围`（`A231–A240`：烛火转绿逆影、纸人渗墨转睛、墙面潮痕漫延、红绸逆风悬铃、雪花屏显背影、井水倒影脱节、长廊逐灭逼近、石像裂纹渗泪、门缝黑水漫入、冥纸旋风空巷）。
+- **跨专题自动补全联动**：当用户只提供想象画面与视频类型而未写特效细节时，广告、文戏、超现实转场、宏观空镜与中式怪谈可直接按需检索 `C21–C24` 视觉母形，无需借用战斗爆炸词条。
+- **零文件膨胀与全量验证**：得益于 V3.7.5 单文件库架构，新增 40 张视效卡后主技能包仍保持 **70 个文件**；`ability_library.py --validate`（240 项、24 类）、`style_library.py --validate`（60 项）、`rule_registry_check.py --sync`（9 条规则双向哈希）与 **168 项单元测试**（167 项通过、1 项跳过，跳过原因为 `symlinks unsupported`）。
+
 # V3.7.5 · 2026-11-07
 
 - **结构瘦身与单文件库合并**：将 `C01–C20.json` 与 `catalog.json` 合并为单文件 `references/ability-library/abilities.json`（200项），将 `F01–F10.json` 与 `catalog.json` 合并为单文件 `references/style-library/styles.json`（60项），检索脚本同时兼容单文件与旧分片；剥离离线历史日志与冗余副本，使技能包总文件数降至 68 个，完全适配各平台 100 文件上限与 MIME 门禁。
 - **复制块纯净度门禁统一收口**：`scripts/block_lint.py` 新增 `copy_block_purity_findings`，统一拦截「如有参考图」条件句、全局「默认无BGM」、复制块内泄露的 `SD25-` 维护编号、表单式转场头及无时间码写作方式自解释赘语，由 `run_regression.py` 直接复用。
-- **规则注册表一键同步**：`scripts/rule_registry_check.py` 新增 `--sync` 参数，自动计算并写回 9 条核心规则的 `authority_sha256` 与 `summary_sha256`；权威哈希按换行归一后的文本计算，避免不同换行格式的检出导致校验漂移。
+- **规则注册表一键同步**：`scripts/rule_registry_check.py` 新增 `--sync` 参数，自动计算并写回 9 条核心规则的 `authority_sha256` 与 `summary_sha256`。
 - **跨专题去重脱水**：精简次级专题中的重复通用规则复述，统一回指权威锚点。版本与兼容入口对齐 V3.7.5，发布说明见 `references/release-v3.7.5.md`。
 
 # V3.7.4 · 2026-11-07

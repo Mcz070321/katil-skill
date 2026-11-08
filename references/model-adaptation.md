@@ -23,7 +23,9 @@ Core只负责已登记模型的自然语言执行稿。当前登记Seedance 2.5�
 
 只在参数、模式或提交条件需要核对时读[能力档案](model-capabilities/seedance-2.5.json)。平台未知仍可依据模型公开基线写稿，不能借用Runway参数或判提交已就绪。精确接口未知不妨碍文案设计，也不构成API适配器证据。
 
-分别记录：文字保真（PASS／WARN／FAIL／UNKNOWN）、当前提交兼容性（UNVERIFIED／UNSUPPORTED／DEGRADED／COMPATIBLE）与真实视频证据。缺必要资料为UNVERIFIED；有已证实硬阻塞为UNSUPPORTED；存在明确损失为DEGRADED；证据支持当前方案且要求保留才可声明COMPATIBLE。用户批准损失也不变成无损。兼容不等于已上传、已生成或保证成功；无真实视频保持PENDING_VIDEO。
+分别记录：文字保真（PASS／WARN／FAIL／UNKNOWN）、当前提交兼容性（UNVERIFIED／UNSUPPORTED／DEGRADED／COMPATIBLE）与真实视频证据。缺必要资料为UNVERIFIED；有已证实硬阻塞为UNSUPPORTED；存在明确损失为DEGRADED；平台实测或同任务观察支持当前方案且要求保留，才可声明COMPATIBLE。用户批准损失也不变成无损。兼容不等于已上传、已生成或保证成功；无真实视频保持PENDING_VIDEO。
+
+模型事实按来源分层：official（官方文档）只支持documented能力；platform_measured（具名平台、日期、版本与参数下的实测）只支持该平台与该任务；unverified_assumption（推断、社区说法或未注明来源）不得填充未知数值，也不得支撑COMPATIBLE。COMPATIBLE需要platform_measured或同任务的真实视频观察（EV2／EV3，见[证据等级](evidence-and-claims.md)），官方文档不能单独判兼容。
 
 检查器 `python scripts/model_profile_check.py` 只验证档案结构和内部一致性，不认证来源语义或提交准备。与Production命中同一任务时，Core只做一次文案适配，扩展仅承担用户要求的导出／状态／工程检查，不把本档案直接塞给Production的API profile接口。
 

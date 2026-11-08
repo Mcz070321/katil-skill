@@ -1,29 +1,33 @@
-# 能力库 v1.8.0（KATIL 3.7.5 内置）· 能力索引
+# 能力与全类型视效库 v2.0.0（KATIL 3.9.0 内置）· 240项索引
 
-共200种，20类，每类10种；ID为A001—A200。条目按世界类型与用途筛选，不自动赋予角色新能力。
+共240种，24类，每类10种；ID为A001—A240。条目按世界类型与用途筛选，不自动赋予角色新能力。
 
 | 类别 | 编号 | 题材条件 | 条目文件 |
 | --- | --- | --- | --- |
-| C01 徒手与身体控制 | A001—A010 | 现实 | [C01.json](abilities.json) |
-| C02 冷兵器与格挡反制 | A011—A020 | 现实 | [C02.json](abilities.json) |
-| C03 跑酷与环境机动 | A021—A030 | 现实 | [C03.json](abilities.json) |
-| C04 现代动作与道具攻防 | A031—A040 | 现实 | [C04.json](abilities.json) |
-| C05 潜行侦察与信息博弈 | A041—A050 | 现实 | [C05.json](abilities.json) |
-| C06 救援协作与防护 | A051—A060 | 现实 | [C06.json](abilities.json) |
-| C07 运动竞速与舞台技巧 | A061—A070 | 现实 | [C07.json](abilities.json) |
-| C08 动力装甲与机械结构 | A071—A080 | 科幻 | [C08.json](abilities.json) |
-| C09 能量装置与防护 | A081—A090 | 科幻 | [C09.json](abilities.json) |
-| C10 无人机与群体协同 | A091—A100 | 科幻 | [C10.json](abilities.json) |
-| C11 磁电与信号交互 | A101—A110 | 科幻 | [C11.json](abilities.json) |
-| C12 生体改造与仿生 | A111—A120 | 科幻 | [C12.json](abilities.json) |
-| C13 火热与熔流 | A121—A130 | 奇幻 | [C13.json](abilities.json) |
-| C14 冰水与流体 | A131—A140 | 奇幻 | [C14.json](abilities.json) |
-| C15 风土与植物 | A141—A150 | 奇幻 | [C15.json](abilities.json) |
-| C16 雷光声波与振动 | A151—A160 | 奇幻 | [C16.json](abilities.json) |
-| C17 重力惯性与动量 | A161—A170 | 科幻／奇幻 | [C17.json](abilities.json) |
-| C18 空间时间与规则 | A171—A180 | 奇幻 | [C18.json](abilities.json) |
-| C19 幻象召唤与形态变化 | A181—A190 | 奇幻 | [C19.json](abilities.json) |
-| C20 水墨纸艺与超现实实体 | A191—A200 | 奇幻 | [C20.json](abilities.json) |
+| C01 徒手与身体控制 | A001—A010 | 现实 | [abilities.json](abilities.json) |
+| C02 冷兵器与格挡反制 | A011—A020 | 现实 | [abilities.json](abilities.json) |
+| C03 跑酷与环境机动 | A021—A030 | 现实 | [abilities.json](abilities.json) |
+| C04 现代动作与道具攻防 | A031—A040 | 现实 | [abilities.json](abilities.json) |
+| C05 潜行侦察与信息博弈 | A041—A050 | 现实 | [abilities.json](abilities.json) |
+| C06 救援协作与防护 | A051—A060 | 现实 | [abilities.json](abilities.json) |
+| C07 运动竞速与舞台技巧 | A061—A070 | 现实 | [abilities.json](abilities.json) |
+| C08 动力装甲与机械结构 | A071—A080 | 科幻 | [abilities.json](abilities.json) |
+| C09 能量装置与防护 | A081—A090 | 科幻 | [abilities.json](abilities.json) |
+| C10 无人机与群体协同 | A091—A100 | 科幻 | [abilities.json](abilities.json) |
+| C11 磁电与信号交互 | A101—A110 | 科幻 | [abilities.json](abilities.json) |
+| C12 生体改造与仿生 | A111—A120 | 科幻 | [abilities.json](abilities.json) |
+| C13 火热与熔流 | A121—A130 | 奇幻 | [abilities.json](abilities.json) |
+| C14 冰水与流体 | A131—A140 | 奇幻 | [abilities.json](abilities.json) |
+| C15 风土与植物 | A141—A150 | 奇幻 | [abilities.json](abilities.json) |
+| C16 雷光声波与振动 | A151—A160 | 奇幻 | [abilities.json](abilities.json) |
+| C17 重力惯性与动量 | A161—A170 | 科幻／奇幻 | [abilities.json](abilities.json) |
+| C18 空间时间与规则 | A171—A180 | 奇幻 | [abilities.json](abilities.json) |
+| C19 幻象召唤与形态变化 | A181—A190 | 奇幻 | [abilities.json](abilities.json) |
+| C20 水墨纸艺与超现实实体 | A191—A200 | 奇幻 | [abilities.json](abilities.json) |
+| C21 商业微距与产品视效 | A201—A210 | 现实／科幻 | [abilities.json](abilities.json) |
+| C22 自然天象与宏观奇观 | A211—A220 | 现实／科幻／奇幻 | [abilities.json](abilities.json) |
+| C23 心理梦境与超现实转场 | A221—A230 | 现实／科幻／奇幻 | [abilities.json](abilities.json) |
+| C24 怪谈异变与诡异氛围 | A231—A240 | 现实／奇幻 | [abilities.json](abilities.json) |
 
 ## 技能名与编号
 
@@ -107,6 +111,22 @@ A181 借影错身；A182 回声假令；A183 梦蝶探路；A184 石犬守契；
 
 A191 墨骨成桥；A192 褶盾展屏；A193 印影重镇；A194 折鹤送签；A195 拓形薄匙；A196 食锈墨兽；A197 篆字负架；A198 剪纸补阙；A199 瓷月悬舟；A200 墨脉探隙。
 
+### C21 商业微距与产品视效
+
+A201 微距水油乳化；A202 冰块入水冠冕；A203 精密悬浮拆解；A204 风洞流线光轨；A205 丝绸经纬流波；A206 液态汞珠聚形；A207 香氛雾化焦斑；A208 纳米电路脉冲；A209 日晷光影推移；A210 琥珀油脂拉花。
+
+### C22 自然天象与宏观奇观
+
+A211 极光帷幕折卷；A212 深海荧光涡流；A213 双月引力潮汐；A214 穹顶圣光浮尘；A215 四季延时枯荣；A216 雷暴云墙环闪；A217 灰幕日食余烬；A218 荒原热浪蜃景；A219 星环流火掠空；A220 云海日晕雾瀑。
+
+### C23 心理梦境与超现实转场
+
+A221 空间碎镜剥落；A222 地面液化深潜；A223 镜廊慢拍错位；A224 走廊重力翻转；A225 胶片烧穿闪回；A226 轮廓风化散沙；A227 雨滴悬停升空；A228 瞳孔缩入换景；A229 室内拉伸荒原；A230 画布融化入实。
+
+### C24 怪谈异变与诡异氛围
+
+A231 烛火转绿逆影；A232 纸人渗墨转睛；A233 墙面潮痕漫延；A234 红绸逆风悬铃；A235 雪花屏显背影；A236 井水倒影脱节；A237 长廊逐灭逼近；A238 石像裂纹渗泪；A239 门缝黑水漫入；A240 冥纸旋风空巷。
+
 [选择与使用规则](../ability-library.md)
 
-数据以分类JSON为准；维护后同步生成本索引和对外阅读版。
+数据以单文件 JSON（`abilities.json`）为准；维护后同步生成本索引和对外阅读版。

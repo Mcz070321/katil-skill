@@ -15,7 +15,7 @@ from pathlib import Path
 from video_evidence import validate_generation
 from block_lint import copy_block_purity_findings, event_timing_findings
 
-VERSION = "3.7.5"
+VERSION = "3.9.0"
 STATUSES = {"PASS", "WARN", "FAIL", "UNKNOWN", "PENDING_VIDEO"}
 AUDIO_DECISIONS = {
     "music_led",
@@ -23,10 +23,12 @@ AUDIO_DECISIONS = {
     "information_led",
     "unspecified_no_conflict",
 }
+# 3.9.0 起，这些高密度/连续性用例必须把正反断言分开写，避免拒绝项只藏在 criteria 里。
+STRUCTURED_IDS = {f"T{i}" for i in range(34, 44)} | {"C04"}
 
 # 文件名, 类别, 最少条数, 必有字段
 SPECS = [
-    ("routing_cases.json", "routing", 16, ["id", "request", "expected_load", "prohibited_or_caution"]),
+    ("routing_cases.json", "routing", 20, ["id", "request", "expected_load", "prohibited_or_caution"]),
     ("execution_cases.json", "execution", 1, ["id", "request", "criteria"]),
     ("continuity_cases.json", "continuity", 1, ["id", "initial", "next", "expected"]),
     ("style_cases.json", "style", 1, ["id", "request", "expected"]),
@@ -80,8 +82,8 @@ def load_cases(cases_dir, errors):
             continue
         if len(cases) < min_count:
             fail_errors(errors, f"{filename} 用例不足：{len(cases)} < {min_count}")
-        if category == "routing" and len(cases) != 16:
-            fail_errors(errors, f"{filename} 应保持 16 条，实际 {len(cases)}")
+        if category == "routing" and len(cases) != 20:
+            fail_errors(errors, f"{filename} 应保持 20 条，实际 {len(cases)}")
         if category == "adaptation" and (len(cases) != 36 or {str(c.get('id')) for c in cases if isinstance(c,dict)} != {f'M{i:02}' for i in range(1,37)}):
             fail_errors(errors, f"{filename} 应独立覆盖 M01–M36")
         seen = set()
@@ -100,6 +102,22 @@ def load_cases(cases_dir, errors):
             for field in required:
                 if field not in case or case[field] in (None, "", []):
                     fail_errors(errors, f"{label} 缺少字段 {field}")
+            if category in ("execution", "continuity") and str(cid) in STRUCTURED_IDS:
+                for field in ("must_hold", "must_reject"):
+                    values = case.get(field)
+                    if (not isinstance(values, list) or not values
+                            or not all(isinstance(v, str) and v.strip() for v in values)):
+                        fail_errors(errors, f"{label}（{cid}）{field} 必须是非空字符串数组")
+                        continue
+                    if len(values) != len(set(values)):
+                        fail_errors(errors, f"{label}（{cid}）{field} 含重复断言")
+                hold = case.get("must_hold")
+                reject = case.get("must_reject")
+                if isinstance(hold, list) and isinstance(reject, list):
+                    overlap = {v.strip() for v in hold if isinstance(v, str)} & {
+                        v.strip() for v in reject if isinstance(v, str)}
+                    if overlap:
+                        fail_errors(errors, f"{label}（{cid}）must_hold 与 must_reject 互相矛盾：{sorted(overlap)}")
             if 'timing_mode' in case and case['timing_mode'] not in ('event_driven', 'timecoded', 'local_anchor'):
                 fail_errors(errors, f"{label} timing_mode 不在枚举内")
             if category == "routing":

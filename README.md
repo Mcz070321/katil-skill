@@ -15,11 +15,11 @@
   </p>
 
   <p>
-    <a href="https://github.com/Mcz070321/katil-skill/releases"><img alt="version 3.7.5" src="https://img.shields.io/badge/version-3.7.5-2f2f2f?style=flat-square"></a>
+    <a href="https://github.com/Mcz070321/katil-skill/releases"><img alt="version 3.9.0" src="https://img.shields.io/badge/version-3.9.0-2f2f2f?style=flat-square"></a>
     <img alt="MIT license" src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square">
     <a href="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml"><img alt="checks passing" src="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml/badge.svg"></a>
-    <img alt="167 tests passed" src="https://img.shields.io/badge/tests-167%20passed-2ea44f?style=flat-square">
-    <img alt="200 abilities" src="https://img.shields.io/badge/abilities-200-8957e5?style=flat-square">
+    <img alt="184 tests" src="https://img.shields.io/badge/tests-184-2ea44f?style=flat-square">
+    <img alt="240 abilities" src="https://img.shields.io/badge/abilities-240-8957e5?style=flat-square">
     <img alt="60 styles" src="https://img.shields.io/badge/styles-60-d29922?style=flat-square">
   </p>
 </div>
@@ -41,7 +41,7 @@ KATIL-skill 是一个以 [SKILL.md](SKILL.md) 为入口的 **AI 影视导演系�
 - **不是题材模板合集。** 没有「动作片模板」「恐怖片模板」可套；模块只在命中时才加载，且同一决策域只有一个主导。
 - **不是提示词美化器。** 它改的是事件、因果、观察路径与容量，不是形容词。
 - **不是视频模型或剪辑器。** 它不生成视频、不做转码、不修文件。
-- **不做没有证据的承诺。** 未实际生成并观看，它不会宣称成片变好了。
+- **不做没有证据的承诺。** 每条结论都要标证据等级（EV0–EV3）：结构检查通过只写到「结构通过」，没有真实生成并完整观看，就不写「成片变好了」。规则见 [references/evidence-and-claims.md](references/evidence-and-claims.md)。
 
 ## 为什么需要它
 
@@ -63,6 +63,7 @@ KATIL-skill 是一个以 [SKILL.md](SKILL.md) 为入口的 **AI 影视导演系�
 6. **双语独立复制块** —— 每段、每种语言各有一份完整、纯净、可直接粘贴的块；英文不是中文的缩写版，改动任何一版都要同步另一版。
 7. **交付前返修** —— 容量、状态连续、手脚与支点占用、终态承载逐项核对；发现的冲突先改正文，不能只在内部写一句「注意容量」。
 8. **验收分层** —— 文字验收可以现在跑；视频验收必须真实生成并观看。两者分开记录，样本不足就标「不确定」。
+9. **证据分级（EV0–EV3）** —— 设计、文本与结构、单次生成观察、同条件多次加盲评，四层证据分开标注：EV1 的结构 PASS 不能改写成成片 PASS，没有完整观看就保持「待验证」。模型事实同样分官方文档、平台实测与未验证假设，官方文档不能单独支撑「兼容」。
 
 ## 快速开始
 
@@ -137,9 +138,9 @@ Shot 03 They hold each other's gaze through the steam, neither speaking first. T
 
 ## 能力库与风格库
 
-- **200 张角色能力卡（C01–C20）** —— 覆盖现实、科幻、奇幻三类世界，每张按「机制与用途 / 动作与应答 / 特效描写 / 限制与反制 / 镜头与声音 / 残留与连续性」组织，避免把能力写成没有代价的万能招。
+- **240 张能力卡（C01–C24）** —— C01–C20 是现实、科幻、奇幻三类世界的角色技能；C21–C24 是不依附战斗的全类型影视视效：商业微距与产品视效、自然天象与宏观奇观、心理梦境与超现实转场、怪谈异变与诡异氛围。每张按「机制与用途 / 动作与应答 / 特效描写 / 限制与反制 / 镜头与声音 / 残留与连续性」组织，避免把能力写成没有代价的万能招。
 - **60 张视觉风格配方（F01–F10）** —— 从真人纪实到日式二维、传统绘画、定格与实验混合媒介；每张含角色图、场景图、视频三种风格片段的**中英双语**写法。
-- **9 条权威规则** —— 带 SHA-256 溯源与摘要块，见 [rules/rule-registry.yaml](rules/rule-registry.yaml)。
+- **10 条权威规则** —— 带 SHA-256 溯源与摘要块，见 [rules/rule-registry.yaml](rules/rule-registry.yaml)。其中 EVIDENCE 1.0.0 定义证据等级与发布声明的边界。
 
 两个库都是只读检索，不需要打开整份 JSON：
 
@@ -174,9 +175,9 @@ F06 日式二维动画: S031-S036
 katil-skill/
 ├─ SKILL.md                技能入口：9 步统一流程与「按任务读取」路由表
 ├─ manifest.yaml           版本、兼容范围、验证边界（机器可读）
-├─ CHANGELOG.md            版本记录（当前 3.7.5）
+├─ CHANGELOG.md            版本记录（当前 3.9.0）
 ├─ agents/openai.yaml      运行时清单：显示名、简介、默认提示
-├─ references/             37 个专题文档 + 3 个数据目录
+├─ references/             41 个专题文档 + 3 个数据目录
 │  ├─ general-creative-core.md      多维契约、模块决策权、TIME 规则
 │  ├─ action-and-shot-compiler.md   动作编排与关键因果
 │  ├─ narrative-and-performance.md  文戏、对白、人物关系
@@ -186,12 +187,13 @@ katil-skill/
 │  ├─ sound-and-rhythm.md           声音四层与节奏
 │  ├─ prompt-delivery-and-language.md  复制块、双语、台词锁死
 │  ├─ general-acceptance.md / video-acceptance-testing.md  两级验收
-│  ├─ ability-library/abilities.json    200 张能力卡
+│  ├─ evidence-and-claims.md        证据等级 EV0–EV3 与声明边界
+│  ├─ ability-library/abilities.json    240 张能力卡
 │  ├─ style-library/styles.json         60 张风格卡
 │  └─ model-capabilities/seedance-2.5.json
-├─ rules/rule-registry.yaml  9 条权威规则与摘要哈希
+├─ rules/rule-registry.yaml  10 条权威规则与摘要哈希
 ├─ scripts/                 7 个校验 / 检索脚本
-├─ tests/                   167 项软件测试、100 条回归用例与样本
+├─ tests/                   184 项软件测试、117 条回归用例与样本
 ├─ docs/                    配套工具：需求指令优化器（中英双语）
 └─ assets/                  图标与中英横幅
 ```
@@ -209,25 +211,25 @@ python scripts/style_library.py --validate
 python scripts/run_regression.py --cases tests --out regression_result.json
 ```
 
-当前状态（2026-11-07；Windows 11 / Python 3.12.7 / pytest 7.4.4 本地运行，GitHub Actions 上另有 Linux + Python 3.12 的同套检查）：
+当前状态（2026-11-08；Windows 11 / Python 3.12.7 / pytest 7.4.4 本地运行，GitHub Actions 上另有 Linux + Python 3.12 的同套检查）：
 
 | 检查 | 结果 |
 | --- | --- |
-| `pytest tests` | **167 passed**（Linux CI，含符号链接用例）；**166 passed, 1 skipped**（Windows 本地） |
-| `rule_registry_check.py` | PASS，9 条规则；语义等价性 UNKNOWN（需人工复核） |
+| `pytest tests` | **184 passed**（Linux CI，含符号链接用例）；**183 passed, 1 skipped**（Windows 本地） |
+| `rule_registry_check.py` | PASS，10 条规则；语义等价性 UNKNOWN（需人工复核） |
 | `model_profile_check.py` | PASS（仅结构与来源链接）；semantic_support 始终 UNKNOWN |
-| `ability_library.py --validate` | PASS，200 项，C01–C20 |
+| `ability_library.py --validate` | PASS，240 项，C01–C24 |
 | `style_library.py --validate` | PASS，60 项，F01–F10 |
-| `run_regression.py` | 100 条用例结构检查：96 UNKNOWN + 4 PENDING_VIDEO |
+| `run_regression.py` | 117 条用例结构检查：111 UNKNOWN + 6 PENDING_VIDEO |
 
-**边界，写在最前面：** 以上全部是文本层与软件层的验证。[manifest.yaml](manifest.yaml) 里的 `validation_scope` 写得很直白——`E1: fixed text tasks and software tests; no real-model/video claim`。本仓库没有附带真实模型生成与成片评审证据，也不把「结构检查通过」当成「画面变好了」。历史证据目录（`tests/README.md` 中提到的 `results/v3.x`）属于发布时的离线记录，未随技能包分发。
+**边界，写在最前面：** 以上全部是文本层与软件层的验证，按 [证据等级](references/evidence-and-claims.md) 记作 **EV1**。[manifest.yaml](manifest.yaml) 里的 `validation_scope` 写得很直白——`EV1: fixed text tasks and software tests; no real-model/video claim`。本仓库没有附带真实模型生成与成片评审证据，也不把「结构检查通过」当成「画面变好了」。结构化验收用例（T34–T43、C04）另外带 `must_hold`／`must_reject` 正反断言，缺项、重复或两数组相交按结构错误处理。历史证据目录（`tests/README.md` 中提到的 `results/v3.x`）属于发布时的离线记录，未随技能包分发。
 
 ## 版本与兼容
 
-- 当前版本 **3.7.5**（2026-11-07），发布通道 `stable`
+- 当前版本 **3.9.0**（2026-11-08），发布通道 `stable`
 - 兼容范围 `compatible_core: ">=3.7.0,<4.0.0"`
-- 能力库 1.8.0 / 风格库 1.9.0
-- 变更记录见 [CHANGELOG.md](CHANGELOG.md)；本版发布范围见 [references/release-v3.7.5.md](references/release-v3.7.5.md)
+- 能力库 2.0.0（240 项）/ 风格库 1.9.0（60 项）
+- 变更记录见 [CHANGELOG.md](CHANGELOG.md)；本版发布范围见 [references/release-v3.9.0.md](references/release-v3.9.0.md)
 - 规则治理与哈希同步见 [references/rule-registry-maintenance.md](references/rule-registry-maintenance.md)
 
 ## 常见问题
@@ -265,7 +267,7 @@ python scripts/run_regression.py --cases tests --out regression_result.json
 <details>
 <summary><b>为什么 README 不放「使用前后对比」？</b></summary>
 
-因为没做同条件、同模型版本、多次生成并实际观看的对照。放一张精选成片当证据，恰恰是这个项目反对的做法。要评估请按 [references/video-acceptance-testing.md](references/video-acceptance-testing.md) 自己跑 A/B，并接受小样本不能推断统计显著性。
+因为没做同条件、同模型版本、多次生成并实际观看的对照。放一张精选成片当证据，恰恰是这个项目反对的做法——按 3.9.0 的证据分级，它连 EV2 都不构成。要评估请按 [references/video-acceptance-testing.md](references/video-acceptance-testing.md) 自己跑 A/B，并接受小样本不能推断统计显著性。
 </details>
 
 ## 参与贡献
@@ -290,5 +292,5 @@ python -m pytest tests -q
 ---
 
 <div align="center">
-  <sub>KATIL-skill · V3.7.5 · 写给人看的分镜，也写给模型看的指令。</sub>
+  <sub>KATIL-skill · V3.9.0 · 写给人看的分镜，也写给模型看的指令。</sub>
 </div>

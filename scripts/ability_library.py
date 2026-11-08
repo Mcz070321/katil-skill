@@ -70,13 +70,13 @@ def render(card: dict, category_names: dict[str, str]) -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="KATIL-skill：只读查询200种角色技能与配套特效。")
+    parser = argparse.ArgumentParser(description="KATIL-skill：只读查询240种角色技能与全类型视效。")
     parser.add_argument("--id", nargs="+", help="One or more exact stable IDs, e.g. A051 A081")
     parser.add_argument("--category", nargs="+", help="Category IDs, e.g. C06 C09")
     parser.add_argument("--world", choices=("现实", "科幻", "奇幻"))
     parser.add_argument("--role", nargs="+", help="Required role labels; all supplied roles must match")
     parser.add_argument("--query", help="Whitespace-separated keywords; all must occur in a card")
-    parser.add_argument("--limit", type=int, help="Maximum returned cards, 1–200; defaults to 5 unless exact IDs supplied")
+    parser.add_argument("--limit", type=int, help="Maximum returned cards, 1–240; defaults to 5 unless exact IDs supplied")
     parser.add_argument("--list", action="store_true", help="Print compact ID/name lines")
     parser.add_argument("--json", action="store_true", help="Return JSON instead of Markdown")
     parser.add_argument("--validate", action="store_true", help="Validate bundled cards and print counts")

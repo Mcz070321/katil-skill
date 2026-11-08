@@ -213,6 +213,54 @@
       "concept_mode": "作者型",
       "expected_load": "原创概念、通用创作核心、导演运镜、声音与节奏",
       "prohibited_or_caution": "不套写实物理；不用旁白解释规则；概念只服务人物与事件，不做无关奇观。"
+    },
+    {
+      "id": 17,
+      "request": "纯爱告别，固定机位，无打斗。",
+      "intent": "让观众感到关系结束但仍有留恋",
+      "genre": "爱情",
+      "medium": "真人",
+      "form": "单条短片",
+      "director_mode": "写实",
+      "concept_mode": "极简型",
+      "expected_load": "叙事与表演、导演运镜、声音与节奏",
+      "prohibited_or_caution": "动作、特效、高速与多人；不要因情绪冲突加打斗或破坏。"
+    },
+    {
+      "id": 18,
+      "request": "护肤品微距广告，只拍质地与滴落。",
+      "intent": "让观众看清质地与滴落过程",
+      "genre": "产品／美容",
+      "medium": "真人",
+      "form": "广告",
+      "director_mode": "商业",
+      "concept_mode": "约束型",
+      "expected_load": "现实主义与广告、导演运镜、声音与节奏",
+      "prohibited_or_caution": "动作、特效、环境破坏；不要加爆炸或尘暴，不新增未证实功效。"
+    },
+    {
+      "id": 19,
+      "request": "真一镜跟随主角穿过三层楼道，不剪。",
+      "intent": "让观众持续相信同一连续空间",
+      "genre": "悬疑／空间",
+      "medium": "真人",
+      "form": "单条短片",
+      "director_mode": "写实",
+      "concept_mode": "极简型",
+      "expected_load": "视点与连续、导演运镜、空间描述三模式",
+      "prohibited_or_caution": "动作、特效；不要拆多机位，不要用藏切假装一镜。"
+    },
+    {
+      "id": 20,
+      "request": "严格人眼 POV，被锁在柜内，不能切宽景。",
+      "intent": "让观众与被困者共享有限视野和恐惧",
+      "genre": "恐怖",
+      "medium": "真人",
+      "form": "单条短片",
+      "director_mode": "类型化",
+      "concept_mode": "作者型",
+      "expected_load": "视点与连续、导演运镜、恐怖与悬疑",
+      "prohibited_or_caution": "动作、特效；不要切外部宽景，不要从人眼飞到子弹或第三方视角。"
     }
   ]
 }
