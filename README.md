@@ -177,7 +177,7 @@ katil-skill/
 ├─ manifest.yaml           版本、兼容范围、验证边界（机器可读）
 ├─ CHANGELOG.md            版本记录（当前 3.9.0）
 ├─ agents/openai.yaml      运行时清单：显示名、简介、默认提示
-├─ references/             41 个专题文档 + 3 个数据目录
+├─ references/             42 个专题文档 + 3 个数据目录
 │  ├─ general-creative-core.md      多维契约、模块决策权、TIME 规则
 │  ├─ action-and-shot-compiler.md   动作编排与关键因果
 │  ├─ narrative-and-performance.md  文戏、对白、人物关系

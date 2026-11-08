@@ -179,7 +179,7 @@ katil-skill/
 ├─ manifest.yaml           Version, compatibility range, validation scope (machine-readable)
 ├─ CHANGELOG.md            Version history (currently 3.9.0)
 ├─ agents/openai.yaml      Runtime manifest: display name, summary, default prompt
-├─ references/             41 topic documents + 3 data directories
+├─ references/             42 topic documents + 3 data directories
 │  ├─ general-creative-core.md      Task contract, module authority, TIME rules
 │  ├─ action-and-shot-compiler.md   Action staging and critical causality
 │  ├─ narrative-and-performance.md  Drama, dialogue, relationships
