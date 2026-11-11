@@ -1,0 +1,8 @@
+interface:
+  display_name: KATIL-skill · 动作模块 V3.10.5
+  short_description: KATIL V3.10.5 动作兼容入口，共用主技能编排、返修与验收规则
+  default_prompt: 使用 $direct-cinematic-fights 定位同版 KATIL-skill 主入口，按需加载动作专题并完成交付前返修。
+  icon_small: ./assets/icon.svg
+  icon_large: ./assets/icon.svg
+policy:
+  allow_implicit_invocation: true

@@ -56,6 +56,17 @@ def write_minimal_suite(root):
     (root / 'generation_cases.json').write_text(json.dumps({'cases': generation}, ensure_ascii=False), encoding='utf-8')
     adaptation = [{'id': 'M%02d' % i, 'request': '中文提示词', 'context': '独立新任务', 'material_conditions': '无素材'} for i in range(1,37)]
     (root / 'model_adaptation_cases.json').write_text(json.dumps({'cases': adaptation}, ensure_ascii=False), encoding='utf-8')
+    fx = []
+    for i in range(1, 22):
+        cid = 'FXT%02d' % i
+        extra_primary = {16: 'FX10', 17: 'FX05', 18: 'FX07', 19: 'FX11', 20: 'FX14', 21: 'FX04'}
+        primary = 'NONE' if i == 10 else ('FX%02d' % i if i <= 15 else extra_primary[i])
+        secondary = ['FX10'] if i == 1 else []
+        fx.append({'id': cid, 'request': '特效设计 %d' % i, 'primary_fx': primary,
+                   'secondary_fx': secondary, 'layers': [['Primary','Secondary','Impact','Environment','Optical','Audio'][(i - 1) % 6]],
+                   'criteria': ['来源与结果可读'], 'must_hold': ['效果有可见来源'],
+                   'must_reject': ['效果凭空出现'], 'evidence_boundary': 'PENDING_VIDEO'})
+    (root / 'fx_cases.json').write_text(json.dumps({'cases': fx}, ensure_ascii=False), encoding='utf-8')
 
 
 def write_evidence(root, versions=('3.6.1', '3.6.2'), count=3):
@@ -120,10 +131,13 @@ class RunnerTests(unittest.TestCase):
         proc, report = run_runner(ROOT / 'tests')
         self.assertEqual(proc.returncode, 0, proc.stderr)
         self.assertEqual(report['suite']['status'], 'PASS')
-        self.assertEqual(len(report['results']), 117)
-        self.assertEqual(report['summary']['UNKNOWN'], 111)
-        self.assertEqual(report['summary']['PENDING_VIDEO'], 6)
+        self.assertEqual(len(report['results']), 162)
+        self.assertEqual(report['summary']['UNKNOWN'], 151)
+        self.assertEqual(report['summary']['PENDING_VIDEO'], 11)
         self.assertEqual(report['summary']['PASS'], 0)
+        for row in report['results']:
+            expected = 'PENDING_VIDEO' if row['test_case'].startswith('G') else 'UNKNOWN'
+            self.assertEqual(row['status'], expected, row['test_case'])
 
     def test_minimal_suite_is_valid(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -467,26 +481,40 @@ def add_adaptation(root):
     return path,data
 
 class AdaptationRegressionTests(unittest.TestCase):
-    def test_real_suite_has_117_pending_tasks(self):
+    def test_real_suite_has_151_unknown_tasks(self):
         proc,report=run_runner(ROOT/'tests')
         self.assertEqual(proc.returncode,0,proc.stderr)
-        self.assertEqual(len(report['results']),117)
+        self.assertEqual(len(report['results']),162)
+        self.assertEqual(report['suite']['counts']['execution'],62)
         self.assertEqual(report['suite']['counts']['adaptation'],36)
-        self.assertEqual(report['suite']['counts']['generation'],6)
-        self.assertEqual(report['summary']['UNKNOWN'],111)
-        self.assertEqual(report['summary']['PENDING_VIDEO'],6)
+        self.assertEqual(report['suite']['counts']['generation'],11)
+        self.assertEqual(report['suite']['counts']['fx'],21)
+        self.assertEqual(report['summary']['UNKNOWN'],151)
+        self.assertEqual(report['summary']['PENDING_VIDEO'],11)
 
-    def test_structured_case_requires_both_assertion_fields(self):
+    def structured_case(self,case):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);write_minimal_suite(root)
             path=root/'execution_cases.json'
             data=json.loads(path.read_text(encoding='utf-8'))
-            data['cases'].append({'id':'T34','request':'一次带墨色剑气的斩击','criteria':['源头、路径与兑现可见'],'must_hold':['剑气从刀锋离体并落到目标']})
+            data['cases'].append(case)
             path.write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
             proc,report=run_runner(root)
             self.assertEqual(proc.returncode,2,proc.stderr)
             self.assertEqual(report['suite']['status'],'FAIL')
-            self.assertTrue(any('T34' in finding and 'must_reject' in finding for finding in report['suite']['findings']),report['suite']['findings'])
+            return report['suite']['findings']
+
+    def test_structured_case_requires_both_assertion_fields(self):
+        findings=self.structured_case({'id':'T34','request':'一次带墨色剑气的斩击','criteria':['源头、路径与兑现可见'],'must_hold':['剑气从刀锋离体并落到目标']})
+        self.assertTrue(any('T34' in finding and 'must_reject' in finding for finding in findings),findings)
+
+    def test_structured_case_rejects_duplicate_assertions(self):
+        findings=self.structured_case({'id':'T34','request':'一次带墨色剑气的斩击','criteria':['源头、路径与兑现可见'],'must_hold':['剑气从刀锋离体','剑气从刀锋离体'],'must_reject':['剑气凭空出现在目标体内']})
+        self.assertTrue(any('T34' in finding and '含重复断言' in finding for finding in findings),findings)
+
+    def test_structured_case_rejects_contradictory_assertions(self):
+        findings=self.structured_case({'id':'T34','request':'一次带墨色剑气的斩击','criteria':['源头、路径与兑现可见'],'must_hold':['剑气从刀锋离体并落到目标'],'must_reject':['剑气从刀锋离体并落到目标']})
+        self.assertTrue(any('T34' in finding and '互相矛盾' in finding for finding in findings),findings)
 
     def invalid_case(self,mutate):
         with tempfile.TemporaryDirectory() as tmp:
@@ -516,14 +544,66 @@ class AdaptationRegressionTests(unittest.TestCase):
         self.assertEqual(item['video'],'PENDING_VIDEO')
 
     def test_text_failure_is_not_hidden_by_compatibility(self):
-        proc,report,item=self.response({'adaptation':'PASS','text_review_status':'FAIL','submission_compatibility':'COMPATIBLE'})
+        proc,report,item=self.response({'adaptation':'PASS','text_review_status':'FAIL','submission_compatibility':'UNSUPPORTED'})
         self.assertEqual(proc.returncode,1)
         self.assertEqual(item['status'],'FAIL')
         self.assertEqual(item['video'],'PENDING_VIDEO')
 
+    def test_compatible_requires_submission_evidence(self):
+        proc,report,item=self.response({'adaptation':'PASS','submission_compatibility':'COMPATIBLE'})
+        self.assertEqual(proc.returncode,2)
+        self.assertEqual(item['status'],'FAIL')
+        self.assertEqual(item['submission_compatibility'],'UNVERIFIED')
+        self.assertEqual(item['submission_verdict_source'],'invalid_declaration')
+        self.assertTrue(any('submission_evidence' in finding for finding in report['suite']['findings']))
+
+    def test_compatible_evidence_source_wrong_type_returns_structured_error(self):
+        for source in (['platform_measured'], {'name':'platform_measured'}, 7, None):
+            with self.subTest(source=source):
+                try:
+                    proc,report,item=self.response({
+                        'adaptation':'PASS','submission_compatibility':'COMPATIBLE',
+                        'submission_evidence':{'source':source,'reference':'seedance-2.5 / 2026-11-05 / run-42'},
+                    })
+                except json.JSONDecodeError:
+                    self.fail('Runner crashed without structured JSON for source %r' % (source,))
+                self.assertEqual(proc.returncode,2)
+                self.assertEqual(report['suite']['status'],'FAIL')
+                self.assertEqual(item['status'],'FAIL')
+                self.assertEqual(item['adaptation'],'FAIL')
+                self.assertEqual(item['submission_compatibility'],'UNVERIFIED')
+                self.assertEqual(item['submission_verdict_source'],'invalid_declaration')
+                self.assertTrue(any('submission_evidence' in finding for finding in report['suite']['findings']))
+
+    def test_compatible_with_platform_evidence_is_recorded(self):
+        proc,report,item=self.response({
+            'adaptation':'PASS','text_review_status':'PASS','submission_compatibility':'COMPATIBLE',
+            'submission_evidence':{'source':'platform_measured','reference':'seedance-2.5 / 2026-11-05 / run-42'},
+        })
+        self.assertEqual(proc.returncode,0,proc.stderr)
+        self.assertEqual(item['status'],'PASS')
+        self.assertEqual(item['submission_compatibility'],'COMPATIBLE')
+        self.assertEqual(item['submission_evidence_source'],'platform_measured')
+        self.assertEqual(item['submission_evidence_reference'],'seedance-2.5 / 2026-11-05 / run-42')
+        self.assertEqual(item['submission_verdict_source'],'external_declaration_with_evidence_reference')
+
+    def test_documented_is_not_a_submission_compatibility_value(self):
+        proc,report,item=self.response({'adaptation':'PASS','submission_compatibility':'documented'})
+        self.assertEqual(proc.returncode,2)
+        self.assertEqual(item['submission_compatibility'],'UNVERIFIED')
+        self.assertEqual(item['submission_verdict_source'],'invalid_declaration')
+
+    def test_invalid_adaptation_value_fails_the_item(self):
+        proc,report,item=self.response({'adaptation':['PASS'],'submission_compatibility':'UNVERIFIED'})
+        self.assertEqual(proc.returncode,2)
+        self.assertEqual(item['status'],'FAIL')
+        self.assertEqual(item['adaptation'],'FAIL')
+
     def test_invalid_compatibility_is_rejected(self):
         proc,report,item=self.response({'adaptation':'PASS','submission_compatibility':'READY'})
         self.assertEqual(proc.returncode,2)
+        self.assertEqual(item['status'],'FAIL')
+        self.assertEqual(item['adaptation'],'FAIL')
 
     def test_adaptation_suite_cannot_import_video_pass(self):
         proc,report,item=self.response({'adaptation':'PASS','video':'PASS'})
@@ -553,7 +633,7 @@ class V375ToolingAndLibraryTests(unittest.TestCase):
             reg_path.write_text(json.dumps(data, ensure_ascii=False), encoding='utf-8')
             self.assertTrue(check(r))
             synced = sync(r)
-            self.assertEqual(len(synced), 10)
+            self.assertEqual(len(synced), 15)
             self.assertEqual(check(r), [])
 
     def test_consolidated_ability_and_style_libraries_validate(self):

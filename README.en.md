@@ -15,10 +15,10 @@
   </p>
 
   <p>
-    <a href="https://github.com/Mcz070321/katil-skill/releases"><img alt="version 3.9.0" src="https://img.shields.io/badge/version-3.9.0-2f2f2f?style=flat-square"></a>
+    <a href="https://github.com/Mcz070321/katil-skill/releases"><img alt="version 3.10.5" src="https://img.shields.io/badge/version-3.10.5-2f2f2f?style=flat-square"></a>
     <img alt="MIT license" src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square">
     <a href="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml"><img alt="checks passing" src="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml/badge.svg"></a>
-    <img alt="184 tests" src="https://img.shields.io/badge/tests-184-2ea44f?style=flat-square">
+    <img alt="244 tests" src="https://img.shields.io/badge/tests-244-2ea44f?style=flat-square">
     <img alt="240 abilities" src="https://img.shields.io/badge/abilities-240-8957e5?style=flat-square">
     <img alt="60 styles" src="https://img.shields.io/badge/styles-60-d29922?style=flat-square">
   </p>
@@ -66,6 +66,18 @@ It also assumes no model. The default output is platform-agnostic; the Seedance 
 7. **Repair before delivery** — capacity, state continuity, hand occupancy and support points, and end-state support are checked item by item. Found conflicts are fixed in the prompt body, not noted internally.
 8. **Layered acceptance** — text acceptance can run now; video acceptance requires a real generation and a real viewing pass. They are recorded separately, and small samples are marked "uncertain".
 9. **Evidence levels (EV0–EV3)** — design, text-and-structure, single-generation observation, and repeated same-condition blind review are labelled separately: an EV1 structural PASS never becomes a footage PASS, and anything not watched in full stays "pending". Model facts are likewise split into official documentation, platform measurements and unverified assumptions; official docs alone cannot justify "compatible".
+10. **Effects scheduled as events (FX Director 2.0)** — effects are not adjectives but an event layer: 15 visual-effect classes, a six-layer schedule (narrative intent / physical mechanism / procedural lifecycle / engine visual grammar / optics and compositing / event sync), one lead class plus 0–3 supporting classes, and three complexity budgets. The FX layer rules on classification and scheduling only; it never rewrites abilities, injuries, action outcomes, camera locks or sound permissions. Engine names are visual grammar references, not real engine calls.
+11. **Irreversible endings and tail lock** — fix the S0→Sn state chain and the giant-scale ladder before writing the process; once a decisive result lands, the tail only carries its immediate aftermath and settling, never a second ending. An impact frame may briefly occlude the contact point, but the result must be visible once the frame recovers.
+
+## The FX directing layer (3.10)
+
+Visual effects are no longer "add more particles"; they are an event layer that can be scheduled and reviewed. The flow asks what state this blow or this scene changes, then decides which FX classes to use, who leads, and what budget applies.
+
+- **Classification and six-layer scheduling** — 15 visual-effect classes, one lead + 0–3 supporting, the A–H decision flow and three budgets, in [fx-director.md](references/fx-director.md).
+- **Procedural lifecycle** — onset, sustain, decay, residue and motion fields, so particles do not simply vanish, in [procedural-fx-grammar.md](references/procedural-fx-grammar.md).
+- **Engine visual translation** — Niagara / Chaos / Lumen are visual grammar references, not real engine calls, in [engine-fx-visual-mapping.md](references/engine-fx-visual-mapping.md).
+- **Optics and compositing** — exposure, depth of field, motion blur, dispersion, smoke occlusion and layer order, in [optical-and-compositing-grammar.md](references/optical-and-compositing-grammar.md).
+- **Event-level sync** — action, environment, camera, FX and sound aligned on the same event, in [fx-synchronization.md](references/fx-synchronization.md); fidelity checks when compressing long drafts in [fx-compilation-and-fidelity.md](references/fx-compilation-and-fidelity.md).
 
 ## Quick start
 
@@ -88,6 +100,8 @@ mv katil-skill ~/.agents/skills/katil-skill
 ```
 
 The entry point is [SKILL.md](SKILL.md); [manifest.yaml](manifest.yaml) declares version, compatibility range and validation scope; [agents/openai.yaml](agents/openai.yaml) provides the display name and default prompt for runtimes that read that manifest.
+
+The archive also carries an action compatibility entry. This repository keeps it at compatibility/direct-cinematic-fights/ (5 files); it is only needed when a runtime loads nested skill directories. For a standalone install, copy that directory next to katil-skill in your skills path. The main entry remains katil-skill alone.
 
 ### 3. Trigger it
 
@@ -142,7 +156,7 @@ A few deliberate choices: no timecodes, no adjective stacking, no "do not…" ex
 
 - **240 ability cards (C01–C24)** — C01–C20 are character abilities across realistic, sci-fi and fantasy worlds; C21–C24 add non-combat screen effects for any genre: commercial macro and product effects, natural phenomena and macro spectacle, dream logic and surreal transitions, and uncanny folklore atmospheres. Each card is organised as mechanism and use / action and response / effect description / limits and counters / camera and sound / residue and continuity, so an ability is never a cost-free win button.
 - **60 visual-style recipes (F01–F10)** — from live-action documentary to Japanese 2D animation, traditional painting media, stop motion and experimental hybrid work. Each recipe ships character-image, location-image and video style fragments **in both Chinese and English**.
-- **10 authoritative rules** — with SHA-256 provenance and summary blocks, in [rules/rule-registry.yaml](rules/rule-registry.yaml). EVIDENCE 1.0.0 defines the evidence levels and the boundaries of release claims.
+- **15 authoritative rules** — with SHA-256 provenance and summary blocks, in [rules/rule-registry.yaml](rules/rule-registry.yaml). EVIDENCE 1.0.0 defines the evidence levels and the boundaries of release claims; FX_DIRECTOR / FX_PROCEDURAL / FX_ENGINE / FX_OPTICAL / FX_SYNC govern FX scheduling, lifecycle, engine translation, optics and sync.
 
 Both libraries are read-only lookups; you never have to open the full JSON:
 
@@ -177,9 +191,9 @@ F06 日式二维动画: S031-S036
 katil-skill/
 ├─ SKILL.md                Skill entry: the nine-step flow and the "read by task" routing table
 ├─ manifest.yaml           Version, compatibility range, validation scope (machine-readable)
-├─ CHANGELOG.md            Version history (currently 3.9.0)
+├─ CHANGELOG.md            Version history (currently 3.10.5)
 ├─ agents/openai.yaml      Runtime manifest: display name, summary, default prompt
-├─ references/             42 topic documents + 3 data directories
+├─ references/             46 topic documents + 3 data directories
 │  ├─ general-creative-core.md      Task contract, module authority, TIME rules
 │  ├─ action-and-shot-compiler.md   Action staging and critical causality
 │  ├─ narrative-and-performance.md  Drama, dialogue, relationships
@@ -190,12 +204,18 @@ katil-skill/
 │  ├─ prompt-delivery-and-language.md  Copy blocks, bilingual delivery, locked dialogue
 │  ├─ general-acceptance.md / video-acceptance-testing.md  Two acceptance levels
 │  ├─ evidence-and-claims.md        Evidence levels EV0–EV3 and claim boundaries
+│  ├─ fx-director.md                15 FX classes, six-layer scheduling and budgets
+│  ├─ procedural-fx-grammar.md      Procedural lifecycle and residue
+│  ├─ optical-and-compositing-grammar.md  Optics and compositing
+│  ├─ fx-synchronization.md         Event-level eight-track sync
+│  ├─ release-history.md            Archived release notes, V3.9.3–V3.10.3
 │  ├─ ability-library/abilities.json    240 ability cards
 │  ├─ style-library/styles.json         60 style cards
 │  └─ model-capabilities/seedance-2.5.json
-├─ rules/rule-registry.yaml  10 authoritative rules with summary hashes
-├─ scripts/                7 validation / lookup scripts
-├─ tests/                  184 software tests, 117 regression cases and fixtures
+├─ rules/rule-registry.yaml  15 authoritative rules with summary hashes
+├─ scripts/                8 validation / lookup scripts
+├─ tests/                  244 software tests, 162 regression cases and fixtures
+├─ compatibility/          Action compatibility entry (direct-cinematic-fights, 5 files)
 ├─ docs/                   Companion tool: the requirement optimizer (zh + en)
 └─ assets/                 Icon and bilingual banners
 ```
@@ -213,25 +233,25 @@ python scripts/style_library.py --validate
 python scripts/run_regression.py --cases tests --out regression_result.json
 ```
 
-Current state (2026-11-08; run locally on Windows 11 / Python 3.12.7 / pytest 7.4.4, with the same checks on GitHub Actions Linux + Python 3.12):
+Current state (2026-11-11; run locally on Windows 11 / Python 3.12.7 / pytest 7.4.4, with the same checks on GitHub Actions Linux + Python 3.12):
 
 | Check | Result |
 | --- | --- |
-| `pytest tests` | **184 passed** (Linux CI, symlink case included); **183 passed, 1 skipped** (Windows, local) |
-| `rule_registry_check.py` | PASS, 10 rules; semantic equivalence UNKNOWN (manual review required) |
+| `pytest tests` | **244 passed** (Linux CI, symlink case included); **243 passed, 1 skipped** (Windows, local) |
+| `rule_registry_check.py` | PASS, 15 rules; semantic equivalence UNKNOWN (manual review required) |
 | `model_profile_check.py` | PASS (structure and provenance links only); semantic_support is always UNKNOWN |
 | `ability_library.py --validate` | PASS, 240 entries, C01–C24 |
 | `style_library.py --validate` | PASS, 60 entries, F01–F10 |
-| `run_regression.py` | 117 cases structurally checked: 111 UNKNOWN + 6 PENDING_VIDEO |
+| `run_regression.py` | 162 cases structurally checked: 151 UNKNOWN + 11 PENDING_VIDEO |
 
-**The boundary, stated up front:** everything above is text-level and software-level validation, recorded as **EV1** under the [evidence levels](references/evidence-and-claims.md). `validation_scope` in [manifest.yaml](manifest.yaml) says it plainly — `EV1: fixed text tasks and software tests; no real-model/video claim`. This repository ships no real-model generation or footage-review evidence, and does not treat "structure checks pass" as "the picture got better". Structured acceptance cases (T34–T43, C04) additionally carry `must_hold` / `must_reject` assertions; missing, duplicated or intersecting arrays are treated as structural errors. The historical evidence folders referenced in `tests/README.md` (`results/v3.x`) were offline release records and are not distributed with the skill package.
+**The boundary, stated up front:** everything above is text-level and software-level validation, recorded as **EV1** under the [evidence levels](references/evidence-and-claims.md). `validation_scope` in [manifest.yaml](manifest.yaml) says it plainly — `EV1: fixed text tasks and software tests; no real-model/video claim`. This repository ships no real-model generation or footage-review evidence, and does not treat "structure checks pass" as "the picture got better". Structured acceptance cases (T34–T62, C04, G10 / G11) additionally carry `must_hold` / `must_reject` assertions; missing, duplicated or intersecting arrays are treated as structural errors. G10 / G11 require criterion coverage against each complete video: an impact frame that briefly occludes the contact point does not count as a missing result, and only a result still invisible after recovery is marked `PENDING_VIDEO`. The historical evidence folders referenced in `tests/README.md` (`results/v3.x`) were offline release records and are not distributed with the skill package.
 
 ## Version and compatibility
 
-- Current version **3.9.0** (2026-11-08), release channel `stable`
+- Current version **3.10.5** (2026-11-11), release channel `candidate` (local install and structural checks complete; ten-endpoint installation and real-generation blind review are not)
 - Compatibility: `compatible_core: ">=3.7.0,<4.0.0"`
 - Ability library 2.0.0 (240 entries) / style library 1.9.0 (60 entries)
-- History in [CHANGELOG.md](CHANGELOG.md); scope of this release in [references/release-v3.9.0.md](references/release-v3.9.0.md)
+- History in [CHANGELOG.md](CHANGELOG.md); per-release notes for V3.9.3–V3.10.3 are archived in [references/release-history.md](references/release-history.md)
 - Rule governance and hash synchronisation in [references/rule-registry-maintenance.md](references/rule-registry-maintenance.md)
 
 ## FAQ
@@ -269,7 +289,7 @@ Code and documentation are MIT — see [LICENSE](LICENSE). Rights to the images,
 <details>
 <summary><b>Why is there no before/after comparison in the README?</b></summary>
 
-Because no same-task, same-model-version, multi-generation A/B has been run and watched. Putting a cherry-picked clip here as proof is exactly what this project argues against — under the 3.9.0 evidence levels it would not even reach EV2. To evaluate it, run your own A/B following [references/video-acceptance-testing.md](references/video-acceptance-testing.md) — and accept that a small sample cannot establish statistical significance.
+Because no same-task, same-model-version, multi-generation A/B has been run and watched. Putting a cherry-picked clip here as proof is exactly what this project argues against — under the 3.10.5 evidence levels it would not even reach EV2. To evaluate it, run your own A/B following [references/video-acceptance-testing.md](references/video-acceptance-testing.md) — and accept that a small sample cannot establish statistical significance.
 </details>
 
 ## Contributing
@@ -294,5 +314,5 @@ Third-party visual and VFX study sources are listed in [references/style-study-s
 ---
 
 <div align="center">
-  <sub>KATIL-skill · V3.9.0 · Storyboards written for people, instructions written for models.</sub>
+  <sub>KATIL-skill · V3.10.5 · Storyboards written for people, instructions written for models.</sub>
 </div>

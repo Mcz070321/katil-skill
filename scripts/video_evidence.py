@@ -64,9 +64,12 @@ def inspect_video(path):
     return 'PASS', metadata, '媒体流与帧读取检查通过'
 
 
-def read_review(raw, base, case_id, records, notes, audit):
+def read_review(raw, base, case_id, records, notes, audit, runs_min=2, review_criteria=None):
     """Import a separately stored, hash-bound, per-clip review; identity is not authenticated."""
+    required_criteria = set(review_criteria or ())
     audit['review_record_valid'] = False
+    audit.update(review_mode='open', independence='shared', blind_protocol=None,
+                 sample_size=None, ev3_supported=False)
     if not isinstance(raw, str) or not raw.strip():
         notes.append('缺少独立评审文件 review_file；reviewed=true 不能代替逐条评审')
         return 'PENDING_VIDEO'
@@ -84,6 +87,26 @@ def read_review(raw, base, case_id, records, notes, audit):
         date = datetime.fromisoformat(str(review.get('reviewed_at', '')).replace('Z', '+00:00'))
         if date.tzinfo is None:
             raise ValueError('reviewed_at 须为带时区的 ISO 时间')
+        review_mode = review.get('review_mode', 'open')
+        if review_mode not in ('blind', 'open'):
+            raise ValueError('review_mode 须为 blind 或 open')
+        independence = review.get('independence', 'shared')
+        if independence not in ('independent', 'shared'):
+            raise ValueError('independence 须为 independent 或 shared')
+        protocol = review.get('blind_protocol')
+        if protocol is not None and not isinstance(protocol, str):
+            raise ValueError('blind_protocol 须为字符串')
+        sample_size = review.get('sample_size')
+        if sample_size is not None and (isinstance(sample_size, bool) or not isinstance(sample_size, int) or sample_size < 1):
+            raise ValueError('sample_size 须为不小于 1 的整数')
+        min_sample = max(2, runs_min if type(runs_min) is int else 2)
+        if review_mode == 'blind':
+            if not isinstance(protocol, str) or not protocol.strip():
+                raise ValueError('blind 评审必须写明 blind_protocol')
+            if not isinstance(sample_size, int) or sample_size < min_sample:
+                raise ValueError(f'blind 评审的 sample_size 须不小于 {min_sample}（对应用例 runs_min）')
+            if independence != 'independent':
+                raise ValueError('blind 评审必须声明 independence=independent')
         clips = review.get('clips')
         if not isinstance(clips, list) or len(clips) != len(records):
             raise ValueError('逐条评审数与视频证据数不符')
@@ -111,6 +134,7 @@ def read_review(raw, base, case_id, records, notes, audit):
             observations = clip.get('observations')
             if not isinstance(observations, list) or not observations:
                 raise ValueError('缺少逐条观察 observations')
+            observed_criteria = set()
             for observation in observations:
                 if not isinstance(observation, dict):
                     raise ValueError('观察必须是对象')
@@ -121,12 +145,28 @@ def read_review(raw, base, case_id, records, notes, audit):
                 if (isinstance(time, bool) or not isinstance(time, (int, float)) or
                         not math.isfinite(time) or not 0 <= time <= record['duration_seconds']):
                     raise ValueError('观察时间无效或超出对应视频时长')
+                observed_criteria.add(observation['criterion'])
+            if clip['viewing'] == 'full_video':
+                missing = required_criteria - observed_criteria
+                if missing:
+                    raise ValueError(f'{key[0]} 第 {key[1]} 条视频缺少评审判据：{", ".join(sorted(missing))}')
             verdicts.append(clip['verdict'])
     except (OSError, UnicodeError, ValueError, TypeError, OverflowError) as exc:
         notes.append(f'独立评审记录无效：{exc}')
         return 'FAIL'
-    audit.update(review_record_valid=True, reviewer=reviewer, reviewed_at=review['reviewed_at'])
-    notes.append(f'导入外部评审：{reviewer["id"]}（{reviewer["kind"]}）；身份与实际观看声明未认证')
+    ev3_supported = (review_mode == 'blind' and independence == 'independent'
+                     and isinstance(protocol, str) and bool(protocol.strip())
+                     and isinstance(sample_size, int) and sample_size >= min_sample
+                     and not partial)
+    audit.update(review_record_valid=True, reviewer=reviewer, reviewed_at=review['reviewed_at'],
+                 review_mode=review_mode, independence=independence,
+                 blind_protocol=protocol.strip() if isinstance(protocol, str) else None,
+                 sample_size=sample_size, ev3_supported=ev3_supported)
+    notes.append(f'导入外部评审：{reviewer["id"]}（{reviewer["kind"]}）；评审方式 {review_mode}／{independence}；身份与实际观看声明未认证')
+    if ev3_supported:
+        notes.append('EV3 盲评记录字段齐备；程序仍不认证评审者独立性与实际盲法执行')
+    elif review_mode == 'blind':
+        notes.append('声明 blind 但观看范围或字段不足，不能记为 EV3')
     if 'FAIL' in verdicts:
         return 'FAIL'
     if partial:
@@ -213,7 +253,10 @@ def validate_generation(case, response, base, versions, notes, audit):
         audit['evidence_status'] = 'PENDING_VIDEO'
         return 'PENDING_VIDEO'
     audit['evidence_status'] = 'PASS'
-    review_status = read_review(response.get('review_file'), base, str(case.get('id')), records, notes, audit)
+    review_status = read_review(
+        response.get('review_file'), base, str(case.get('id')), records, notes, audit,
+        runs_min=case.get('runs_min', 2), review_criteria=case.get('review_criteria'),
+    )
     audit['review_status'] = review_status
     if audit.get('review_record_valid') and review_status in ('PASS', 'WARN', 'FAIL'):
         audit['quality_verdict_source'] = 'external_review_record_unverified_identity'

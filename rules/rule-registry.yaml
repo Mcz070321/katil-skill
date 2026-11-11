@@ -7,14 +7,14 @@
         "path": "references/reference-and-task-handling.md",
         "anchor": "katil-ref"
       },
-      "authority_sha256": "fec062bdcb55b91c0eb1ebeac2388265468d136a55a3d32c80135cdf6ee74df2",
-      "rule_revision": "1.2.0",
+      "authority_sha256": "125179d66e15f0e9f63c613544a4fb2217e6fec8484608c1550b28c4e18a8d7e",
+      "rule_revision": "1.4.0",
       "summary_refs": [
         {
           "path": "SKILL.md",
-          "marker": "SUMMARY of REF@1.2.0",
-          "rule_revision": "1.2.0",
-          "summary_sha256": "7d22d1f1f933cc0562a2c7fb3becaed34eb3254fc3d77861c824ef70768ee1c2"
+          "marker": "SUMMARY of REF@1.4.0",
+          "rule_revision": "1.4.0",
+          "summary_sha256": "71087a4165967ace19e3a56c5ba25e7167647975526307b0bed8274c45a40ad0"
         }
       ],
       "depends_on": [
@@ -74,21 +74,21 @@
         "path": "references/shot-execution-contract.md",
         "anchor": "katil-witness"
       },
-      "authority_sha256": "2ee024cde9f37aca22325fcea148d1904ee4cd81c524cbbe9862d197725ac9bd",
-      "rule_revision": "1.2.0",
+      "authority_sha256": "7066e5251da770e582371a07a70a3949464a483b4c9c17c8fe914cf899202ac7",
+      "rule_revision": "1.3.0",
       "summary_refs": [
         {
           "path": "SKILL.md",
-          "marker": "SUMMARY of WITNESS@1.2.0",
-          "rule_revision": "1.2.0",
-          "summary_sha256": "c39a67acc3a28c80455c8103629c54a83411419de7f22571f018e8001648c6b7"
+          "marker": "SUMMARY of WITNESS@1.3.0",
+          "rule_revision": "1.3.0",
+          "summary_sha256": "21956f0a6c0e0f87b4efce2b7751f8d9f2d900a54e5f575720eb2218c6e327bc"
         }
       ],
       "depends_on": [
         "TIME"
       ],
       "review_status": "reviewed",
-      "last_reviewed": "2026-11-07",
+      "last_reviewed": "2026-11-09",
       "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
     },
     {
@@ -143,7 +143,7 @@
         "path": "references/model-adaptation.md",
         "anchor": "katil-adapter"
       },
-      "authority_sha256": "cd22e7a94df801382c99d20c106234f320004f9fb4549610c33e569775d865a2",
+      "authority_sha256": "63ba569e40a8d399e24758a5b92cd9e05c538eab7eaa132ecb715780c613218e",
       "rule_revision": "1.3.0",
       "summary_refs": [
         {
@@ -160,7 +160,7 @@
       ],
       "review_status": "reviewed",
       "last_reviewed": "2026-11-08",
-      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护、来源分层与 COMPATIBLE 边界；语义及真实视频按各自证据评审"
+      "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护、来源分层与 COMPATIBLE 边界；运行器要求 COMPATIBLE 附 submission_evidence，documented 只写能力档案；语义及真实视频按各自证据评审"
     },
     {
       "rule_id": "EVIDENCE",
@@ -168,7 +168,7 @@
         "path": "references/evidence-and-claims.md",
         "anchor": "katil-evidence"
       },
-      "authority_sha256": "443c4cdbdcd28a4afc3381c88fc22f3255b2ffd25f162d40f5cfc7c2d88302a7",
+      "authority_sha256": "640527a7bca2956f818f4a1ca5ee63390a6e4a57d47233e48f42ed690b6279c5",
       "rule_revision": "1.0.0",
       "summary_refs": [
         {
@@ -185,7 +185,7 @@
       ],
       "review_status": "reviewed",
       "last_reviewed": "2026-11-08",
-      "review_scope": "定向文字对照 EV0–EV3、四类证据互不转换、来源分层与 COMPATIBLE 边界；语义支持与真实视频按各自证据另行评审"
+      "review_scope": "定向文字对照 EV0–EV3、EV1 含语义文字评审、四类证据互不转换、来源分层与 COMPATIBLE 边界；documented 不是提交兼容性值，submission_ready 在 3.9.x 恒 false；语义支持与真实视频按各自证据另行评审"
     },
     {
       "rule_id": "SEEDANCE",
@@ -193,14 +193,14 @@
         "path": "references/seedance-2.5.md",
         "anchor": "katil-seedance"
       },
-      "authority_sha256": "7dc332b939f4c626c5eb18f2224a0b032cbcb3cc1a2fb44cf3562642382c07f7",
-      "rule_revision": "1.3.0",
+      "authority_sha256": "891757662d145e2e2d7f6525598fd53faddf96158e8457578d051b3d4ca11983",
+      "rule_revision": "1.5.0",
       "summary_refs": [
         {
           "path": "SKILL.md",
-          "marker": "SUMMARY of SEEDANCE@1.3.0",
-          "rule_revision": "1.3.0",
-          "summary_sha256": "3a96bcccd6f455f97ff730b0a45ae4083f43ec5250e717c9ed9c1081bb73896a"
+          "marker": "SUMMARY of SEEDANCE@1.5.0",
+          "rule_revision": "1.5.0",
+          "summary_sha256": "76b69ce769530c618cb3ffe4315ca862526804f7b1ff6856a573892187519f9d"
         }
       ],
       "depends_on": [
@@ -237,6 +237,134 @@
       "review_status": "reviewed",
       "last_reviewed": "2026-11-07",
       "review_scope": "定向文字对照事件序、精确时间适用范围、来源保护与容量承接；语义及真实视频按各自证据评审"
+    },
+    {
+      "rule_id": "FX_DIRECTOR",
+      "authority": {
+        "path": "references/fx-director.md",
+        "anchor": "katil-fx-director"
+      },
+      "authority_sha256": "634361990ae300a311d7ecdaf440788a3ceb43216ab932132805e0c9e2bbbb5a",
+      "rule_revision": "1.0.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of FX_DIRECTOR@1.0.0",
+          "rule_revision": "1.0.0",
+          "summary_sha256": "f22111bf15e31b9e0eabacb483314f668ccd35186c7e420b68095038286302f6"
+        }
+      ],
+      "depends_on": [
+        "TIME",
+        "WITNESS",
+        "DELIVERY"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-09",
+      "review_scope": "特效分类、主导与辅助类别、六层职责、复杂度预算与权威边界；结构文字评审，无真实视频"
+    },
+    {
+      "rule_id": "FX_PROCEDURAL",
+      "authority": {
+        "path": "references/procedural-fx-grammar.md",
+        "anchor": "katil-procedural-fx"
+      },
+      "authority_sha256": "8811f32ca5cea62125c1f7855d627a5b521a977a35a1715d7213aba1d2e931dc",
+      "rule_revision": "1.0.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of FX_PROCEDURAL@1.0.0",
+          "rule_revision": "1.0.0",
+          "summary_sha256": "3a26e6b4f9747e615819157b88d294625179354cb87f292639528ad05b80c4fd"
+        }
+      ],
+      "depends_on": [
+        "FX_DIRECTOR",
+        "WITNESS",
+        "CONTINUITY",
+        "TIME"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-09",
+      "review_scope": "程序化生命周期、发射、运动场、碰撞、衰减与残留；结构文字评审，无真实视频"
+    },
+    {
+      "rule_id": "FX_ENGINE",
+      "authority": {
+        "path": "references/engine-fx-visual-mapping.md",
+        "anchor": "katil-engine-fx"
+      },
+      "authority_sha256": "5499366db0a275c03e286e08c6dea55b1de965bd9486bd783465112a489c363d",
+      "rule_revision": "1.0.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of FX_ENGINE@1.0.0",
+          "rule_revision": "1.0.0",
+          "summary_sha256": "7cb3d775c2c4e76099ac580c51328a635b11fa7c631982e36187b8f93b234ae6"
+        }
+      ],
+      "depends_on": [
+        "FX_DIRECTOR",
+        "ADAPTER",
+        "SEEDANCE"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-09",
+      "review_scope": "引擎概念的视觉转译与误用边界；不认证真实引擎调用或模型能力"
+    },
+    {
+      "rule_id": "FX_OPTICAL",
+      "authority": {
+        "path": "references/optical-and-compositing-grammar.md",
+        "anchor": "katil-optical-compositing"
+      },
+      "authority_sha256": "201b59b599583b1bfcc02e6155d99382d2c050c074dff4122cbf06d71f55c536",
+      "rule_revision": "1.0.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of FX_OPTICAL@1.0.0",
+          "rule_revision": "1.0.0",
+          "summary_sha256": "5fc7c0a50836614b500bb41dc650faa2a2e7476207b65c2202e37fac4f01b5d1"
+        }
+      ],
+      "depends_on": [
+        "FX_DIRECTOR",
+        "SPACE",
+        "CONTINUITY"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-09",
+      "review_scope": "光学语法、合成层级、主体可读性与摄影反应；结构文字评审，无真实视频"
+    },
+    {
+      "rule_id": "FX_SYNC",
+      "authority": {
+        "path": "references/fx-synchronization.md",
+        "anchor": "katil-fx-sync"
+      },
+      "authority_sha256": "3488882bafca0cfe0c2b9904efe8903f8ef55c8a0fbe38c4613d4040c8c84490",
+      "rule_revision": "1.0.0",
+      "summary_refs": [
+        {
+          "path": "SKILL.md",
+          "marker": "SUMMARY of FX_SYNC@1.0.0",
+          "rule_revision": "1.0.0",
+          "summary_sha256": "da6f77bc162c2c6d8ee47f87b0310f04561c611fe960cf75cc6c1febd3ecc395"
+        }
+      ],
+      "depends_on": [
+        "FX_DIRECTOR",
+        "SOUND",
+        "WITNESS",
+        "CONTINUITY",
+        "TIME"
+      ],
+      "review_status": "reviewed",
+      "last_reviewed": "2026-11-09",
+      "review_scope": "事件级八轨同步、接触簇、环境前沿与声音同源；结构文字评审，无真实视频"
     }
   ]
 }

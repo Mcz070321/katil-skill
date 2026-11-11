@@ -25,6 +25,8 @@ class EvidenceLevelTests(unittest.TestCase):
             self.assertIn(phrase, text)
         self.assertIn("证据等级属于**具体声明**，不属于整个版本", text)
         self.assertIn("没有实际生成并观看完整视频时，EV2 及以上不成立", text)
+        self.assertIn("按验收条目的语义文字评审", text)
+        self.assertIn("后者仍是文本层判断，不是 EV2", text)
 
     def test_claim_boundaries_do_not_upgrade_text_to_video(self):
         text = read("evidence-and-claims.md")
@@ -32,10 +34,12 @@ class EvidenceLevelTests(unittest.TestCase):
         self.assertIn("用 EV2 写“稳定解决”“全面通过”。", text)
         self.assertIn("结构 PASS 不得改写成成片 PASS", text)
         self.assertIn("版本号、文件数、测试数和绿色 CI 不提升证据等级", text)
+        self.assertIn("文字评审通过", text)
         acceptance = read("video-acceptance-testing.md")
         self.assertIn("EV1", acceptance)
         self.assertIn("EV3", acceptance)
         self.assertIn("PENDING_VIDEO", acceptance)
+        self.assertIn("语义文字评审也属 EV1", acceptance)
 
 
 class SourceTierTests(unittest.TestCase):
@@ -46,6 +50,10 @@ class SourceTierTests(unittest.TestCase):
         self.assertIn("官方文档不能单独判兼容", text)
         self.assertIn("COMPATIBLE需要platform_measured或同任务的真实视频观察", text)
         self.assertIn("不得支撑COMPATIBLE", text)
+        self.assertIn("submission_evidence", text)
+        self.assertIn("documented 只描述文档记载的能力", text)
+        self.assertIn("submission_ready", read("evidence-and-claims.md"))
+        self.assertIn("在 3.9.x 中恒为 false", read("evidence-and-claims.md"))
 
 
 class RegistryAndCaseTests(unittest.TestCase):
@@ -64,7 +72,7 @@ class RegistryAndCaseTests(unittest.TestCase):
         self.assertNotIn("<!-- SUMMARY of ADAPTER@1.2.0 -->", skill)
 
     def test_structured_cases_have_separate_positive_and_negative_assertions(self):
-        ids = {"T%d" % i for i in range(34, 44)} | {"C04"}
+        ids = {"T%d" % i for i in range(34, 61)} | {"C04"}
         seen = set()
         for filename in ("execution_cases.json", "continuity_cases.json"):
             data = json.loads((ROOT / "tests" / filename).read_text(encoding="utf-8"))
@@ -80,7 +88,16 @@ class RegistryAndCaseTests(unittest.TestCase):
                 self.assertTrue(reject, case["id"])
                 self.assertFalse(set(hold) & set(reject), case["id"])
                 self.assertTrue(all(isinstance(item, str) and item.strip() for item in hold + reject), case["id"])
+                if case["id"] == "T42":
+                    self.assertFalse(any("不用" in item for item in hold), case["id"])
+                if case["id"] == "C04":
+                    self.assertFalse(any("不剪切" in item for item in hold), case["id"])
         self.assertEqual(seen, ids)
+
+    def test_runner_contract_fields_are_documented(self):
+        readme = (ROOT / "tests" / "README.md").read_text(encoding="utf-8")
+        for phrase in ("review_mode", "independence", "blind_protocol", "sample_size", "ev3_supported", "submission_evidence"):
+            self.assertIn(phrase, readme)
 
     def test_generation_g05_g06_compare_v381_and_v382(self):
         data = json.loads((ROOT / "tests" / "generation_cases.json").read_text(encoding="utf-8"))

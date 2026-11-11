@@ -16,11 +16,6 @@ def summary_body(text, marker):
         raise ValueError('SUMMARY_EMPTY')
     return body
 
-def authority_payload(path):
-    """Read authority text with line endings normalized so digests survive any checkout."""
-    text=path.read_bytes().decode('utf-8')
-    return text.replace('\r\n','\n').replace('\r','\n').encode('utf-8')
-
 def sync(root):
     """Recompute and write authority_sha256 and summary_sha256 for all registered rules."""
     root=Path(root).resolve()
@@ -36,7 +31,7 @@ def sync(root):
         text=raw.decode('utf-8')
         if 'id="'+rule['authority']['anchor']+'"' not in text:
             raise ValueError(f'ANCHOR_MISSING:{rid}')
-        rule['authority_sha256']=hashlib.sha256(authority_payload(auth_path)).hexdigest()
+        rule['authority_sha256']=hashlib.sha256(raw).hexdigest()
         for ref in rule.get('summary_refs',[]):
             ref['rule_revision']=rule['rule_revision']
             ref['marker']='SUMMARY of '+rid+'@'+rule['rule_revision']
@@ -78,7 +73,7 @@ def check(root):
             if not re.fullmatch(r'\d+\.\d+\.\d+',rule['rule_revision']): raise ValueError('REVISION')
             p=file(rule['authority']['path']);raw=p.read_bytes(); text=raw.decode()
             if 'id="'+rule['authority']['anchor']+'"' not in text: fail('ANCHOR_MISSING',rid)
-            if hashlib.sha256(authority_payload(p)).hexdigest()!=rule['authority_sha256']: fail('AUTHORITY_DIGEST_MISMATCH',rid)
+            if hashlib.sha256(raw).hexdigest()!=rule['authority_sha256']: fail('AUTHORITY_DIGEST_MISMATCH',rid)
             refs=rule['summary_refs']
             if not isinstance(refs,list) or not refs: fail('SUMMARY_REFS_EMPTY',rid);refs=[]
             for ref in refs:

@@ -15,10 +15,10 @@
   </p>
 
   <p>
-    <a href="https://github.com/Mcz070321/katil-skill/releases"><img alt="version 3.9.0" src="https://img.shields.io/badge/version-3.9.0-2f2f2f?style=flat-square"></a>
+    <a href="https://github.com/Mcz070321/katil-skill/releases"><img alt="version 3.10.5" src="https://img.shields.io/badge/version-3.10.5-2f2f2f?style=flat-square"></a>
     <img alt="MIT license" src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square">
     <a href="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml"><img alt="checks passing" src="https://github.com/Mcz070321/katil-skill/actions/workflows/ci.yml/badge.svg"></a>
-    <img alt="184 tests" src="https://img.shields.io/badge/tests-184-2ea44f?style=flat-square">
+    <img alt="244 tests" src="https://img.shields.io/badge/tests-244-2ea44f?style=flat-square">
     <img alt="240 abilities" src="https://img.shields.io/badge/abilities-240-8957e5?style=flat-square">
     <img alt="60 styles" src="https://img.shields.io/badge/styles-60-d29922?style=flat-square">
   </p>
@@ -64,6 +64,18 @@ KATIL-skill 是一个以 [SKILL.md](SKILL.md) 为入口的 **AI 影视导演系�
 7. **交付前返修** —— 容量、状态连续、手脚与支点占用、终态承载逐项核对；发现的冲突先改正文，不能只在内部写一句「注意容量」。
 8. **验收分层** —— 文字验收可以现在跑；视频验收必须真实生成并观看。两者分开记录，样本不足就标「不确定」。
 9. **证据分级（EV0–EV3）** —— 设计、文本与结构、单次生成观察、同条件多次加盲评，四层证据分开标注：EV1 的结构 PASS 不能改写成成片 PASS，没有完整观看就保持「待验证」。模型事实同样分官方文档、平台实测与未验证假设，官方文档不能单独支撑「兼容」。
+10. **特效按事件调度（FX Director 2.0）** —— 特效不是形容词，而是事件层：15 类视觉特效、六层调度（叙事意图／物理机制／程序化生命周期／引擎视觉语法／光学与合成／事件同步），主导 1 类＋辅助 0–3 类，按复杂度分三档预算。特效层只裁决分类与调度，不改写能力、伤势、动作结果、摄影锁定或声音授权；引擎名只作视觉语法，不代表真实引擎调用。
+11. **不可逆终局与尾段锁定** —— 先定 S0→Sn 的状态链与巨物尺度梯，再写过程；决定性结果成立后，尾段只承接直接余波与状态沉降，不再开第二结局。冲击帧可以短暂遮住交点，但恢复后必须逐项看得见结果。
+
+## 特效导演层（3.10）
+
+视效不再是「多加一点粒子」，而是可调度、可验收的事件层。流程先问这一击或这一场改变了什么状态，再决定用哪几类 FX、谁主导、预算多少。
+
+- **分类与六层调度** —— 15 类视觉特效、主导 1＋辅助 0–3、A–H 决策流程与三档预算，见 [fx-director.md](references/fx-director.md)。
+- **程序化生命周期** —— 起势、持续、衰减、残留与运动场，避免「粒子一出就消失」，见 [procedural-fx-grammar.md](references/procedural-fx-grammar.md)。
+- **引擎视觉转译** —— Niagara／Chaos／Lumen 等只作为视觉语法参考，不是对引擎的真实调用，见 [engine-fx-visual-mapping.md](references/engine-fx-visual-mapping.md)。
+- **光学与合成** —— 曝光、景深、运动模糊、色散、烟尘遮光与图层顺序，见 [optical-and-compositing-grammar.md](references/optical-and-compositing-grammar.md)。
+- **事件级同步** —— 动作、环境、摄影、FX 与声音在同一事件上对齐，见 [fx-synchronization.md](references/fx-synchronization.md)；长稿压缩时的保真检查见 [fx-compilation-and-fidelity.md](references/fx-compilation-and-fidelity.md)。
 
 ## 快速开始
 
@@ -86,6 +98,8 @@ mv katil-skill ~/.agents/skills/katil-skill
 ```
 
 技能入口是 [SKILL.md](SKILL.md)；[manifest.yaml](manifest.yaml) 声明版本、兼容范围与验证边界；[agents/openai.yaml](agents/openai.yaml) 供支持该清单的运行时读取显示名与默认提示。
+
+压缩包另带一个动作兼容入口。本仓库把它放在 compatibility/direct-cinematic-fights/（5 个文件）；只有运行时会加载嵌套技能目录时才需要它，独立安装可把该目录复制到与 katil-skill 同级的 skills 路径。主入口仍只有 katil-skill。
 
 ### 3. 触发
 
@@ -140,7 +154,7 @@ Shot 03 They hold each other's gaze through the steam, neither speaking first. T
 
 - **240 张能力卡（C01–C24）** —— C01–C20 是现实、科幻、奇幻三类世界的角色技能；C21–C24 是不依附战斗的全类型影视视效：商业微距与产品视效、自然天象与宏观奇观、心理梦境与超现实转场、怪谈异变与诡异氛围。每张按「机制与用途 / 动作与应答 / 特效描写 / 限制与反制 / 镜头与声音 / 残留与连续性」组织，避免把能力写成没有代价的万能招。
 - **60 张视觉风格配方（F01–F10）** —— 从真人纪实到日式二维、传统绘画、定格与实验混合媒介；每张含角色图、场景图、视频三种风格片段的**中英双语**写法。
-- **10 条权威规则** —— 带 SHA-256 溯源与摘要块，见 [rules/rule-registry.yaml](rules/rule-registry.yaml)。其中 EVIDENCE 1.0.0 定义证据等级与发布声明的边界。
+- **15 条权威规则** —— 带 SHA-256 溯源与摘要块，见 [rules/rule-registry.yaml](rules/rule-registry.yaml)。其中 EVIDENCE 1.0.0 定义证据等级与发布声明的边界；FX_DIRECTOR／FX_PROCEDURAL／FX_ENGINE／FX_OPTICAL／FX_SYNC 分别约束特效调度、生命周期、引擎转译、光学合成与事件同步。
 
 两个库都是只读检索，不需要打开整份 JSON：
 
@@ -175,9 +189,9 @@ F06 日式二维动画: S031-S036
 katil-skill/
 ├─ SKILL.md                技能入口：9 步统一流程与「按任务读取」路由表
 ├─ manifest.yaml           版本、兼容范围、验证边界（机器可读）
-├─ CHANGELOG.md            版本记录（当前 3.9.0）
+├─ CHANGELOG.md            版本记录（当前 3.10.5）
 ├─ agents/openai.yaml      运行时清单：显示名、简介、默认提示
-├─ references/             42 个专题文档 + 3 个数据目录
+├─ references/             46 个专题文档 + 3 个数据目录
 │  ├─ general-creative-core.md      多维契约、模块决策权、TIME 规则
 │  ├─ action-and-shot-compiler.md   动作编排与关键因果
 │  ├─ narrative-and-performance.md  文戏、对白、人物关系
@@ -188,12 +202,18 @@ katil-skill/
 │  ├─ prompt-delivery-and-language.md  复制块、双语、台词锁死
 │  ├─ general-acceptance.md / video-acceptance-testing.md  两级验收
 │  ├─ evidence-and-claims.md        证据等级 EV0–EV3 与声明边界
+│  ├─ fx-director.md                15 类特效、六层调度与预算
+│  ├─ procedural-fx-grammar.md      程序化生命周期与残留
+│  ├─ optical-and-compositing-grammar.md  光学与合成
+│  ├─ fx-synchronization.md         事件级八轨同步
+│  ├─ release-history.md            V3.9.3–V3.10.3 发布说明归档
 │  ├─ ability-library/abilities.json    240 张能力卡
 │  ├─ style-library/styles.json         60 张风格卡
 │  └─ model-capabilities/seedance-2.5.json
-├─ rules/rule-registry.yaml  10 条权威规则与摘要哈希
-├─ scripts/                 7 个校验 / 检索脚本
-├─ tests/                   184 项软件测试、117 条回归用例与样本
+├─ rules/rule-registry.yaml  15 条权威规则与摘要哈希
+├─ scripts/                 8 个校验 / 检索脚本
+├─ tests/                   244 项软件测试、162 条回归用例与样本
+├─ compatibility/           动作兼容入口（direct-cinematic-fights，5 个文件）
 ├─ docs/                    配套工具：需求指令优化器（中英双语）
 └─ assets/                  图标与中英横幅
 ```
@@ -211,25 +231,25 @@ python scripts/style_library.py --validate
 python scripts/run_regression.py --cases tests --out regression_result.json
 ```
 
-当前状态（2026-11-08；Windows 11 / Python 3.12.7 / pytest 7.4.4 本地运行，GitHub Actions 上另有 Linux + Python 3.12 的同套检查）：
+当前状态（2026-11-11；Windows 11 / Python 3.12.7 / pytest 7.4.4 本地运行，GitHub Actions 上另有 Linux + Python 3.12 的同套检查）：
 
 | 检查 | 结果 |
 | --- | --- |
-| `pytest tests` | **184 passed**（Linux CI，含符号链接用例）；**183 passed, 1 skipped**（Windows 本地） |
-| `rule_registry_check.py` | PASS，10 条规则；语义等价性 UNKNOWN（需人工复核） |
+| `pytest tests` | **244 passed**（Linux CI，含符号链接用例）；**243 passed, 1 skipped**（Windows 本地） |
+| `rule_registry_check.py` | PASS，15 条规则；语义等价性 UNKNOWN（需人工复核） |
 | `model_profile_check.py` | PASS（仅结构与来源链接）；semantic_support 始终 UNKNOWN |
 | `ability_library.py --validate` | PASS，240 项，C01–C24 |
 | `style_library.py --validate` | PASS，60 项，F01–F10 |
-| `run_regression.py` | 117 条用例结构检查：111 UNKNOWN + 6 PENDING_VIDEO |
+| `run_regression.py` | 162 条用例结构检查：151 UNKNOWN + 11 PENDING_VIDEO |
 
-**边界，写在最前面：** 以上全部是文本层与软件层的验证，按 [证据等级](references/evidence-and-claims.md) 记作 **EV1**。[manifest.yaml](manifest.yaml) 里的 `validation_scope` 写得很直白——`EV1: fixed text tasks and software tests; no real-model/video claim`。本仓库没有附带真实模型生成与成片评审证据，也不把「结构检查通过」当成「画面变好了」。结构化验收用例（T34–T43、C04）另外带 `must_hold`／`must_reject` 正反断言，缺项、重复或两数组相交按结构错误处理。历史证据目录（`tests/README.md` 中提到的 `results/v3.x`）属于发布时的离线记录，未随技能包分发。
+**边界，写在最前面：** 以上全部是文本层与软件层的验证，按 [证据等级](references/evidence-and-claims.md) 记作 **EV1**。[manifest.yaml](manifest.yaml) 里的 `validation_scope` 写得很直白——`EV1: fixed text tasks and software tests; no real-model/video claim`。本仓库没有附带真实模型生成与成片评审证据，也不把「结构检查通过」当成「画面变好了」。结构化验收用例（T34–T62、C04、G10／G11）另外带 `must_hold`／`must_reject` 正反断言，缺项、重复或两数组相交按结构错误处理；G10／G11 要求按每条完整视频核对判据标识，冲击帧短暂遮住交点不算结果缺失，恢复后仍看不到才记 `PENDING_VIDEO`。历史证据目录（`tests/README.md` 中提到的 `results/v3.x`）属于发布时的离线记录，未随技能包分发。
 
 ## 版本与兼容
 
-- 当前版本 **3.9.0**（2026-11-08），发布通道 `stable`
+- 当前版本 **3.10.5**（2026-11-11），发布通道 `candidate`（本地安装与结构核验完成；十端安装与真实生成盲评尚未完成）
 - 兼容范围 `compatible_core: ">=3.7.0,<4.0.0"`
 - 能力库 2.0.0（240 项）/ 风格库 1.9.0（60 项）
-- 变更记录见 [CHANGELOG.md](CHANGELOG.md)；本版发布范围见 [references/release-v3.9.0.md](references/release-v3.9.0.md)
+- 变更记录见 [CHANGELOG.md](CHANGELOG.md)；V3.9.3–V3.10.3 的逐版说明归档在 [references/release-history.md](references/release-history.md)
 - 规则治理与哈希同步见 [references/rule-registry-maintenance.md](references/rule-registry-maintenance.md)
 
 ## 常见问题
@@ -267,7 +287,7 @@ python scripts/run_regression.py --cases tests --out regression_result.json
 <details>
 <summary><b>为什么 README 不放「使用前后对比」？</b></summary>
 
-因为没做同条件、同模型版本、多次生成并实际观看的对照。放一张精选成片当证据，恰恰是这个项目反对的做法——按 3.9.0 的证据分级，它连 EV2 都不构成。要评估请按 [references/video-acceptance-testing.md](references/video-acceptance-testing.md) 自己跑 A/B，并接受小样本不能推断统计显著性。
+因为没做同条件、同模型版本、多次生成并实际观看的对照。放一张精选成片当证据，恰恰是这个项目反对的做法——按 3.10.5 的证据分级，它连 EV2 都不构成。要评估请按 [references/video-acceptance-testing.md](references/video-acceptance-testing.md) 自己跑 A/B，并接受小样本不能推断统计显著性。
 </details>
 
 ## 参与贡献
@@ -292,5 +312,5 @@ python -m pytest tests -q
 ---
 
 <div align="center">
-  <sub>KATIL-skill · V3.9.0 · 写给人看的分镜，也写给模型看的指令。</sub>
+  <sub>KATIL-skill · V3.10.5 · 写给人看的分镜，也写给模型看的指令。</sub>
 </div>

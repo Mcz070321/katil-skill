@@ -17,7 +17,7 @@ Core只负责已登记模型的自然语言执行稿。当前登记Seedance 2.5�
 
 模型选择不反过来决定故事强度、速度或结局。用户锁定的角色、武器、能力、事件、时长、精确时点、摄影、台词、声音、媒介、语言和尾态逐项保护。时长／字符／模式硬冲突时先改冗余与自补安排；仍有损失就列具体冲突和可行选择，未授权不自行取舍。60秒原生单次真一镜不能以两段拼接充数。
 
-首轮执行稿与母稿转译的时间表达沿用[通用创作核心的 TIME 规则](general-creative-core.md#katil-time)，默认按无时间码事件序；精确时间按明确要求或任务必需范围保留。编执行稿时，把主体与目标、行动、可见变化及下一状态组织成事件；光色、受力、材料和声音依附同一事件，减少重复叙述与互斥禁令。已锁结局时，按[镜头执行契约](shot-execution-contract.md)倒推并核对每项尾态承载；母稿写过不等于执行稿已保留。转译后逐项对照硬要求，不能把“事件聚合”变成删掉前置条件、结果或指定强度。具体渠道冲突与可选方案留在块外，提示词长短不代表质量或成功率。
+首轮执行稿与母稿转译的时间表达沿用[通用创作核心的 TIME 规则](general-creative-core.md#katil-time)，默认按无时间码事件序；精确时间按明确要求或任务必需范围保留。编执行稿时，把主体与目标、行动、可见变化及下一状态组织成事件；光色、受力、材料和声音依附同一事件，减少重复叙述与互斥禁令。已锁结局时，按[镜头执行契约](shot-execution-contract.md)倒推并核对每项尾态承载；母稿写过不等于执行稿已保留。转译后逐项对照硬要求，不能把“事件聚合”变成删掉前置条件、结果或指定强度。具体渠道冲突与可选方案留在块外，提示词长短不代表质量或成功率。复杂特效、引擎风格术语或光学描述仍按自然语言转译，技术名词只作视觉参照，不得声称模型运行了引擎或粒子系统；按需参见 [FX Director](fx-director.md)、[引擎转译](engine-fx-visual-mapping.md)、[光学与合成](optical-and-compositing-grammar.md)与[特效同步](fx-synchronization.md)，本页的模型与提交边界不变。
 
 ## 档案与结果
 
@@ -26,6 +26,8 @@ Core只负责已登记模型的自然语言执行稿。当前登记Seedance 2.5�
 分别记录：文字保真（PASS／WARN／FAIL／UNKNOWN）、当前提交兼容性（UNVERIFIED／UNSUPPORTED／DEGRADED／COMPATIBLE）与真实视频证据。缺必要资料为UNVERIFIED；有已证实硬阻塞为UNSUPPORTED；存在明确损失为DEGRADED；平台实测或同任务观察支持当前方案且要求保留，才可声明COMPATIBLE。用户批准损失也不变成无损。兼容不等于已上传、已生成或保证成功；无真实视频保持PENDING_VIDEO。
 
 模型事实按来源分层：official（官方文档）只支持documented能力；platform_measured（具名平台、日期、版本与参数下的实测）只支持该平台与该任务；unverified_assumption（推断、社区说法或未注明来源）不得填充未知数值，也不得支撑COMPATIBLE。COMPATIBLE需要platform_measured或同任务的真实视频观察（EV2／EV3，见[证据等级](evidence-and-claims.md)），官方文档不能单独判兼容。
+
+运行器把这项边界落成结构校验：响应声明 `submission_compatibility: COMPATIBLE` 时，必须同时给出 `submission_evidence` 对象；`source` 取 `platform_measured`、`ev2_observation` 或 `ev3_observation`，`reference` 为非空字符串（平台、日期、版本／参数或评审文件）。缺失、类型错误、source 非法或 reference 为空都按结构错误处理，该条判 `FAIL`，提交兼容性回到 `UNVERIFIED`。documented 只描述文档记载的能力，不是 `submission_compatibility` 的取值。
 
 检查器 `python scripts/model_profile_check.py` 只验证档案结构和内部一致性，不认证来源语义或提交准备。与Production命中同一任务时，Core只做一次文案适配，扩展仅承担用户要求的导出／状态／工程检查，不把本档案直接塞给Production的API profile接口。
 

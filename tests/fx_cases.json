@@ -1,0 +1,664 @@
+{
+  "cases": [
+    {
+      "id": "FXT01",
+      "request": "高速刀战：主角一次横斩穿过雨幕，刀锋拖尾、接触火星与地面裂纹必须沿实际刀路发生，收刀后余烬与扬尘继续沉降。",
+      "primary_fx": "FX12",
+      "secondary_fx": [
+        "FX09",
+        "FX06",
+        "FX03"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Environment",
+        "Optical",
+        "Audio"
+      ],
+      "criteria": [
+        "拖尾沿刀路生成",
+        "接触点与火花同帧",
+        "地裂方向服从刀势",
+        "收刀后残留继续衰减"
+      ],
+      "must_hold": [
+        "拖尾从刀锋生成并沿挥砍弧线运动",
+        "接触点先出现火星，再出现地面裂纹",
+        "收刀后火星与扬尘继续沉降而非立即消失"
+      ],
+      "must_reject": [
+        "刀未到达目标就先爆出血花",
+        "拖尾脱离刀锋独立飞行",
+        "切镜后地裂自动复原"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT02",
+      "request": "能量粒子：术士从掌心发射持续粒子束，粒子受目标护盾偏转，命中后密度衰减并留下余辉；不得用引擎术语代替运动描述。",
+      "primary_fx": "FX01",
+      "secondary_fx": [
+        "FX04",
+        "FX09"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Optical",
+        "Audio"
+      ],
+      "criteria": [
+        "发射源与掌心绑定",
+        "粒子轨迹受护盾影响",
+        "命中后密度衰减",
+        "余辉有寿命"
+      ],
+      "must_hold": [
+        "粒子从掌心发射源持续喷出",
+        "粒子接近护盾时轨迹偏转并产生撞击点",
+        "命中结束后粒子密度下降并留下短暂余辉"
+      ],
+      "must_reject": [
+        "粒子没有发射源却铺满全屏",
+        "粒子穿过护盾没有任何交互",
+        "用 Niagara 一词代替粒子运动与交互描述"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT03",
+      "request": "流体魔法：水幕从地面升起形成连续表面，包住对手后分流、汇聚并冲击目标，最后失去维持者而坠落。",
+      "primary_fx": "FX02",
+      "secondary_fx": [
+        "FX05"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Environment"
+      ],
+      "criteria": [
+        "流体表面连续",
+        "惯性与重力可信",
+        "分流后能再汇聚",
+        "目标反馈可见"
+      ],
+      "must_hold": [
+        "水幕保持连续表面并从地面获得上升动力",
+        "流体绕过对手后分流，再在下游汇聚",
+        "失去维持后水体受重力坠落并打湿地面"
+      ],
+      "must_reject": [
+        "水幕瞬间传送包围目标",
+        "流体不受重力悬浮在空中",
+        "命中后水体消失且地面保持干燥"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT04",
+      "request": "建筑破坏：巨力从柱脚受力点进入，裂纹沿承重结构扩展，楼层逐段失去支撑，碎片沿重力路径坠落并留下残余承重。",
+      "primary_fx": "FX06",
+      "secondary_fx": [
+        "FX03",
+        "FX13"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Environment",
+        "Audio"
+      ],
+      "criteria": [
+        "受力点明确",
+        "裂纹符合结构",
+        "碎片路径可信",
+        "残余承重可见"
+      ],
+      "must_hold": [
+        "冲击先落在柱脚并形成可见受力点",
+        "裂纹沿梁柱连接处扩展，而非均匀碎裂",
+        "碎片沿重力与结构约束坠落，尘土从倒塌前沿扩散"
+      ],
+      "must_reject": [
+        "建筑在冲击到达前自行倒塌",
+        "碎片悬停或逆重力飞散",
+        "下一镜建筑完整无损且无修复因果"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT05",
+      "request": "空间扭曲：走廊中段出现可见边界，边界内空间弯折，飞来的碎片与对手位置被改变，人物仍能判断自身与出口的方向。",
+      "primary_fx": "FX08",
+      "secondary_fx": [
+        "FX07"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Optical"
+      ],
+      "criteria": [
+        "边界可见",
+        "对象位移可读",
+        "人物位置不丢",
+        "出口方向保留"
+      ],
+      "must_hold": [
+        "扭曲区域有可见边界与折射变化",
+        "进入边界的碎片轨迹弯折，对手位置随之改变",
+        "人物与出口的空间关系在镜头中保持可读"
+      ],
+      "must_reject": [
+        "只有摄影机抖动，没有对象位移",
+        "边界内人物瞬移到另一地点",
+        "扭曲发生后所有方向感被完全抹除"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT06",
+      "request": "中式水墨战斗：刀锋带出墨色笔触，浓淡与飞白随速度和含水变化，墨迹在雨中介入洇染，不用发光粒子替代笔触。",
+      "primary_fx": "FX10",
+      "secondary_fx": [
+        "FX12"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Optical"
+      ],
+      "criteria": [
+        "笔触来自刀锋",
+        "浓淡随速度变化",
+        "飞白与含水可见",
+        "洇染服从纸水关系"
+      ],
+      "must_hold": [
+        "墨色笔触从刀锋离体并沿挥砍方向展开",
+        "快速段出现飞白，慢速段墨色更浓",
+        "墨迹遇雨或湿面后边缘洇染并向下流"
+      ],
+      "must_reject": [
+        "用发光粒子替代墨色笔触",
+        "所有笔触粗细一致且无飞白",
+        "墨迹像贴图一样不随接触面变化"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT07",
+      "request": "恐怖场景：旧走廊局部出现可辨的空间弯折与低强度尘埃，灯光偶发闪烁，声音先给出错误方位；不靠全屏爆炸或怪物特写。",
+      "primary_fx": "FX08",
+      "secondary_fx": [
+        "FX03"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Environment",
+        "Optical",
+        "Audio"
+      ],
+      "criteria": [
+        "异常局部",
+        "留白有效",
+        "声音方位错误但可解释",
+        "不升级为爆炸"
+      ],
+      "must_hold": [
+        "异常只出现在走廊局部，边界外保持正常",
+        "局部墙面和地砖的空间关系发生可辨弯折",
+        "尘埃与灯光变化指向同一处错误空间",
+        "声音先于可见来源出现，并在揭示后得到解释"
+      ],
+      "must_reject": [
+        "用全屏爆炸替代恐怖积累",
+        "怪物完整特写提前消耗悬念",
+        "无因果地堆叠血腥与尖叫"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT08",
+      "request": "日式校园爱情：黄昏教室，两人隔桌对视，微表情与呼吸变化为主，窗外光线缓慢移动，最多保留少量浮尘，不加入魔法光效。",
+      "primary_fx": "FX03",
+      "secondary_fx": [],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Environment",
+        "Optical"
+      ],
+      "criteria": [
+        "微表情优先",
+        "环境光有来源",
+        "浮尘克制",
+        "无魔法奇观"
+      ],
+      "must_hold": [
+        "表演与微表情承担主要信息",
+        "窗外夕照方向稳定并随时间缓慢变化",
+        "浮尘只作为空气质感，不遮挡面部"
+      ],
+      "must_reject": [
+        "人物周围出现无来源的魔法光环",
+        "用战斗式冲击帧强调对视",
+        "加入爆炸或超自然事件改写类型"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT09",
+      "request": "产品广告微距：香水瓶被水珠击中，液体沿瓶身流下，光线穿过玻璃形成折射与高光，背景保持干净，不加入战斗火花。",
+      "primary_fx": "FX02",
+      "secondary_fx": [
+        "FX07",
+        "FX13"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Environment",
+        "Optical"
+      ],
+      "criteria": [
+        "液体表面张力可信",
+        "材质反射准确",
+        "折射不破坏结构",
+        "背景干净"
+      ],
+      "must_hold": [
+        "水珠接触瓶身后合并并沿表面流下",
+        "玻璃高光与液体折射来自同一主光源",
+        "瓶身轮廓与标签在折射中仍可辨认"
+      ],
+      "must_reject": [
+        "水珠像硬质小球弹开",
+        "加入无来源的战斗火花或爆炸",
+        "折射把瓶身结构扭成无法辨认的形状"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT10",
+      "request": "无特效写实：雨夜公交站，两人争执后沉默，只有真实雨声、车灯扫过与衣料滴水，不添加任何魔法、粒子、冲击波或镜头光晕。",
+      "primary_fx": "NONE",
+      "secondary_fx": [],
+      "layers": [
+        "Environment",
+        "Audio"
+      ],
+      "criteria": [
+        "严格写实",
+        "无新增特效",
+        "环境声与光源可信",
+        "表演承担叙事"
+      ],
+      "must_hold": [
+        "画面只保留真实雨、车灯与衣料滴水",
+        "所有光源都有可见来源",
+        "争执后的沉默由表演与空间关系承担"
+      ],
+      "must_reject": [
+        "加入无来源的魔法粒子或光环",
+        "用冲击波或慢动作强化争吵",
+        "添加没有光源的镜头耀斑"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT11",
+      "request": "切镜连续性：同一场战斗中，破碎的护腕、地面裂缝与空中余烬跨三个机位保持状态，切镜不重置特效寿命、伤势与破坏。",
+      "primary_fx": "FX13",
+      "secondary_fx": [
+        "FX06",
+        "FX01"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Environment"
+      ],
+      "criteria": [
+        "护腕破损连续",
+        "地裂位置连续",
+        "余烬寿命连续",
+        "伤势不因切镜恢复"
+      ],
+      "must_hold": [
+        "护腕缺口在三个机位中保持同一位置与形状",
+        "地裂沿同一方向延伸，不因切镜改向",
+        "空中余烬数量随真实时间递减而非重置"
+      ],
+      "must_reject": [
+        "切镜后护腕自动复原",
+        "地裂在下一机位换方向或消失",
+        "特效消失后角色伤势与破坏一并恢复"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT12",
+      "request": "声画同步：铁锤砸中石柱，接触瞬间出现石屑、震动与低频撞击声，回声按空间传播，静默后不得残留爆炸尾音。",
+      "primary_fx": "FX09",
+      "secondary_fx": [
+        "FX13"
+      ],
+      "layers": [
+        "Primary",
+        "Impact",
+        "Environment",
+        "Audio"
+      ],
+      "criteria": [
+        "接触与声音同帧",
+        "材质声正确",
+        "环境回声有空间",
+        "静默后无残留"
+      ],
+      "must_hold": [
+        "锤面接触石柱的同一事件出现石屑、震动与撞击声",
+        "声音包含石材低频与碎屑细节",
+        "回声按柱廊空间延迟并衰减"
+      ],
+      "must_reject": [
+        "声音早于锤面接触",
+        "石材撞击使用金属尖响",
+        "进入静默后仍持续爆炸式尾音"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT13",
+      "request": "UE5 风格术语：用户要求 Niagara 风格的能量汇聚，提示词只把该词作为一次视觉参照，随后用来源、粒子形态、运动与命中结果说明，不声称模型真实调用引擎。",
+      "primary_fx": "FX01",
+      "secondary_fx": [
+        "FX04"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Optical"
+      ],
+      "criteria": [
+        "术语只作参照",
+        "视觉描述完整",
+        "不声称真实调用",
+        "不编造参数"
+      ],
+      "must_hold": [
+        "Niagara 只出现一次并紧跟自然语言画面解释",
+        "能量汇聚写明来源、粒子形态、运动与命中结果",
+        "明确这是视觉风格参照而非引擎调用"
+      ],
+      "must_reject": [
+        "声称 Seedance 正在运行 Niagara",
+        "列出未经核实的模块参数或性能数字",
+        "用引擎名替代全部视觉描述"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT14",
+      "request": "全屏风格化冲击帧：重拳命中时画面短暂高对比定格，随后回到同一动作相位，主体、力量轴与曝光连续，不开启第二个动作。",
+      "primary_fx": "FX10",
+      "secondary_fx": [
+        "FX09"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Optical",
+        "Audio"
+      ],
+      "criteria": [
+        "峰值帧有动机",
+        "回归同相位",
+        "主体与力量轴连续",
+        "曝光恢复"
+      ],
+      "must_hold": [
+        "冲击帧由命中瞬间触发并只维持短促峰值",
+        "回到运动后仍是同一拳的收势与反作用",
+        "主体轮廓、力量轴与曝光在峰值前后连续"
+      ],
+      "must_reject": [
+        "冲击帧后角色改成另一个攻击动作",
+        "全屏白场过长掩盖接触点",
+        "峰值前后主体位置与力量方向跳变"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT15",
+      "request": "多特效叠加：火焰、烟尘、碎片与热浪同时出现，火焰为主导，烟尘与碎片为次级，热浪只做光学扰动；关键接触与人物轮廓必须可读。",
+      "primary_fx": "FX05",
+      "secondary_fx": [
+        "FX03",
+        "FX06",
+        "FX07"
+      ],
+      "layers": [
+        "Primary",
+        "Secondary",
+        "Impact",
+        "Environment",
+        "Optical",
+        "Audio"
+      ],
+      "criteria": [
+        "主导类别明确",
+        "次级各有职责",
+        "关键接触不被遮挡",
+        "层间不互相抹除"
+      ],
+      "must_hold": [
+        "火焰始终是主导视觉，烟尘与碎片服务于同一爆炸事件",
+        "热浪只改变背景边缘，不吞没人物轮廓",
+        "关键接触点在烟尘经过时仍短暂可读"
+      ],
+      "must_reject": [
+        "所有效果同等强度并互相抢夺焦点",
+        "烟尘完全遮住接触点与人物",
+        "后出现的效果把先前的火焰与碎片抹除"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT16",
+      "request": "元素主导：固定机位观察寒霜从树枝末端沿枝条蔓延结晶，霜覆盖叶片并停留；不要冰墙、爆炸或其他角色。",
+      "primary_fx": "FX05",
+      "secondary_fx": [
+        "FX13"
+      ],
+      "layers": [
+        "Primary",
+        "Environment"
+      ],
+      "criteria": [
+        "元素是主导形态",
+        "结晶源头与扩展方向可见",
+        "树枝和叶片受到冻结",
+        "静止构图和残留保持"
+      ],
+      "must_hold": [
+        "冰霜从树枝末端形成并沿枝条向叶片扩展",
+        "枝叶表面留下连续霜晶",
+        "摄影机保持固定且霜晶在结尾仍可见"
+      ],
+      "must_reject": [
+        "用独立飞舞的粒子替代霜晶",
+        "无触发地出现冰墙或爆炸",
+        "摄影机擅自环绕或结尾霜晶无故消失"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT17",
+      "request": "光学主导：固定机位拍一道来自单一光源的光穿过玻璃棱镜，在墙面形成可辨色带；不出现物体真实位移、魔法或其他发光源。",
+      "primary_fx": "FX07",
+      "secondary_fx": [],
+      "layers": [
+        "Primary",
+        "Optical"
+      ],
+      "criteria": [
+        "光源、玻璃介质与色带关系明确",
+        "折射改变成像而非物体位置",
+        "固定构图不变"
+      ],
+      "must_hold": [
+        "单一光源照射玻璃棱镜并在墙面形成色带",
+        "棱镜与墙面位置保持不变",
+        "摄影机固定且色带由指定光源产生"
+      ],
+      "must_reject": [
+        "画面平移伪装成物体折射",
+        "无来源的光球或魔法能量束",
+        "擅自移动摄像机或改变棱镜位置"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT18",
+      "request": "变形主导：同一角色右臂机械刀沿关节连续展开成弧盾，挡下飞石后保持盾形；不凭空增加第二件武器。",
+      "primary_fx": "FX11",
+      "secondary_fx": [
+        "FX09"
+      ],
+      "layers": [
+        "Primary",
+        "Impact"
+      ],
+      "criteria": [
+        "刀盾是同一物体",
+        "关节转动和形态过渡可见",
+        "格挡的接触及尾态明确"
+      ],
+      "must_hold": [
+        "右臂机械刀沿关节连续展开为弧盾",
+        "飞石到达后被盾面挡住",
+        "结尾同一右臂弧盾保持展开"
+      ],
+      "must_reject": [
+        "刀瞬间消失并凭空复制出一面盾",
+        "左臂持盾代替右臂变形",
+        "飞石未接触盾面就凭空弹开"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT19",
+      "request": "数字故障主导：监视器原有的图像出现扫描线、信号块错位与短暂撕裂，随后恢复；异常只发生在屏幕内。",
+      "primary_fx": "FX15",
+      "secondary_fx": [],
+      "layers": [
+        "Primary"
+      ],
+      "criteria": [
+        "有真实的屏幕与信号语义",
+        "图像错误局限于屏幕",
+        "故障出现、变化及恢复可辨"
+      ],
+      "must_hold": [
+        "监视器内的原有画面出现扫描线和块状错位",
+        "屏幕内图像短暂撕裂后恢复",
+        "屏幕外场景和摄影机维持原状态"
+      ],
+      "must_reject": [
+        "把普通摄影机抖动称为数字故障",
+        "整间房间像液体一样扭曲",
+        "未授权的UI或新角色覆盖原有画面"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT20",
+      "request": "动态图形主导：抽象画面中几何点沿圆弧扩展为圆环，再分成规则网格后淡出；不出现文字、界面或物理爆炸。",
+      "primary_fx": "FX14",
+      "secondary_fx": [],
+      "layers": [
+        "Primary"
+      ],
+      "criteria": [
+        "几何图形的结构和变化过程是主体",
+        "图形由点到环再到网格",
+        "淡出后不新增其他信息"
+      ],
+      "must_hold": [
+        "几何点沿圆弧展开形成圆环",
+        "圆环按节奏转换为规则网格",
+        "网格淡出且画面不出现文字或界面"
+      ],
+      "must_reject": [
+        "用随机爆炸与火星代替几何图形",
+        "加入未经要求的HUD或文字",
+        "网格在圆环形成之前凭空出现"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    },
+    {
+      "id": "FXT21",
+      "request": "能量主导：角色手心生成半透明能量护盾，飞来的石块接触护盾后被挡住；护盾收缩消散，地面碎屑保留。",
+      "primary_fx": "FX04",
+      "secondary_fx": [
+        "FX09"
+      ],
+      "layers": [
+        "Primary",
+        "Impact",
+        "Environment"
+      ],
+      "criteria": [
+        "护盾有手心来源",
+        "能量表面与范围可读",
+        "接触、反作用和消散有明确关系"
+      ],
+      "must_hold": [
+        "能量护盾由角色手心形成半透明保护面",
+        "飞石到达护盾时被阻挡并留下接触反馈",
+        "护盾收缩消散后地面原有碎屑保留"
+      ],
+      "must_reject": [
+        "角色尚未释放就先有护盾",
+        "飞石穿过护盾且无任何交互",
+        "护盾消散后已经产生的碎屑无故消失"
+      ],
+      "evidence_boundary": "PENDING_VIDEO",
+      "timing_mode": "event_driven"
+    }
+  ]
+}

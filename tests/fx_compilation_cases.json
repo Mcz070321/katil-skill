@@ -1,0 +1,64 @@
+{
+  "cases": [
+    {
+      "id": "FCC01",
+      "purpose": "高密度攻防与结果；全屏效果与动作状态同时保留",
+      "source_text": "全片严格30秒，人物共两位：甲持重斧，乙手握鬼灯。甲开启重力领域，甲以重斧砸中石柱，石柱根部向左开裂，冲击峰值采用全屏朱砂裂墨；峰值后接回同一斧势，乙向后撤步，鬼灯被这一击击碎，甲取胜。烟尘散后柱根裂痕保留。无背景音乐。补充：斧、柱与灯的相对位置要看清，片中同一人物的面容和衣着持续一致。",
+      "compiled_text": "严格30秒，两位人物：甲持重斧、乙手握鬼灯，甲开启重力领域并以重斧砸中石柱，柱根向左开裂。冲击峰值全屏朱砂裂墨，随后接回同一斧势，乙向后撤步，鬼灯被这一击击碎、甲取胜；烟尘散后柱根裂痕保留。无背景音乐；人物面容、衣着保持一致，斧、柱、灯的位置连续且可辨。",
+      "requirements": [
+        {"id":"duration", "source_span":"全片严格30秒", "compiled_span":"严格30秒"},
+        {"id":"characters", "source_span":"人物共两位", "compiled_span":"两位人物"},
+        {"id":"weapons", "source_span":"甲持重斧，乙手握鬼灯", "compiled_span":"甲持重斧、乙手握鬼灯"},
+        {"id":"source", "source_span":"甲开启重力领域", "compiled_span":"甲开启重力领域"},
+        {"id":"contact", "source_span":"以重斧砸中石柱", "compiled_span":"以重斧砸中石柱"},
+        {"id":"crack", "source_span":"石柱根部向左开裂", "compiled_span":"柱根向左开裂"},
+        {"id":"impact", "source_span":"全屏朱砂裂墨", "compiled_span":"全屏朱砂裂墨"},
+        {"id":"phase", "source_span":"接回同一斧势", "compiled_span":"接回同一斧势"},
+        {"id":"reaction", "source_span":"乙向后撤步", "compiled_span":"乙向后撤步"},
+        {"id":"object_result", "source_span":"鬼灯被这一击击碎", "compiled_span":"鬼灯被这一击击碎"},
+        {"id":"outcome", "source_span":"甲取胜", "compiled_span":"甲取胜"},
+        {"id":"residue", "source_span":"烟尘散后柱根裂痕保留", "compiled_span":"烟尘散后柱根裂痕保留"},
+        {"id":"audio", "source_span":"无背景音乐", "compiled_span":"无背景音乐"},
+        {"id":"continuity", "source_span":"面容和衣着持续一致", "compiled_span":"人物面容、衣着保持一致"},
+        {"id":"visibility", "source_span":"斧、柱与灯的相对位置要看清", "compiled_span":"斧、柱、灯的位置连续且可辨"}
+      ],
+      "required_order": [["source","contact"],["contact","crack"],["crack","impact"],["impact","phase"],["phase","reaction"],["object_result","outcome"],["outcome","residue"]]
+    },
+    {
+      "id": "FCC02",
+      "purpose": "变形中的手别、连续形态、阻挡与尾态",
+      "source_text": "总长15秒。单一角色右臂的银色机械刀保持蓝色光缝。飞石向角色袭来，右臂刀刃沿腕部展开成弧盾，弧盾挡住飞石，碎屑向外弹开。弧盾保持展开，没有变回刀刃。不得出现新的角色或额外武器。采用事件顺序，不给镜头分秒。",
+      "compiled_text": "15秒：飞石袭来，唯一角色的右臂银色机械刀沿腕部展开成弧盾，蓝色光缝保持可见；弧盾挡住飞石，碎屑向外弹开，末尾弧盾保持展开。不要新角色或额外武器；按事件顺序编排。",
+      "requirements": [
+        {"id":"duration", "source_span":"总长15秒", "compiled_span":"15秒"},
+        {"id":"count", "source_span":"单一角色", "compiled_span":"唯一角色"},
+        {"id":"incoming", "source_span":"飞石向角色袭来", "compiled_span":"飞石袭来"},
+        {"id":"transform", "source_span":"右臂刀刃沿腕部展开成弧盾", "compiled_span":"右臂银色机械刀沿腕部展开成弧盾"},
+        {"id":"material", "source_span":"蓝色光缝", "compiled_span":"蓝色光缝"},
+        {"id":"block", "source_span":"弧盾挡住飞石", "compiled_span":"弧盾挡住飞石"},
+        {"id":"reaction", "source_span":"碎屑向外弹开", "compiled_span":"碎屑向外弹开"},
+        {"id":"tail", "source_span":"弧盾保持展开", "compiled_span":"弧盾保持展开"},
+        {"id":"restriction", "source_span":"不得出现新的角色或额外武器", "compiled_span":"不要新角色或额外武器"},
+        {"id":"timing", "source_span":"事件顺序", "compiled_span":"事件顺序"}
+      ],
+      "required_order": [["incoming","transform"],["transform","block"],["block","reaction"],["reaction","tail"]]
+    },
+    {
+      "id": "FCC03",
+      "purpose": "非战斗、静止机位和声音限制不被 FX 模块越权",
+      "source_text": "一条无特效的走廊恐怖短片，固定机位。女孩站在走廊尽头，灯一盏盏熄灭，最后女孩缓缓抬头。不要怪物，不要人物对白，不要音乐；只留自然环境声。营造压抑氛围，不要增加其他事件。",
+      "compiled_text": "无特效，固定机位：女孩站在走廊尽头，灯一盏盏熄灭，最后女孩缓缓抬头。保持压抑；不要怪物、人物对白和音乐，只留自然环境声，不增加其他事件。",
+      "requirements": [
+        {"id":"fx", "source_span":"无特效", "compiled_span":"无特效"},
+        {"id":"camera", "source_span":"固定机位", "compiled_span":"固定机位"},
+        {"id":"position", "source_span":"女孩站在走廊尽头", "compiled_span":"女孩站在走廊尽头"},
+        {"id":"lights", "source_span":"灯一盏盏熄灭", "compiled_span":"灯一盏盏熄灭"},
+        {"id":"ending", "source_span":"最后女孩缓缓抬头", "compiled_span":"最后女孩缓缓抬头"},
+        {"id":"sound", "source_span":"只留自然环境声", "compiled_span":"只留自然环境声"},
+        {"id":"no_monster", "source_span":"不要怪物", "compiled_span":"不要怪物"},
+        {"id":"no_music", "source_span":"不要音乐", "compiled_span":"人物对白和音乐"}
+      ],
+      "required_order": [["position","lights"],["lights","ending"]]
+    }
+  ]
+}

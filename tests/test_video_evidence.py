@@ -201,6 +201,82 @@ class VideoEvidenceTests(unittest.TestCase):
         self.assertEqual(len(item['evidence_records']), 6)
         self.assertEqual(item['quality_verdict_source'], 'external_review_record_unverified_identity')
         self.assertTrue(any('未认证' in n for n in item['notes']))
+        self.assertEqual(item['review_mode'], 'open')
+        self.assertEqual(item['independence'], 'shared')
+        self.assertFalse(item['ev3_supported'])
+
+    def test_blind_review_requires_protocol_sample_and_independence(self):
+        cases = {
+            'missing_protocol': {'review_mode': 'blind', 'independence': 'independent', 'sample_size': 3},
+            'small_sample': {'review_mode': 'blind', 'independence': 'independent', 'blind_protocol': '随机盲测', 'sample_size': 1},
+            'below_runs_min': {'review_mode': 'blind', 'independence': 'independent', 'blind_protocol': '随机盲测', 'sample_size': 2},
+            'shared_reviewer': {'review_mode': 'blind', 'independence': 'shared', 'blind_protocol': '随机盲测', 'sample_size': 3},
+        }
+        for mode, fields in cases.items():
+            with self.subTest(mode=mode):
+                _, response = self.valid()
+                self.change_review(response, lambda data: data.update(fields))
+                _, item = self.evaluate(response)
+                self.assertEqual(item['review_status'], 'FAIL')
+                self.assertFalse(item['review_record_valid'])
+                self.assertFalse(item['ev3_supported'])
+
+    def test_valid_blind_review_records_ev3_support_but_not_authentication(self):
+        _, response = self.valid()
+        self.change_review(response, lambda data: data.update(
+            review_mode='blind', independence='independent',
+            blind_protocol='评审者未见版本标签，按随机顺序逐条观看全片',
+            sample_size=3))
+        _, item = self.evaluate(response)
+        self.assertEqual(item['status'], 'PASS')
+        self.assertEqual(item['review_mode'], 'blind')
+        self.assertEqual(item['independence'], 'independent')
+        self.assertEqual(item['sample_size'], 3)
+        self.assertTrue(item['ev3_supported'])
+        self.assertTrue(any('EV3' in n for n in item['notes']))
+        self.assertTrue(any('未认证' in n for n in item['notes']))
+
+    def test_required_criteria_are_checked_for_each_full_clip(self):
+        path = self.root / 'generation_cases.json'
+        suite = json.loads(path.read_text(encoding='utf-8'))
+        suite['cases'][0]['review_criteria'] = {
+            'right_arm_and_blade': '右臂带刀离体',
+            'head_separation': '头身分离',
+        }
+        path.write_text(json.dumps(suite), encoding='utf-8')
+        _, response = self.valid()
+
+        def set_review(data, mode):
+            data.update(review_mode='blind', independence='independent',
+                        blind_protocol='synthetic fixture', sample_size=3)
+            for clip in data['clips']:
+                clip['viewing'] = 'full_video'
+                clip['observations'] = [
+                    {'criterion': key, 'time_seconds': 0.0, 'observation': 'synthetic test'}
+                    for key in ('right_arm_and_blade', 'head_separation')
+                ]
+            if mode != 'complete':
+                data['clips'][0]['observations'][1]['criterion'] = 'lighting'
+            if mode == 'partial':
+                data['clips'][0]['viewing'] = 'frames'
+
+        for mode, expected in [('missing', 'FAIL'), ('complete', 'PASS'), ('partial', 'PENDING_VIDEO')]:
+            with self.subTest(mode=mode):
+                self.change_review(response, lambda data: set_review(data, mode))
+                _, item = self.evaluate(response)
+                self.assertEqual(item['evidence_status'], 'PASS')
+                self.assertEqual(item['review_status'], expected)
+                self.assertIs(item['ev3_supported'], mode == 'complete')
+
+    def test_blind_frame_only_review_is_not_ev3(self):
+        _, response = self.valid()
+        self.change_review(response, lambda data: data.update(
+            review_mode='blind', independence='independent',
+            blind_protocol='随机盲测', sample_size=3))
+        self.change_review(response, lambda data: data['clips'][0].update(viewing='frames'))
+        _, item = self.evaluate(response)
+        self.assertEqual(item['review_status'], 'PENDING_VIDEO')
+        self.assertFalse(item['ev3_supported'])
 
 
 if __name__ == '__main__':

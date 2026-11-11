@@ -53,6 +53,74 @@
         ]
       },
       "usable_as_baseline": false
+    },
+    {
+      "filename": "7c0d8a73bcf97b49a0863c69366cae7e.mp4",
+      "sha256": "4BD1BAD907C51F3526F810AB4AA607C311B672F70BC5EFC2CD5979438656840A",
+      "case_candidate": "G10",
+      "attribution": "据用户报告为 KATIL 提示词经 Seedance 2.5 生成，实际技能版本未核实",
+      "attribution_source": "用户会话，2026-11-10",
+      "file_status": "obtained_in_session_not_bundled",
+      "prompt_status": "comparison_draft_only",
+      "related_draft": "提示词.docx",
+      "related_draft_sha256": "0C23B49D1E14C3B51093D9F8244243DE0A2BE503ED6AAAAD41837B2B73B68EBA",
+      "parameters_status": "实际提交稿、参考绑定、设置、分段及后期未知",
+      "file_metadata": {
+        "codec": "hevc",
+        "width": 960,
+        "height": 408,
+        "fps": 24,
+        "frames": 721,
+        "duration_seconds": 30.041667
+      },
+      "observations": {
+        "evidence": "全段 0.5 秒抽帧与关键窗口加密复核",
+        "full_playback_review": false,
+        "audio_review": false,
+        "visible": [
+          "f520–f523 可见女主近似重叠轮廓",
+          "f567、f570 终斩时仍可见着甲手臂握弯刀，随后见黑灰；缺少可确认的两次断臂及头身分离链"
+        ],
+        "unknown": [
+          "原速节奏和音画同步",
+          "生成原因与可复现性"
+        ]
+      },
+      "usable_as_baseline": false
+    },
+    {
+      "filename": "ee121adc759762d8ac11a07093e0a075.mp4",
+      "sha256": "233F830EC721D53402D2A167A582A462DE4909CFB5A4F6457150DA052A83CD0F",
+      "case_candidate": "G11",
+      "attribution": "据用户报告为 KATIL 提示词经 Seedance 2.5 生成，实际技能版本未核实",
+      "attribution_source": "用户会话，2026-11-10",
+      "file_status": "obtained_in_session_not_bundled",
+      "prompt_status": "comparison_draft_only",
+      "related_draft": "提示词.docx",
+      "related_draft_sha256": "0C23B49D1E14C3B51093D9F8244243DE0A2BE503ED6AAAAD41837B2B73B68EBA",
+      "parameters_status": "实际提交稿、参考绑定、设置、分段及后期未知",
+      "file_metadata": {
+        "codec": "hevc",
+        "width": 960,
+        "height": 408,
+        "fps": 24,
+        "frames": 721,
+        "duration_seconds": 30.041667
+      },
+      "observations": {
+        "evidence": "全段 0.5 秒抽帧与关键窗口加密复核",
+        "full_playback_review": false,
+        "audio_review": false,
+        "visible": [
+          "f498–f535 近景呈人物拳剑与金蓝弧面相抵，无法确认两件规定巨物已成形",
+          "末段保留星球弧面、环状云洞及余光衰减"
+        ],
+        "unknown": [
+          "原速节奏和音画同步",
+          "生成原因与可复现性"
+        ]
+      },
+      "usable_as_baseline": false
     }
   ],
   "ab_comparison": "not_performed",

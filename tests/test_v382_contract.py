@@ -36,8 +36,10 @@ class EffectContractTests(unittest.TestCase):
 
     def test_effect_peak_identity_present(self):
         text = read("effects-and-damage.md")
-        self.assertIn("峰值帧仍要认得出主体。", text)
-        self.assertIn("主体剪影、兵器朝向、力量轴线、恢复后同相位承接", text)
+        self.assertIn("主体剪影、兵器朝向或力量轴线", text)
+        self.assertIn("完全遮蔽时，靠进入与恢复画面", text)
+        self.assertIn("仅指定全画幅或抽象表现时，沿用该接触的机位、尺度与事件", text)
+        self.assertIn("用户明确指定换机位或尺度时", text)
 
     def test_effect_entity_boundary_present(self):
         text = read("visual-material-grammar.md")
@@ -79,12 +81,12 @@ class ActionCameraContractTests(unittest.TestCase):
         registry = json.loads((ROOT / "rules" / "rule-registry.yaml").read_text(encoding="utf-8"))
         rules = {rule["rule_id"]: rule for rule in registry["rules"]}
         self.assertEqual(rules["CONTINUITY"]["rule_revision"], "1.2.0")
-        self.assertEqual(rules["SEEDANCE"]["rule_revision"], "1.3.0")
+        self.assertEqual(rules["SEEDANCE"]["rule_revision"], "1.5.0")
         expected = {
-            "REF": "1.2.0",
+            "REF": "1.4.0",
             "SOUND": "1.0.0",
             "SPACE": "1.1.0",
-            "WITNESS": "1.2.0",
+            "WITNESS": "1.3.0",
             "DELIVERY": "1.2.0",
             "ADAPTER": "1.3.0",
             "EVIDENCE": "1.0.0",
@@ -97,11 +99,31 @@ class ActionCameraContractTests(unittest.TestCase):
         self.assertEqual(rules["EVIDENCE"]["authority"]["anchor"], "katil-evidence")
         skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
         self.assertIn("<!-- SUMMARY of CONTINUITY@1.2.0 -->", skill)
-        self.assertIn("<!-- SUMMARY of SEEDANCE@1.3.0 -->", skill)
+        self.assertIn("<!-- SUMMARY of SEEDANCE@1.5.0 -->", skill)
+        self.assertIn("<!-- SUMMARY of REF@1.4.0 -->", skill)
         self.assertIn("<!-- SUMMARY of ADAPTER@1.3.0 -->", skill)
         self.assertIn("<!-- SUMMARY of EVIDENCE@1.0.0 -->", skill)
         self.assertNotIn("<!-- SUMMARY of CONTINUITY@1.1.0 -->", skill)
-        self.assertNotIn("<!-- SUMMARY of SEEDANCE@1.2.0 -->", skill)
+        self.assertNotIn("<!-- SUMMARY of SEEDANCE@1.3.0 -->", skill)
+        self.assertNotIn("<!-- SUMMARY of REF@1.2.0 -->", skill)
+
+    def test_v394_scene_reference_decisions_present(self):
+        ref_doc = read("reference-and-task-handling.md")
+        self.assertIn("场景参考图的四维判断与“一减三留”", ref_doc)
+        self.assertIn("四项可以同时成立，不是四选一的状态机", ref_doc)
+        self.assertIn("**D 场景证据：** **K 已知**", ref_doc)
+        for rule in ("SR-A 首镜与起幅", "SR-B 真实位移", "SR-C 锁帧承接", "SR-D 相邻镜头", "SR-E 锁死判定"):
+            self.assertIn(rule, ref_doc)
+        self.assertNotIn("不锁定原图静态机位与全景画幅", ref_doc)
+
+        cam_doc = read("camera-direction.md")
+        self.assertIn("不要求每相邻两镜都改变对同一地标的角度与景别", cam_doc)
+        self.assertIn("不强制前景滑出", cam_doc)
+
+        sd_doc = read("seedance-2.5.md")
+        self.assertIn("一减三留", sd_doc)
+        self.assertIn("不强制前景滑出", sd_doc)
+        self.assertIn("不强制立即脱框", sd_doc)
 
 
 if __name__ == "__main__":
